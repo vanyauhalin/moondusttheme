@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 import {mkdir, writeFile} from "node:fs/promises"
-import {dirname} from "node:path"
+import {dirname, join} from "node:path"
 import {argv} from "node:process"
+import {URL, fileURLToPath} from "node:url"
 import sade from "sade"
 import * as examples from "./examples/examples.js"
 import {light} from "./extension/themes.js"
@@ -37,5 +38,9 @@ async function build() {
 }
 
 async function buildExamples() {
-  await examples.build("./examples/dist")
+  const u = new URL(".", import.meta.url)
+  let d = fileURLToPath(u)
+  d = join(d, "examples/dist")
+  await mkdir(d, {recursive: true})
+  await examples.build(d)
 }
