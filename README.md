@@ -16,25 +16,26 @@ The color palette is centered around shades of gray and blue. These two colors p
 
 Moondust is developed for each syntax individually. Alongside each syntax, you will find a comprehensive example showcasing the syntax highlighting.
 
-| Syntax             | Powered by                                                                                                            | Example                                                               |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| CSS                | [CSS Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/css/)                      | [View example](https://vanyauhalin.github.io/moondusttheme/css/)      |
-| Dockerfile         | [Docker Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/docker/)                | [View example](https://vanyauhalin.github.io/moondusttheme/docker/)   |
-| Go                 | [Builtin Extension (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/go/)                         | [View example](https://vanyauhalin.github.io/moondusttheme/go/)       |
-| Go Module          | [Go](https://github.com/golang/vscode-go/tree/v0.41.2/)                                                               | [View example](https://vanyauhalin.github.io/moondusttheme/go.mod/)   |
-| Go Sum             | [Go](https://github.com/golang/vscode-go/tree/v0.41.2/)                                                               | [View example](https://vanyauhalin.github.io/moondusttheme/go.sum/)   |
-| INI                | [Ini Language Basics (builtin)](https://github.com/microsoft/vscode/blob/1.87.0/extensions/ini/)                      | [View example](https://vanyauhalin.github.io/moondusttheme/ini/)      |
-| JavaScript         | [JavaScript Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/javascript/)        | [View example](https://vanyauhalin.github.io/moondusttheme/js/)       |
-| JSX                | [JavaScript Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/javascript/)        | [View example](https://vanyauhalin.github.io/moondusttheme/jsx/)      |
-| JSON               | [JSON Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/json/)                    | [View example](https://vanyauhalin.github.io/moondusttheme/json/)     |
-| JSON with Comments | [JSON Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/json/)                    | [View example](https://vanyauhalin.github.io/moondusttheme/jsonc/)    |
-| JSON Lines         | [JSON Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/json/)                    | [View example](https://vanyauhalin.github.io/moondusttheme/jsonl/)    |
-| Makefile           | [Make Language Basics (builtin)](https://github.com/microsoft/vscode/blob/1.87.0/extensions/make/)                    | [View example](https://vanyauhalin.github.io/moondusttheme/makefile/) |
-| Ruby               | [Ruby Language Basics (builtin)](https://github.com/microsoft/vscode/blob/1.87.0/extensions/ruby/)                    | [View example](https://vanyauhalin.github.io/moondusttheme/ruby/)     |
-| TOML               | [Even Better TOML](https://github.com/tamasfe/taplo/tree/release-even-better-toml-0.20.0/editors/vscode/)             | [View example](https://vanyauhalin.github.io/moondusttheme/toml/)     |
-| TypeScript         | [TypeScript Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/typescript-basics/) | [View example](https://vanyauhalin.github.io/moondusttheme/ts/)       |
-| TSX                | [TypeScript Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/typescript-basics/) | [View example](https://vanyauhalin.github.io/moondusttheme/tsx/)      |
-| YAML               | [YAML Language Basics (builtin)](https://github.com/microsoft/vscode/blob/1.87.0/extensions/yaml/)                    | [View example](https://vanyauhalin.github.io/moondusttheme/yaml/)     |
+| Syntax             | Powered by                                                                                                            | Example                                                                 |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| CSS                | [CSS Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/css/)                      | [View example](https://vanyauhalin.github.io/moondusttheme/css/)        |
+| Dockerfile         | [Docker Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/docker/)                | [View example](https://vanyauhalin.github.io/moondusttheme/dockerfile/) |
+| Go                 | [Builtin Extension (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/go/)                         | [View example](https://vanyauhalin.github.io/moondusttheme/go/)         |
+| Go Module          | [Go](https://github.com/golang/vscode-go/tree/v0.41.2/)                                                               | [View example](https://vanyauhalin.github.io/moondusttheme/go.mod/)     |
+| Go Sum             | [Go](https://github.com/golang/vscode-go/tree/v0.41.2/)                                                               | [View example](https://vanyauhalin.github.io/moondusttheme/go.sum/)     |
+| HTML               | [HTML Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/html/)                    | [View example](https://vanyauhalin.github.io/moondusttheme/html/)       |
+| INI                | [Ini Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/ini/)                      | [View example](https://vanyauhalin.github.io/moondusttheme/ini/)        |
+| JavaScript         | [JavaScript Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/javascript/)        | [View example](https://vanyauhalin.github.io/moondusttheme/js/)         |
+| JSON               | [JSON Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/json/)                    | [View example](https://vanyauhalin.github.io/moondusttheme/json/)       |
+| JSON with Comments | [JSON Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/json/)                    | [View example](https://vanyauhalin.github.io/moondusttheme/jsonc/)      |
+| JSON Lines         | [JSON Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/json/)                    | [View example](https://vanyauhalin.github.io/moondusttheme/jsonl/)      |
+| JSX                | [JavaScript Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/javascript/)        | [View example](https://vanyauhalin.github.io/moondusttheme/jsx/)        |
+| Makefile           | [Make Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/make/)                    | [View example](https://vanyauhalin.github.io/moondusttheme/makefile/)   |
+| Ruby               | [Ruby Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/ruby/)                    | [View example](https://vanyauhalin.github.io/moondusttheme/ruby/)       |
+| TOML               | [Even Better TOML](https://github.com/tamasfe/taplo/tree/release-even-better-toml-0.20.0/editors/vscode/)             | [View example](https://vanyauhalin.github.io/moondusttheme/toml/)       |
+| TypeScript         | [TypeScript Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/typescript-basics/) | [View example](https://vanyauhalin.github.io/moondusttheme/ts/)         |
+| TSX                | [TypeScript Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/typescript-basics/) | [View example](https://vanyauhalin.github.io/moondusttheme/tsx/)        |
+| YAML               | [YAML Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/yaml/)                    | [View example](https://vanyauhalin.github.io/moondusttheme/yaml/)       |
 
 ## Contribution
 
