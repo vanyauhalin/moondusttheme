@@ -14,7 +14,7 @@ export function meta() {
     title: "JSON Lines",
     name: "jsonl",
     scope: "source.json.lines",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/json/syntaxes/JSONL.tmLanguage.json"],
+    grammars: ["https://github.com/microsoft/vscode/blob/1.87.0/extensions/json/syntaxes/JSONL.tmLanguage.json/"],
     example: json.meta().example
   }
 }

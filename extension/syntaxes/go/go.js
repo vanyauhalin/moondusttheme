@@ -11,7 +11,7 @@ export function meta() {
     title: "GoLang",
     name: "go",
     scope: "source.go",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/go/syntaxes/go.tmLanguage.json"],
+    grammars: ["https://github.com/microsoft/vscode/blob/1.87.0/extensions/go/syntaxes/go.tmLanguage.json/"],
     example: {
       author: {
         name: "Alec Thomas",
@@ -19,7 +19,7 @@ export function meta() {
       },
       source: {
         name: "Kong",
-        url: "https://github.com/alecthomas/kong/blob/v0.9.0/kong.go"
+        url: "https://github.com/alecthomas/kong/blob/v0.9.0/kong.go/"
       }
     }
   }

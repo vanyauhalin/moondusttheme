@@ -11,7 +11,7 @@ export function meta() {
     title: "JavaScript",
     name: "js",
     scope: "source.js",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/javascript/syntaxes/JavaScript.tmLanguage.json"],
+    grammars: ["https://github.com/microsoft/vscode/blob/1.87.0/extensions/javascript/syntaxes/JavaScript.tmLanguage.json/"],
     example: {
       author: {
         name: "Luke Edwards",
@@ -19,7 +19,7 @@ export function meta() {
       },
       source: {
         name: "uvu",
-        url: "https://github.com/lukeed/uvu/blob/v0.5.6/src/assert.js"
+        url: "https://github.com/lukeed/uvu/blob/v0.5.6/src/assert.js/"
       }
     }
   }

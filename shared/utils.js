@@ -33,6 +33,6 @@ export async function fetchExample(u) {
  * @returns {Promise<Response>}
  */
 export function fetchRaw(u) {
-  u = u.replace(/\/((blob)|(tree))\//, "/raw/")
+  u = u.replace("/blob/", "/raw/")
   return fetch(u, {redirect: "follow"})
 }

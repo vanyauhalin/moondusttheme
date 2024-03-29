@@ -11,7 +11,7 @@ export function meta() {
     title: "Go Sum",
     name: "go.sum",
     scope: "go.sum",
-    grammars: ["https://github.com/golang/vscode-go/tree/v0.41.2/extension/syntaxes/go.sum.tmGrammar.json"],
+    grammars: ["https://github.com/golang/vscode-go/blob/v0.41.2/extension/syntaxes/go.sum.tmGrammar.json/"],
     example: {
       author: {
         name: "Maas Lalani",
@@ -19,7 +19,7 @@ export function meta() {
       },
       source: {
         name: "Invoice",
-        url: "https://github.com/maaslalani/invoice/blob/v0.1.0/go.sum"
+        url: "https://github.com/maaslalani/invoice/blob/v0.1.0/go.sum/"
       }
     }
   }

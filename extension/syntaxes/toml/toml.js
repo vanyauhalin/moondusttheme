@@ -11,7 +11,7 @@ export function meta() {
     title: "TOML",
     name: "toml",
     scope: "source.toml",
-    grammars: ["https://github.com/tamasfe/taplo/blob/release-even-better-toml-0.20.0/editors/vscode/toml.tmLanguage.json"],
+    grammars: ["https://github.com/tamasfe/taplo/blob/release-even-better-toml-0.20.0/editors/vscode/toml.tmLanguage.json/"],
     example: {
       author: {
         name: "jdx",
@@ -19,7 +19,7 @@ export function meta() {
       },
       source: {
         name: "mise",
-        url: "https://github.com/jdx/mise/blob/main/Cargo.toml"
+        url: "https://github.com/jdx/mise/blob/main/Cargo.toml/"
       }
     }
   }

@@ -12,8 +12,8 @@ export function meta() {
     name: "html",
     scope: "text.html.derivative",
     grammars: [
-      "https://github.com/microsoft/vscode/tree/1.87.0/extensions/html/syntaxes/html-derivative.tmLanguage.json",
-      "https://github.com/microsoft/vscode/tree/1.87.0/extensions/html/syntaxes/html.tmLanguage.json"
+      "https://github.com/microsoft/vscode/blob/1.87.0/extensions/html/syntaxes/html-derivative.tmLanguage.json/",
+      "https://github.com/microsoft/vscode/blob/1.87.0/extensions/html/syntaxes/html.tmLanguage.json/"
     ],
     example: {
       author: {
@@ -22,7 +22,7 @@ export function meta() {
       },
       source: {
         name: "Two Columns Article",
-        url: "https://github.com/pepelsbey/pepelsbey.dev/blob/6f3c41050ea299da49b3358e2c87108fd0404a52/src/articles/two-columns/demos/flexbox.html"
+        url: "https://github.com/pepelsbey/pepelsbey.dev/blob/6f3c41050ea299da49b3358e2c87108fd0404a52/src/articles/two-columns/demos/flexbox.html/"
       }
     }
   }

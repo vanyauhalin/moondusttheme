@@ -11,7 +11,7 @@ export function meta() {
     title: "YAML",
     name: "yaml",
     scope: "source.yaml",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/yaml/syntaxes/yaml.tmLanguage.json"],
+    grammars: ["https://github.com/microsoft/vscode/blob/1.87.0/extensions/yaml/syntaxes/yaml.tmLanguage.json/"],
     example: {
       author: {
         name: "Google",
@@ -19,7 +19,7 @@ export function meta() {
       },
       source: {
         name: "Brotli",
-        url: "https://github.com/google/brotli/blob/v1.1.0/.github/workflows/release.yaml"
+        url: "https://github.com/google/brotli/blob/v1.1.0/.github/workflows/release.yaml/"
       }
     }
   }

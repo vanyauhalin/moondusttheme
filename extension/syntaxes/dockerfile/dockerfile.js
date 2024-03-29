@@ -11,7 +11,7 @@ export function meta() {
     title: "Dockerfile",
     name: "dockerfile",
     scope: "source.dockerfile",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/docker/syntaxes/docker.tmLanguage.json"],
+    grammars: ["https://github.com/microsoft/vscode/blob/1.87.0/extensions/docker/syntaxes/docker.tmLanguage.json/"],
     example: {
       author: {
         name: "NGINX",
@@ -19,7 +19,7 @@ export function meta() {
       },
       source: {
         name: "NGINX Alpine Dockerfile",
-        url: "https://github.com/nginxinc/docker-nginx/blob/1.25.4/stable/alpine/Dockerfile"
+        url: "https://github.com/nginxinc/docker-nginx/blob/1.25.4/stable/alpine/Dockerfile/"
       }
     }
   }

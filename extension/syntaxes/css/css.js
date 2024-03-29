@@ -11,7 +11,7 @@ export function meta() {
     title: "CSS",
     name: "css",
     scope: "source.css",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/css/syntaxes/css.tmLanguage.json"],
+    grammars: ["https://github.com/microsoft/vscode/blob/1.87.0/extensions/css/syntaxes/css.tmLanguage.json/"],
     example: {
       author: {
         name: "Julia Miocene",
@@ -19,7 +19,7 @@ export function meta() {
       },
       source: {
         name: "Portraits Pure CSS Animation",
-        url: "https://github.com/Miocene/animations/blob/d83b89b38a0f286b374344e210ecd2a61fe6a671/2023_05_portraits/style.css"
+        url: "https://github.com/Miocene/animations/blob/d83b89b38a0f286b374344e210ecd2a61fe6a671/2023_05_portraits/style.css/"
       }
     }
   }

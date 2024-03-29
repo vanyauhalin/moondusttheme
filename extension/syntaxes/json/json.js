@@ -11,7 +11,7 @@ export function meta() {
     title: "JSON",
     name: "json",
     scope: "source.json",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/json/syntaxes/JSON.tmLanguage.json"],
+    grammars: ["https://github.com/microsoft/vscode/blob/1.87.0/extensions/json/syntaxes/JSON.tmLanguage.json/"],
     example: {
       author: {
         name: "typicode",
@@ -19,7 +19,7 @@ export function meta() {
       },
       source: {
         name: "JSON Server",
-        url: "https://github.com/typicode/json-server/blob/v0.17.4/package.json"
+        url: "https://github.com/typicode/json-server/blob/v0.17.4/package.json/"
       }
     }
   }

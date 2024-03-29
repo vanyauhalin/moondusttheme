@@ -11,7 +11,7 @@ export function meta() {
     title: "Go Module",
     name: "go.mod",
     scope: "go.mod",
-    grammars: ["https://github.com/golang/vscode-go/tree/v0.41.2/extension/syntaxes/go.mod.tmGrammar.json"],
+    grammars: ["https://github.com/golang/vscode-go/blob/v0.41.2/extension/syntaxes/go.mod.tmGrammar.json/"],
     example: {
       author: {
         name: "Maas Lalani",
@@ -19,7 +19,7 @@ export function meta() {
       },
       source: {
         name: "Invoice",
-        url: "https://github.com/maaslalani/invoice/blob/v0.1.0/go.mod"
+        url: "https://github.com/maaslalani/invoice/blob/v0.1.0/go.mod/"
       }
     }
   }
