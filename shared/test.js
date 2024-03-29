@@ -7,7 +7,7 @@
  * @typedef {import("hast").Root} Root
  * @typedef {import("hastscript").Child} Child
  * @typedef {import("uvu").Test} Test
- * @typedef {import("../syntaxes/syntaxes.js").Syntax} Syntax
+ * @typedef {import("../extension/syntaxes/syntaxes.js").Syntax} Syntax
  */
 
 import {readFile, readdir} from "node:fs/promises"
@@ -18,8 +18,8 @@ import {h} from "hastscript"
 import {getHighlighter} from "shiki"
 import {equal} from "uvu/assert"
 import {test} from "uvu"
-import {light} from "../colors/themes.js"
-import {toTokenColors} from "../utils.js"
+import {light} from "../extension/colors/themes.js"
+import {toTokenColors} from "../extension/utils.js"
 import {fetchGrammar} from "./utils.js"
 
 /**
