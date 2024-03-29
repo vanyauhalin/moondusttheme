@@ -4,7 +4,7 @@
  */
 
 import {port} from "../../utils.js"
-import * as js from "../js/js.js"
+import * as jsx from "../jsx/jsx.js"
 
 /**
  * @returns {Meta}
@@ -33,6 +33,6 @@ export function meta() {
  * @returns {Record<string, string>}
  */
 export function tokenColors(s) {
-  const c = js.tokenColors(s)
-  return port(c, ".js", ".tsx")
+  const c = jsx.tokenColors(s)
+  return port(c, ".js.jsx", ".tsx")
 }
