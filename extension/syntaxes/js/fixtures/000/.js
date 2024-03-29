@@ -1,0 +1,123 @@
+#!
+// c
+/* c */
+/** c */
+/// <reference path="" />
+
+import type a from "m"
+import a from "m"
+import * as a from "m" with {}
+import {a} from "m" assert {}
+import {default as a} from "m"
+import "m"
+import a=;
+
+import.meta.url
+
+export default a
+export type a;
+export * as a from "m"
+export {a} from "m"
+
+a: if (0) {} else {}
+for (;0;) {continue}
+while (0) {return}
+switch (0) {case 0: break; default:}
+try {} catch {goto}
+
+@d
+async function *a() {yield 1}
+await a
+var a
+const a
+let a
+class extends {}
+enum a {}
+interface a {}
+namespace a {}
+module a {}
+type a = {}
+() => {};
+
+"s"
+'s'
+`s${a}`
+/s/g
+
+true
+false
+infinity
+NaN
+null
+undefined
+0b0
+0x0
+0o0
+1.000
+
+a+a
+a+=a
+a<<a
+a<<=a
+a~a
+a==a
+a++
+a--
+a>a
+a??a
+a.a
+a?.a
+a={a:0}
+[a,a]
+a(a,a)
+...a
+?a:a
+
+package
+declare
+debugger
+delete a
+in a
+instanceof a
+of a
+typeof a
+void a
+new a
+
+type a = s|"s"|'s'|`s`|0|string|this
+function a(...a,a?:string|"",[a],{a}:{a:string}):s|"s"|'s'|`s`|0|string|this {a}
+():s|"s"|'s'|`s`|0|string|this|{a:string}=>{}
+
+namespace a {
+  export type a = {
+    a: s|"s"|'s'|`s`|0|string|this
+    b(a:s): s|"s"|'s'|`s`|0|string|this
+  }
+  export class a {
+    a: s|"s"|'s'|`s`|0|string|this
+    b(a:s): s|"s"|'s'|`s`|0|string|this
+  }
+  export interface a {
+    a: s|"s"|'s'|`s`|0|string|this
+    b(a:s): s|"s"|'s'|`s`|0|string|this
+  }
+}
+
+class {
+  constructor(){}
+  #a=import("")
+  a=this.#a
+  a!:a;
+  get s(){}
+  static s(){}
+  [a](){}
+}
+
+interface a<A,B extends C> {} as a<string,keyof infer a, "s", 's', `s`>
+function (): is a{}
+
+<div
+  a="s"
+  a='s'
+  a={a}
+>{a}</div>

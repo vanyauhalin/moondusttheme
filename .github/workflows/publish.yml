@@ -1,0 +1,51 @@
+name: Publish
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup NodeJS
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: "package.json"
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v3
+
+    - name: Install Dependencies
+      run: pnpm install --frozen-lockfile
+
+    - name: Build Examples
+      run: pnpm build-examples
+
+    - name: Setup Git
+      run: |
+        u=$(curl --silent --header "Accept: application/json" "https://api.github.com/users/${{github.actor}}")
+        id=$(echo "$u" | jq --raw-output ".id")
+        git config --global user.name "${{github.actor}}"
+        git config --global user.email "$id+${{github.actor}}@users.noreply.github.com"
+
+    - name: Publish Examples
+      run: |
+        temp=$(mktemp -d)
+        cd ./examples/dist
+        git clone \
+          --quiet \
+          --no-checkout \
+          --single-branch \
+          --branch "gh-pages" \
+          "https://${{github.token}}@github.com/${{github.repository}}.git" \
+          "$temp"
+        mv "$temp/.git" .
+        git add .
+        git commit --quiet --message "$(date --utc)"
+        git push

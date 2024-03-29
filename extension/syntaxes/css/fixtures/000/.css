@@ -1,0 +1,45 @@
+/* c */
+
+@import "s";
+@import 's';
+
+@annotation {}
+@body {}
+@character-variant {}
+@charset {}
+@counter-style {}
+@css {}
+@document {}
+@font-face {}
+@font-feature-values {}
+@keyframes {}
+@media {}
+@namespace {}
+@ornaments {}
+@page {}
+@styleset {}
+@stylistic {}
+@supports {}
+@swash {}
+@viewport {}
+
+@media and not only (>=) {}
+@supports (display: flex) {}
+@document url(s) {}
+@document url('s') {}
+@document url("s") {}
+
+* ~ b #c .c
+:root ::before
+[a=s]
+[a="s"]
+[a='s']
+:has() {
+  --v: var(--v, none);
+  -moz-any: red;
+  color: "red";
+  color: #c0ffee;
+  color: calc(1px + 2%);
+  color: linear-gradient(to red);
+  color: !important;
+}

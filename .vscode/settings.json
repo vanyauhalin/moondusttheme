@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "**/extension/syntaxes/dockerfile/dockerfile.js": "javascript",
+    "**/extension/syntaxes/dockerfile/dockerfile.test.js": "javascript"
+  }
+}

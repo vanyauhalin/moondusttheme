@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "resolveJsonModule": true,
+    "rootDir": ".",
+    "noEmit": true,
+    "outDir": "./dist",
+    "allowJs": true,
+    "checkJs": true,
+    "target": "ESNext",
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "./extension/syntaxes/*/fixtures/*/.js"
+  ],
+  "include": [
+    "./examples/*.js",
+    "./extension/**/*.js",
+    "./makefile.js"
+  ]
+}

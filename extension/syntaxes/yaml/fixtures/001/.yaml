@@ -1,0 +1,5 @@
+# There is no scope for the property of key in the YAML grammar.
+"a": "s"
+'b': "s"
+false: false
+null: null

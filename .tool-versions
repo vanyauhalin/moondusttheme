@@ -1,0 +1,6 @@
+node 21.2.0
+pnpm 8.10.5
+
+# golang/vscode-go 0.41.2
+# microsoft/vscode 1.87.0
+# tamasfe/taplo    0.20.0

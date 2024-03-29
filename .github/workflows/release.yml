@@ -1,0 +1,43 @@
+name: Release
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup NodeJS
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: "package.json"
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v3
+
+    - name: Install VSCode Extension Manager
+      run: pnpm install --global vsce
+
+    - name: Install Dependencies
+      run: pnpm install --frozen-lockfile
+
+    - name: Build Themes
+      run: pnpm build
+
+    - name: Release Themes
+      env:
+        VSCE_PAT: ${{secrets.VSCE_RELEASE_TOKEN}}
+      run: vsce publish --no-dependencies
+
+    - name: Create Release
+      env:
+        GH_TOKEN: ${{github.token}}
+      run: |
+        v=$(jq --raw-output ".version" package.json)
+        gh release create "v${v}" --generate-notes
