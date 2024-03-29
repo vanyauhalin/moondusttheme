@@ -281,6 +281,10 @@ function mainStyles() {
       position: relative;
     }
 
+    .tab {
+      tab-size: 2;
+    }
+
     .space::before,
     .tab::before {
       position: absolute;
