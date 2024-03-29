@@ -275,27 +275,25 @@ function mainStyles() {
       color: inherit;
     }
 
-    .space,
-    .tab {
+    .space {
       color: var(--wg);
       position: relative;
     }
 
-    .tab {
-      tab-size: 2;
-    }
-
-    .space::before,
-    .tab::before {
+    .space::before {
+      content: "·";
       position: absolute;
     }
 
-    .space::before {
-      content: "·";
+    .tab {
+      color: var(--wg);
+      position: relative;
+      tab-size: 2;
     }
 
     .tab::before {
       content: "⇥";
+      position: absolute;
     }
 
     .c0 {
