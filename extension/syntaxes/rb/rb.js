@@ -8,9 +8,20 @@
  */
 export function meta() {
   return {
+    title: "Ruby",
     name: "rb",
     scope: "source.ruby",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/ruby/syntaxes/ruby.tmLanguage.json"]
+    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/ruby/syntaxes/ruby.tmLanguage.json"],
+    example: {
+      author: {
+        name: "Ruby",
+        url: "https://github.com/ruby/"
+      },
+      source: {
+        name: "OpenURI",
+        url: "https://github.com/ruby/open-uri/blob/v0.4.1/lib/open-uri.rb"
+      }
+    }
   }
 }
 

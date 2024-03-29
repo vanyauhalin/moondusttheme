@@ -11,9 +11,20 @@ import * as js from "../js/js.js"
  */
 export function meta() {
   return {
+    title: "TypeScript",
     name: "ts",
     scope: "source.ts",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json"]
+    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json"],
+    example: {
+      author: {
+        name: "Vitest",
+        url: "https://github.com/vitest-dev/"
+      },
+      source: {
+        name: "Vitest",
+        url: "https://github.com/vitest-dev/vitest/blob/v1.4.0/packages/vitest/src/typecheck/collect.ts"
+      }
+    }
   }
 }
 

@@ -11,9 +11,11 @@ import * as json from "../json/json.js"
  */
 export function meta() {
   return {
+    title: "JSON with Comments",
     name: "jsonc",
     scope: "source.json.comments",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/json/syntaxes/JSONC.tmLanguage.json"]
+    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/json/syntaxes/JSONC.tmLanguage.json"],
+    example: json.meta().example
   }
 }
 

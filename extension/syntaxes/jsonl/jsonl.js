@@ -11,9 +11,11 @@ import * as json from "../json/json.js"
  */
 export function meta() {
   return {
+    title: "JSON Lines",
     name: "jsonl",
     scope: "source.json.lines",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/json/syntaxes/JSONL.tmLanguage.json"]
+    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/json/syntaxes/JSONL.tmLanguage.json"],
+    example: json.meta().example
   }
 }
 

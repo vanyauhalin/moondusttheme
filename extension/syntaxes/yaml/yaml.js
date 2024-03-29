@@ -8,9 +8,20 @@
  */
 export function meta() {
   return {
+    title: "YAML",
     name: "yaml",
     scope: "source.yaml",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/yaml/syntaxes/yaml.tmLanguage.json"]
+    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/yaml/syntaxes/yaml.tmLanguage.json"],
+    example: {
+      author: {
+        name: "Google",
+        url: "https://github.com/google/"
+      },
+      source: {
+        name: "Brotli",
+        url: "https://github.com/google/brotli/blob/v1.1.0/.github/workflows/release.yaml"
+      }
+    }
   }
 }
 

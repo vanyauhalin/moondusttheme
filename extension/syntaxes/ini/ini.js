@@ -8,9 +8,20 @@
  */
 export function meta() {
   return {
+    title: "INI",
     name: "ini",
     scope: "source.ini",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/ini/syntaxes/ini.tmLanguage.json"]
+    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/ini/syntaxes/ini.tmLanguage.json"],
+    example: {
+      author: {
+        name: "Nushell",
+        url: "https://github.com/nushell/"
+      },
+      source: {
+        name: "Nushell",
+        url: "https://github.com/nushell/nushell/blob/0.91.0/tests/fixtures/formats/sample.ini"
+      }
+    }
   }
 }
 

@@ -11,9 +11,20 @@ import * as js from "../js/js.js"
  */
 export function meta() {
   return {
+    title: "JSX",
     name: "jsx",
     scope: "source.js.jsx",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/javascript/syntaxes/JavaScriptReact.tmLanguage.json"]
+    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/javascript/syntaxes/JavaScriptReact.tmLanguage.json"],
+    example: {
+      author: {
+        name: "Semantic",
+        url: "https://github.com/Semantic-Org/"
+      },
+      source: {
+        name: "Semantic UI React",
+        url: "https://github.com/Semantic-Org/Semantic-UI-React/blob/v2.1.5/docs/src/components/ComponentDoc/ComponentDoc.js"
+      }
+    }
   }
 }
 

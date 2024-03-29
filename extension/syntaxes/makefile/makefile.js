@@ -8,9 +8,20 @@
  */
 export function meta() {
   return {
+    title: "Makefile",
     name: "makefile",
     scope: "source.makefile",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/make/syntaxes/make.tmLanguage.json"]
+    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/make/syntaxes/make.tmLanguage.json"],
+    example: {
+      author: {
+        name: "Meta",
+        url: "https://github.com/facebook/"
+      },
+      source: {
+        name: "zstd",
+        url: "https://github.com/facebook/zstd/blob/zstd-0.4.2/Makefile"
+      }
+    }
   }
 }
 

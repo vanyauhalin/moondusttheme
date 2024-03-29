@@ -8,9 +8,20 @@
  */
 export function meta() {
   return {
+    title: "JavaScript",
     name: "js",
     scope: "source.js",
-    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/javascript/syntaxes/JavaScript.tmLanguage.json"]
+    grammars: ["https://github.com/microsoft/vscode/tree/1.87.0/extensions/javascript/syntaxes/JavaScript.tmLanguage.json"],
+    example: {
+      author: {
+        name: "Luke Edwards",
+        url: "https://github.com/lukeed/"
+      },
+      source: {
+        name: "uvu",
+        url: "https://github.com/lukeed/uvu/blob/v0.5.6/src/assert.js"
+      }
+    }
   }
 }
 
