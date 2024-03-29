@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
+  audit:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
