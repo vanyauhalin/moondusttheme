@@ -49,6 +49,7 @@ Moondust could use your assistance. If you are interested in porting the theme, 
 ## Mentions
 
 - [Post on Hacker News](https://news.ycombinator.com/item?id=39873808)
+- [Post on r/vscode](https://www.reddit.com/r/vscode/comments/1brm9vn/moondust_handcrafted_theme_for_those_who_havent/)
 - [Page on VS Code Themes](https://vscodethemes.com/e/vanyauhalin.moondusttheme/)
 
 ## Acknowledgments
