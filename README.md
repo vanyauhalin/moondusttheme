@@ -56,4 +56,4 @@ A special shout-out goes to the entire community that focuses on creating minima
 
 [MIT](https://github.com/vanyauhalin/moondusttheme/blob/main/LICENSE/) (c) [Ivan Uhalin](https://github.com/vanyauhalin/)
 
-<br><p align="center"><img width="730" height="160" src="https://raw.githubusercontent.com/vanyauhalin/moondusttheme/main/docs/footer.webp" alt="Moondust dunes"></p>
+<br><p align="center"><img src="https://raw.githubusercontent.com/vanyauhalin/moondusttheme/main/docs/footer.webp" alt="Moondust dunes"></p>
