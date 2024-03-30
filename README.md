@@ -46,6 +46,10 @@ Moondust could use your assistance. If you are interested in porting the theme, 
 - [A case against syntax highlighting](https://www.linusakesson.net/programming/syntaxhighlighting/)
 - [Syntax highlighting is a waste of an information channel](https://buttondown.email/hillelwayne/archive/syntax-highlighting-is-a-waste-of-an-information/)
 
+## Mentions
+
+- [Page on VS Code Themes](https://vscodethemes.com/e/vanyauhalin.moondusttheme/)
+
 ## Acknowledgments
 
 In the [initial phase](https://github.com/primer/github-vscode-theme/discussions/341/), Moondust was primarily a modification of the [GitHub Theme](https://github.com/primer/github-vscode-theme/). I owe a great deal of gratitude to the Primer team for their work. 
