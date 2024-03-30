@@ -48,7 +48,7 @@ Moondust could use your assistance. If you are interested in porting the theme, 
 
 ## Acknowledgments
 
-In the [initial phase](https://github.com/primer/github-vscode-theme/discussions/341/), Moondust was primarily a modification of the [GitHub Theme](https://github.com/primer/github-vscode-theme). I owe a great deal of gratitude to the Primer team for their work. 
+In the [initial phase](https://github.com/primer/github-vscode-theme/discussions/341/), Moondust was primarily a modification of the [GitHub Theme](https://github.com/primer/github-vscode-theme/). I owe a great deal of gratitude to the Primer team for their work. 
 
 A special shout-out goes to the entire community that focuses on creating minimalistic, two-color, monochrome themes, particularly [Monochrome](https://github.com/anotherglitchinthematrix/monochrome/). It was a delight for me to delve into your work, and it is heartening to realize that our aesthetic preferences align closely.
 
