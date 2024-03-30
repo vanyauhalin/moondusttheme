@@ -3,7 +3,17 @@
   "version": "0.1.0",
   "description": "Handcrafted theme for those who haven't found syntax highlighting useful for themself",
   "keywords": [
+    "color-scheme",
+    "color-theme",
+    "color",
+    "extension",
+    "syntax-highlighting",
+    "syntax-theme",
+    "syntax",
     "theme",
+    "visual-studio-code",
+    "vscode-extension",
+    "vscode-theme",
     "vscode"
   ],
   "homepage": "https://github.com/vanyauhalin/moondusttheme/",
