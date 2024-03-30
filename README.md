@@ -48,6 +48,7 @@ Moondust could use your assistance. If you are interested in porting the theme, 
 
 ## Mentions
 
+- [Post on Hacker News](https://news.ycombinator.com/item?id=39873808)
 - [Page on VS Code Themes](https://vscodethemes.com/e/vanyauhalin.moondusttheme/)
 
 ## Acknowledgments
