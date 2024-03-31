@@ -50,6 +50,10 @@ Moondust could use your assistance. If you are interested in porting the theme, 
 
 - [Post on Hacker News](https://news.ycombinator.com/item?id=39873808)
 - [Post on r/vscode](https://www.reddit.com/r/vscode/comments/1brm9vn/moondust_handcrafted_theme_for_those_who_havent/)
+- [Post on r/code](https://www.reddit.com/r/code/comments/1bs5t03/moondust_handcrafted_theme_for_those_who_havent/)
+- [Post on r/programming](https://www.reddit.com/r/programming/comments/1bs5wly/moondust_handcrafted_theme_for_those_who_havent/)
+- [Post on Dev Community](https://dev.to/vanyauhalin/moondust-handcrafted-theme-for-those-who-havent-found-syntax-highlighting-useful-for-themself-324h/)
+- [Post on Visual Studio Code Community Discussions](https://github.com/microsoft/vscode-discussions/discussions/1118/)
 - [Page on VS Code Themes](https://vscodethemes.com/e/vanyauhalin.moondusttheme/)
 
 ## Acknowledgments
