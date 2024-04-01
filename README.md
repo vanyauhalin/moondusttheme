@@ -37,6 +37,10 @@ Moondust is developed for each syntax individually. Alongside each syntax, you w
 | TSX                | [TypeScript Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/typescript-basics/) | [View example](https://vanyauhalin.github.io/moondusttheme/tsx/)        |
 | YAML               | [YAML Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/yaml/)                    | [View example](https://vanyauhalin.github.io/moondusttheme/yaml/)       |
 
+## Installation
+
+Moondust is available on the [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=vanyauhalin.moondusttheme) and [Open VSX Registry](https://open-vsx.org/extension/vanyauhalin/moondusttheme/).
+
 ## Contribution
 
 Moondust could use your assistance. If you are interested in porting the theme, encourage you to take the initiative. Additionally, please remember to report any issues where the syntax highlighting is not working properly, and include code examples for clarity. If you are new to this, check out the guide on [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/).
