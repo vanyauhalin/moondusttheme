@@ -106,7 +106,6 @@ export function tokenColors(s) {
     "meta.import.js punctuation.definition.string.end.js": p0,
     "meta.import.js string.quoted.double.js": p1,
     "meta.import.js string.quoted.single.js": p1,
-    "meta.method.declaration.js storage.type.js": p1,
     "meta.return.type.arrow.js punctuation.definition.string.begin.js": p0,
     "meta.return.type.arrow.js punctuation.definition.string.end.js": p0,
     "meta.return.type.arrow.js punctuation.definition.string.template.begin.js": p0,

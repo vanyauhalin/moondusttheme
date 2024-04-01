@@ -104,7 +104,6 @@ namespace a {
 }
 
 class {
-  constructor(){}
   #a=import("")
   a=this.#a
   a!:a;

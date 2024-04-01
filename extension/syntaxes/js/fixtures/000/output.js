@@ -124,7 +124,6 @@ export function fn(s) {
     p0("}"),
 
     p0("class {"),
-      p1("constructor"), p0("(){}"),
       p1("#a"), p0("="), p1("import"), p0("("), s0('""'), p0(")"),
       p1("a"), p0("="), p1("this"), p0("."), p1("#a"),
       p1("a"), p0("!:a;"),
