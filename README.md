@@ -6,11 +6,11 @@ Early on in my programming journey, syntax highlighting aided my understanding t
 
 Moondust is crafted to reduce eye strain, allowing to truly focus on code. It challenges the conventional approach of highlighting keywords and typical structures. Instead of drawing excessive attention to them, Moondust brings business logic to the forefront. Avoiding a vibrant color palette further helps maintain the focus.
 
-<br><p align="center"><img width="730" height="65" src="https://raw.githubusercontent.com/vanyauhalin/moondusttheme/main/docs/syntax.webp" alt="The color palette used for syntax highlighting"></p><br>
+<br><p align="center"><img width="730" src="https://raw.githubusercontent.com/vanyauhalin/moondusttheme/main/docs/syntax.webp" alt="The color palette used for syntax highlighting"></p><br>
 
 The color palette is centered around shades of gray and blue. These two colors provide five shades, each serving a unique purpose in syntax highlighting. The shade `c0` is dedicated to comments, subtly enhancing readability. `p0` is used to gently push keywords into the background, while `p1` brings the body text to the forefront. For string quotes, `s0` is used, and `s1` is reserved for the string body.
 
-<br><p align="center"><img width="730" height="420" src="https://raw.githubusercontent.com/vanyauhalin/moondusttheme/main/docs/preview.webp" alt="Screenshot of the code editor showing the color theme"></p><br>
+<br><p align="center"><img width="730" src="https://raw.githubusercontent.com/vanyauhalin/moondusttheme/main/docs/preview.webp" alt="Screenshot of the code editor showing the color theme"></p><br>
 
 ## Syntaxes
 
