@@ -17,6 +17,10 @@ import * as _dockerfile from "./dockerfile/dockerfile.js"
 /** @type {Syntax} */
 export const dockerfile = _dockerfile
 
+import * as _fish from "./fish/fish.js"
+/** @type {Syntax} */
+export const fish = _fish
+
 import * as _go from "./go/go.js"
 /** @type {Syntax} */
 export const go = _go
