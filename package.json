@@ -44,22 +44,21 @@
     "package.json"
   ],
   "devDependencies": {
-    "@shikijs/transformers": "^1.2.1",
+    "@shikijs/transformers": "^1.4.0",
     "@types/hast": "^3.0.4",
     "@types/html-minifier-terser": "^7.0.2",
-    "@types/node": "^20.11.30",
+    "@types/node": "^20.12.7",
     "color": "^4.2.3",
     "hastscript": "^9.0.0",
     "html-minifier-terser": "^7.2.0",
     "lightningcss": "^1.24.1",
     "sade": "^1.8.1",
-    "shiki": "^1.2.0",
-    "typescript": "^5.4.3",
+    "shiki": "^1.4.0",
+    "typescript": "^5.4.5",
     "uvu": "^0.5.6"
   },
-  "packageManager": "pnpm@8.10.5",
   "engines": {
-    "node": "21.2.0",
+    "node": "^22",
     "vscode": "^1.87.0"
   },
 
