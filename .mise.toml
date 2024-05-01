@@ -1,0 +1,8 @@
+[tools]
+node = "prefix:22"
+pnpm = "prefix:9"
+
+# The tools listed below are used in the project.
+# However, you probably installed them globally.
+# ovsx = "prefix:0"
+# vsce = "prefix:2"
