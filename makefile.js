@@ -5,7 +5,7 @@ import {dirname, join} from "node:path"
 import {argv} from "node:process"
 import {URL, fileURLToPath} from "node:url"
 import sade from "sade"
-import * as examples from "./examples/examples.js"
+import * as docs from "./docs/docs.js"
 import {light} from "./extension/themes.js"
 import pkg from "./package.json" with {type: "json"}
 
@@ -18,8 +18,8 @@ function main() {
   sade("./makefile.js")
     .command("build")
     .action(build)
-    .command("build-examples")
-    .action(buildExamples)
+    .command("build-docs")
+    .action(buildDocs)
     .parse(argv)
 }
 
@@ -37,10 +37,13 @@ async function build() {
   await writeFile(m.path, c)
 }
 
-async function buildExamples() {
+/**
+ * @returns {Promise<void>}
+ */
+async function buildDocs() {
   const u = new URL(".", import.meta.url)
   let d = fileURLToPath(u)
-  d = join(d, "examples/dist")
+  d = join(d, "docs/dist")
   await mkdir(d, {recursive: true})
-  await examples.build(d)
+  await docs.build(d)
 }

@@ -16,7 +16,7 @@
     "./extension/syntaxes/*/fixtures/*/.js"
   ],
   "include": [
-    "./examples/*.js",
+    "./docs/*.js",
     "./extension/**/*.js",
     "./makefile.js"
   ]

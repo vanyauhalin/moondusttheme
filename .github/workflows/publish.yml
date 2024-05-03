@@ -26,8 +26,8 @@ jobs:
     - name: Install Dependencies
       run: pnpm install --frozen-lockfile
 
-    - name: Build Examples
-      run: pnpm build-examples
+    - name: Build Documentation
+      run: pnpm build-docs
 
     - name: Setup Git
       run: |
@@ -36,10 +36,10 @@ jobs:
         git config --global user.name "${{github.actor}}"
         git config --global user.email "$id+${{github.actor}}@users.noreply.github.com"
 
-    - name: Publish Examples
+    - name: Publish Documentation
       run: |
         temp=$(mktemp -d)
-        cd ./examples/dist
+        cd ./docs/dist
         git clone \
           --quiet \
           --no-checkout \
