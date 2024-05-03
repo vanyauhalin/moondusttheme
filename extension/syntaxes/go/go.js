@@ -8,7 +8,7 @@
  */
 export function meta() {
   return {
-    title: "GoLang",
+    title: "Go",
     name: "go",
     scope: "source.go",
     grammars: ["https://github.com/microsoft/vscode/blob/1.87.0/extensions/go/syntaxes/go.tmLanguage.json/"],
