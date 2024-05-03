@@ -24,10 +24,10 @@ jobs:
         version: "^9"
 
     - name: Install VSCode Extension Manager
-      run: pnpm install --global vsce
+      run: pnpm install --global @vscode/vsce@2
 
     - name: Install Open VSX Extension Manager
-      run: pnpm install --global ovsx
+      run: pnpm install --global ovsx@0
 
     - name: Install Dependencies
       run: pnpm install --frozen-lockfile
