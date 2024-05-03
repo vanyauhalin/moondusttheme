@@ -17,7 +17,7 @@ import {getHighlighter} from "shiki"
 import * as colorThemes from "../extension/colors/themes.js"
 import * as syntaxes from "../extension/syntaxes/syntaxes.js"
 import * as editorThemes from "../extension/themes.js"
-import {fetchExample, fetchGrammar} from "../shared/utils.js"
+import {fetchExample, fetchGrammar} from "../shared/meta.js"
 import pack from "../package.json" with {type: "json"}
 
 /**

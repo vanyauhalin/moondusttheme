@@ -20,7 +20,7 @@ import {equal} from "uvu/assert"
 import {test} from "uvu"
 import {light} from "../extension/colors/themes.js"
 import {toTokenColors} from "../extension/utils.js"
-import {fetchGrammar} from "./utils.js"
+import {fetchGrammar} from "./meta.js"
 
 /**
  * @param {...Child} children
