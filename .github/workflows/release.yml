@@ -35,6 +35,9 @@ jobs:
     - name: Build Themes
       run: pnpm build
 
+    - name: Package Themes
+      run: vsce package --no-dependencies
+
     - name: Release Themes on VSCode Marketplace
       env:
         VSCE_PAT: ${{secrets.VSCE_RELEASE_TOKEN}}
@@ -51,3 +54,4 @@ jobs:
       run: |
         v=$(jq --raw-output ".version" package.json)
         gh release create "v${v}" --generate-notes
+        gh release upload "v${v}" *.vsix
