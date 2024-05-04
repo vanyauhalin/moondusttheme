@@ -16,6 +16,8 @@ The color palette is centered around shades of gray and blue. These two colors p
 
 Moondust is developed for each syntax individually. Alongside each syntax, you will find a comprehensive example showcasing the syntax highlighting.
 
+<div align="center">
+
 | Syntax             | Powered by                                                                                                            | Example                                                                 |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | CSS                | [CSS Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/css/)                      | [View example](https://vanyauhalin.github.io/moondusttheme/css/)        |
@@ -38,6 +40,8 @@ Moondust is developed for each syntax individually. Alongside each syntax, you w
 | TypeScript         | [TypeScript Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/typescript-basics/) | [View example](https://vanyauhalin.github.io/moondusttheme/ts/)         |
 | TSX                | [TypeScript Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/typescript-basics/) | [View example](https://vanyauhalin.github.io/moondusttheme/tsx/)        |
 | YAML               | [YAML Language Basics (builtin)](https://github.com/microsoft/vscode/tree/1.87.0/extensions/yaml/)                    | [View example](https://vanyauhalin.github.io/moondusttheme/yaml/)       |
+
+</div>
 
 ## Installation
 
