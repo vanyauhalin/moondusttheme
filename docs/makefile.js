@@ -11,9 +11,10 @@
  * @typedef {import("../extension/syntaxes/syntax.js").ExampleSource} ExampleSource
  */
 
-import {mkdir, writeFile} from "node:fs/promises"
+import {mkdir, rm, writeFile} from "node:fs/promises"
 import {existsSync} from "node:fs"
 import {join} from "node:path"
+import {URL, fileURLToPath} from "node:url"
 import {transformerRenderWhitespace} from "@shikijs/transformers"
 import {minify} from "html-minifier-terser"
 import {transform} from "lightningcss"
@@ -23,14 +24,21 @@ import {dark, light} from "../extension/main.js"
 import pack from "../package.json" with {type: "json"}
 
 /**
- * @param {string} to
  * @returns {Promise<void>}
  */
-export async function build(to) {
+export async function build() {
   const [lt, ect, _, as] = light()
   const [dt] = dark()
   const g = await grammars(as)
   const h = await getHighlighter({langs: g, themes: [lt]})
+
+  const rd = rootDir()
+  const dd = distDir(rd)
+  if (existsSync(dd)) {
+    await rm(dd, {recursive: true})
+  }
+  await mkdir(dd)
+
   /** @type {Promise<void>[]} */
   const a = []
   for (const s of as) {
@@ -97,7 +105,7 @@ export async function build(to) {
    * @returns {Promise<void>}
    */
   async function write(s) {
-    const d = join(to, s.name)
+    const d = join(dd, s.name)
     if (!existsSync(d)) {
       await mkdir(d)
     }
@@ -106,6 +114,22 @@ export async function build(to) {
     const f = join(d, "index.html")
     await writeFile(f, c)
   }
+}
+
+/**
+ * @returns {string}
+ */
+function rootDir() {
+  const u = new URL(".", import.meta.url)
+  return fileURLToPath(u)
+}
+
+/**
+ * @param {string} d
+ * @returns {string}
+ */
+function distDir(d) {
+  return join(d, "dist")
 }
 
 /**

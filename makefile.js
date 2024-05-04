@@ -1,13 +1,9 @@
 #!/usr/bin/env node
 
-import {mkdir, writeFile} from "node:fs/promises"
-import {dirname, join} from "node:path"
 import {argv} from "node:process"
-import {URL, fileURLToPath} from "node:url"
 import sade from "sade"
-import * as docs from "./docs/docs.js"
-import {dark, light} from "./extension/main.js"
-import pkg from "./package.json" with {type: "json"}
+import * as docs from "./docs/makefile.js"
+import * as extension from "./extension/makefile.js"
 
 main()
 
@@ -18,31 +14,33 @@ function main() {
   sade("./makefile.js")
     .command("build")
     .action(build)
-    .command("build-docs")
-    .action(buildDocs)
     .parse(argv)
 }
 
 /**
- * @returns {Promise<void>}
+ * @typedef {Object} BuildOptions
+ * @property {string[]} _
  */
-async function build() {
-  const m = pkg.contributes.themes[0]
-  const d = dirname(m.path)
-  await mkdir(d, {recursive: true})
-
-  const [t] = light()
-  const c = JSON.stringify(t, null, 2)
-  await writeFile(m.path, c)
-}
 
 /**
+ * @param {BuildOptions} opts
  * @returns {Promise<void>}
  */
-async function buildDocs() {
-  const u = new URL(".", import.meta.url)
-  let d = fileURLToPath(u)
-  d = join(d, "docs/dist")
-  await mkdir(d, {recursive: true})
-  await docs.build(d)
+async function build(opts) {
+  /** @type {Promise<any>[]} */
+  const a = []
+  for (const o of opts._) {
+    if (o === "docs") {
+      const p = docs.build()
+      a.push(p)
+      continue
+    }
+    if (o === "extension") {
+      const p = extension.build()
+      a.push(p)
+      continue
+    }
+    throw new Error(`Unknown target: ${o}`)
+  }
+  await Promise.all(a)
 }
