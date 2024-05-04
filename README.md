@@ -45,7 +45,7 @@ Moondust is developed for each syntax individually. Alongside each syntax, you w
 
 ## Installation
 
-Moondust is available on the [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=vanyauhalin.moondusttheme) and [Open VSX Registry](https://open-vsx.org/extension/vanyauhalin/moondusttheme/).
+Moondust is available on the [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=vanyauhalin.moondusttheme), [Open VSX Registry](https://open-vsx.org/extension/vanyauhalin/moondusttheme/), and [GitHub Releases](https://github.com/vanyauhalin/moondusttheme/releases/).
 
 ## Contribution
 
