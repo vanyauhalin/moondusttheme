@@ -1,4 +1,4 @@
-import {t} from "../../../shared/test.js"
-import * as s from "./dockerfile.js"
+import {t} from "../../test.js"
+import {dockerfile} from "./dockerfile.js"
 
-await t(s, import.meta.url)
+await t(dockerfile, import.meta.url)

@@ -1,29 +1,24 @@
 /**
- * @typedef {import("../../../shared/meta.js").Meta} Meta
- * @typedef {import("../../colors/themes.js").Syntax} Syntax
+ * @typedef {import("../syntax.js").Syntax} Syntax
  */
 
-import {port} from "../../utils.js"
-import * as json from "../json/json.js"
+import {json} from "../json/json.js"
+import {port} from "../syntax.js"
 
 /**
- * @returns {Meta}
+ * @returns {Syntax}
  */
-export function meta() {
+export function jsonc() {
+  const p = json()
   return {
     title: "JSON with Comments",
     name: "jsonc",
     scope: "source.json.comments",
     grammars: ["https://github.com/microsoft/vscode/blob/1.87.0/extensions/json/syntaxes/JSONC.tmLanguage.json/"],
-    example: json.meta().example
+    example: p.example,
+    tokenColors(s) {
+      const c = p.tokenColors(s)
+      return port(c, ".json", ".json.comments")
+    }
   }
-}
-
-/**
- * @param {Syntax} s
- * @returns {Record<string, string>}
- */
-export function tokenColors(s) {
-  const c = json.tokenColors(s)
-  return port(c, ".json", ".json.comments")
 }

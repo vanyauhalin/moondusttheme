@@ -1,15 +1,15 @@
 /**
- * @typedef {import("../../../shared/meta.js").Meta} Meta
- * @typedef {import("../../colors/themes.js").Syntax} Syntax
+ * @typedef {import("../syntax.js").Syntax} Syntax
  */
 
-import {port} from "../../utils.js"
-import * as jsx from "../jsx/jsx.js"
+import {jsx} from "../jsx/jsx.js"
+import {port} from "../syntax.js"
 
 /**
- * @returns {Meta}
+ * @returns {Syntax}
  */
-export function meta() {
+export function tsx() {
+  const p = jsx()
   return {
     title: "TSX",
     name: "tsx",
@@ -24,15 +24,10 @@ export function meta() {
         name: "WPDS's UI Kit",
         url: "https://github.com/washingtonpost/wpds-ui-kit/blob/v1.23.1/ui/popover/src/play.stories.tsx/"
       }
+    },
+    tokenColors(s) {
+      const c = p.tokenColors(s)
+      return port(c, ".js.jsx", ".tsx")
     }
   }
-}
-
-/**
- * @param {Syntax} s
- * @returns {Record<string, string>}
- */
-export function tokenColors(s) {
-  const c = jsx.tokenColors(s)
-  return port(c, ".js.jsx", ".tsx")
 }

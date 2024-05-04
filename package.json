@@ -31,7 +31,6 @@
     "url": "https://github.com/vanyauhalin/"
   },
   "scripts": {
-    "build-examples": "node ./makefile.js build-examples",
     "build": "node ./makefile.js build",
     "test": "uvu"
   },

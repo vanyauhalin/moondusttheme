@@ -1,4 +1,4 @@
-import {t} from "../../../shared/test.js"
-import * as s from "./makefile.js"
+import {t} from "../../test.js"
+import {makefile} from "./makefile.js"
 
-await t(s, import.meta.url)
+await t(makefile, import.meta.url)

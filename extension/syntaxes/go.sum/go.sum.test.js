@@ -1,4 +1,4 @@
-import {t} from "../../../shared/test.js"
-import * as s from "./go.sum.js"
+import {t} from "../../test.js"
+import {gosum} from "./go.sum.js"
 
-await t(s, import.meta.url)
+await t(gosum, import.meta.url)

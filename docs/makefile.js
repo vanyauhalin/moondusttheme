@@ -1,106 +1,139 @@
 /**
  * @typedef {import("hast").Element} Element
+ * @typedef {import("hast").ElementContent} ElementContent
  * @typedef {import("hast").Root} Root
  * @typedef {import("shiki").ShikiTransformer} ShikiTransformer
- * @typedef {import("../extension/colors/themes.js").Syntax} ColorSyntax
- * @typedef {import("../shared/meta.js").Author} Author
- * @typedef {import("../shared/meta.js").Source} Source
+ * @typedef {import("../extension/colors/themes.js").ColorTheme} ColorTheme
+ * @typedef {import("../extension/colors/themes.js").ThemeSyntax} ThemeSyntax
+ * @typedef {import("../extension/editor/themes.js").EditorTheme} EditorTheme
+ * @typedef {import("../extension/syntaxes/syntax.js").Syntax} Syntax
+ * @typedef {import("../extension/syntaxes/syntax.js").ExampleAuthor} ExampleAuthor
+ * @typedef {import("../extension/syntaxes/syntax.js").ExampleSource} ExampleSource
  */
 
-import {mkdir, writeFile} from "node:fs/promises"
+import {mkdir, rm, writeFile} from "node:fs/promises"
 import {existsSync} from "node:fs"
 import {join} from "node:path"
+import {URL, fileURLToPath} from "node:url"
 import {transformerRenderWhitespace} from "@shikijs/transformers"
-import htmlMinifier from "html-minifier-terser"
-import * as lightningcss from "lightningcss"
+import {minify} from "html-minifier-terser"
+import {transform} from "lightningcss"
 import {getHighlighter} from "shiki"
-import * as colorThemes from "../extension/colors/themes.js"
-import * as syntaxes from "../extension/syntaxes/syntaxes.js"
-import * as editorThemes from "../extension/themes.js"
-import {fetchExample, fetchGrammar} from "../shared/utils.js"
+import {fetchExample, fetchGrammars} from "../extension/syntaxes/syntax.js"
+import {dark, light} from "../extension/main.js"
 import pack from "../package.json" with {type: "json"}
 
 /**
- * @typedef {Object} Context
- * @property {string} title
- * @property {string} syntax
- * @property {string} styles
- * @property {string} html
- * @property {Author} author
- * @property {Source} source
- */
-
-/**
- * @param {string} to
  * @returns {Promise<void>}
  */
-export async function build(to) {
-  const all = Object.values(syntaxes)
+export async function build() {
+  const [lt, ect, _, as] = light()
+  const [dt] = dark()
+  const g = await grammars(as)
+  const h = await getHighlighter({langs: g, themes: [lt]})
 
-  /** @type {any[]} */
-  const langs = []
-  await Promise.all(all.map(async (s) => {
-    const m = s.meta()
-    const g = await Promise.all(m.grammars.map(fetchGrammar))
-    langs.push(...g)
-  }))
+  const rd = rootDir()
+  const dd = distDir(rd)
+  if (existsSync(dd)) {
+    await rm(dd, {recursive: true})
+  }
+  await mkdir(dd)
 
-  /** @type {any[]} */
-  const themes = []
-  themes[0] = editorThemes.light()
-  themes[0].name = "light"
+  /** @type {Promise<void>[]} */
+  const a = []
+  for (const s of as) {
+    const p = write(s)
+    a.push(p)
+  }
+  await Promise.all(a)
 
-  const h = await getHighlighter({langs, themes})
-
-  await Promise.all(all.map(async (s) => {
-    const m = s.meta()
-    if (m.example === undefined) {
-      return
+  /**
+   * @param {Syntax[]} as
+   * @returns {Promise<any[]>}
+   */
+  async function grammars(as) {
+    /** @type {Promise<any>[]} */
+    const a = []
+    for (const s of as) {
+      const p = fetchGrammars(s)
+      a.push(p)
     }
+    return await Promise.all(a)
+  }
 
-    const d = join(to, m.name)
-    if (!existsSync(d)) {
-      await mkdir(d)
-    }
+  /**
+   * @param {Syntax} s
+   * @param {string} c
+   * @returns {Promise<string>}
+   */
+  async function render(s, c) {
+    const ctx = context()
+    ctx.title = s.title
+    ctx.syntax = s.name
+    ctx.author = s.example.author
+    ctx.source = s.example.source
 
-    const e = await fetchExample(m.example.source.url)
-
-    let t = template({
-      title: m.title,
-      syntax: m.name,
-      styles: lightningcss
-        .transform({
-          filename: "",
-          code: Buffer.from(mainStyles() + themeStyles()),
-          minify: true
-        })
-        .code
-        .toString(),
-      html: h.codeToHtml(e, {
-        lang: m.scope,
-        theme: "light",
-        transformers: [
-          transformerRenderWhitespace(),
-          transformer(colorThemes.light.syntax)
-        ]
-      }),
-      author: m.example.author,
-      source: m.example.source
+    const r = transform({
+      filename: "",
+      code: Buffer.from(baseStyles() + themeStyles(lt, ect)),
+      minify: true
     })
-    t = await htmlMinifier.minify(t, {
+    ctx.styles = r.code.toString()
+
+    ctx.html = h.codeToHtml(c, {
+      lang: s.scope,
+      theme: lt.name,
+      transformers: [
+        transformerRenderWhitespace(),
+        transformer(ect.syntax)
+      ]
+    })
+
+    let t = template(ctx)
+    t = await minify(t, {
       collapseWhitespace: true,
       decodeEntities: true,
       removeAttributeQuotes: true,
       sortAttributes: true
     })
 
+    return t
+  }
+
+  /**
+   * @param {Syntax} s
+   * @returns {Promise<void>}
+   */
+  async function write(s) {
+    const d = join(dd, s.name)
+    if (!existsSync(d)) {
+      await mkdir(d)
+    }
+    const e = await fetchExample(s)
+    const c = await render(s, e)
     const f = join(d, "index.html")
-    await writeFile(f, t)
-  }))
+    await writeFile(f, c)
+  }
 }
 
 /**
- * @param {ColorSyntax} cs
+ * @returns {string}
+ */
+function rootDir() {
+  const u = new URL(".", import.meta.url)
+  return fileURLToPath(u)
+}
+
+/**
+ * @param {string} d
+ * @returns {string}
+ */
+function distDir(d) {
+  return join(d, "dist")
+}
+
+/**
+ * @param {ThemeSyntax} cs
  * @returns {ShikiTransformer}
  */
 function transformer(cs) {
@@ -141,17 +174,17 @@ function transformer(cs) {
    */
   function code(e) {
     // <code></code>
-    e.children = e.children.flatMap((c) => {
-      if (c.type === "element" && c.properties.class === "line") {
-        return c.children.map((c) => {
-          if (c.type === "element") {
-            return span(c)
-          }
-          return c
-        })
+    /** @type {ElementContent[]} */
+    const a = []
+    for (const ec of e.children) {
+      if (ec.type === "element") {
+        const e = line(ec)
+        a.push(...e.children)
+        continue
       }
-      return c
-    })
+      a.push(ec)
+    }
+    e.children = a
     return e
   }
 
@@ -159,7 +192,29 @@ function transformer(cs) {
    * @param {Element} e
    * @returns {Element}
    */
-  function span(e) {
+  function line(e) {
+    // <span class="line"></span>
+    if ("class" in e.properties && e.properties.class === "line") {
+      /** @type {ElementContent[]} */
+      const a = []
+      for (const ec of e.children) {
+        if (ec.type === "element") {
+          const e = color(ec)
+          a.push(e)
+          continue
+        }
+        a.push(ec)
+      }
+      e.children = a
+    }
+    return e
+  }
+
+  /**
+   * @param {Element} e
+   * @returns {Element}
+   */
+  function color(e) {
     // <span style="color:#"></span>
     if ("style" in e.properties) {
       const s = String(e.properties.style)
@@ -227,7 +282,10 @@ function template(ctx) {
   `
 }
 
-function mainStyles() {
+/**
+ * @returns {string}
+ */
+function baseStyles() {
   return css`
     html {
       background-color: var(--bg);
@@ -318,19 +376,54 @@ function mainStyles() {
   `
 }
 
-function themeStyles() {
+/**
+ * @param {EditorTheme} et
+ * @param {ColorTheme} ct
+ * @returns {string}
+ */
+function themeStyles(et, ct) {
   return css`
     :root {
-      --bg: ${editorThemes.light().colors["editor.background"] || "transparent"};
-      --fg: ${editorThemes.light().colors["editor.foreground"] || "transparent"};
-      --wg: ${editorThemes.light().colors["editorWhitespace.foreground"] || "transparent"};
-      --c0: ${colorThemes.light.syntax.comment[0]};
-      --p0: ${colorThemes.light.syntax.plain[0]};
-      --p1: ${colorThemes.light.syntax.plain[1]};
-      --s0: ${colorThemes.light.syntax.string[0]};
-      --s1: ${colorThemes.light.syntax.string[1]};
+      --bg: ${et.colors["editor.background"] || "transparent"};
+      --fg: ${et.colors["editor.foreground"] || "transparent"};
+      --wg: ${et.colors["editorWhitespace.foreground"] || "transparent"};
+      --c0: ${ct.syntax.comment[0]};
+      --p0: ${ct.syntax.plain[0]};
+      --p1: ${ct.syntax.plain[1]};
+      --s0: ${ct.syntax.string[0]};
+      --s1: ${ct.syntax.string[1]};
     }
   `
+}
+
+/**
+ * @typedef {Object} Context
+ * @property {string} title
+ * @property {string} syntax
+ * @property {string} styles
+ * @property {string} html
+ * @property {ExampleAuthor} author
+ * @property {ExampleSource} source
+ */
+
+/**
+ * @returns {Context}
+ */
+function context() {
+  return {
+    title: "",
+    syntax: "",
+    styles: "",
+    html: "",
+    author: {
+      name: "",
+      url: ""
+    },
+    source: {
+      name: "",
+      url: ""
+    }
+  }
 }
 
 /**
