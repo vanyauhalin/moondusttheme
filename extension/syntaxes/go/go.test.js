@@ -1,4 +1,4 @@
-import {t} from "../../../shared/test.js"
-import * as s from "./go.js"
+import {t} from "../../test.js"
+import {go} from "./go.js"
 
-await t(s, import.meta.url)
+await t(go, import.meta.url)

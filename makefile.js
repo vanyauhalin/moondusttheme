@@ -6,7 +6,7 @@ import {argv} from "node:process"
 import {URL, fileURLToPath} from "node:url"
 import sade from "sade"
 import * as docs from "./docs/docs.js"
-import {light} from "./extension/themes.js"
+import {dark, light} from "./extension/main.js"
 import pkg from "./package.json" with {type: "json"}
 
 main()
@@ -31,8 +31,7 @@ async function build() {
   const d = dirname(m.path)
   await mkdir(d, {recursive: true})
 
-  const t = light()
-  t.name = m.label
+  const [t] = light()
   const c = JSON.stringify(t, null, 2)
   await writeFile(m.path, c)
 }

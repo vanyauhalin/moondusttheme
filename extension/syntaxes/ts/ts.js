@@ -1,15 +1,15 @@
 /**
- * @typedef {import("../../../shared/meta.js").Meta} Meta
- * @typedef {import("../../colors/themes.js").Syntax} Syntax
+ * @typedef {import("../syntax.js").Syntax} Syntax
  */
 
-import {port} from "../../utils.js"
-import * as js from "../js/js.js"
+import {js} from "../js/js.js"
+import {port} from "../syntax.js"
 
 /**
- * @returns {Meta}
+ * @returns {Syntax}
  */
-export function meta() {
+export function ts() {
+  const p = js()
   return {
     title: "TypeScript",
     name: "ts",
@@ -24,15 +24,10 @@ export function meta() {
         name: "Vitest",
         url: "https://github.com/vitest-dev/vitest/blob/v1.4.0/packages/vitest/src/typecheck/collect.ts/"
       }
+    },
+    tokenColors(s) {
+      const c = p.tokenColors(s)
+      return port(c, ".js", ".ts")
     }
   }
-}
-
-/**
- * @param {Syntax} s
- * @returns {Record<string, string>}
- */
-export function tokenColors(s) {
-  const c = js.tokenColors(s)
-  return port(c, ".js", ".ts")
 }

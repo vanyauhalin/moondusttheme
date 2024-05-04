@@ -1,15 +1,15 @@
 /**
- * @typedef {import("../../../shared/meta.js").Meta} Meta
- * @typedef {import("../../colors/themes.js").Syntax} Syntax
+ * @typedef {import("../syntax.js").Syntax} Syntax
  */
 
-import {port} from "../../utils.js"
-import * as js from "../js/js.js"
+import {js} from "../js/js.js"
+import {port} from "../syntax.js"
 
 /**
- * @returns {Meta}
+ * @returns {Syntax}
  */
-export function meta() {
+export function jsx() {
+  const p = js()
   return {
     title: "JSX",
     name: "jsx",
@@ -24,15 +24,10 @@ export function meta() {
         name: "Semantic UI React",
         url: "https://github.com/Semantic-Org/Semantic-UI-React/blob/v2.1.5/docs/src/components/ComponentDoc/ComponentDoc.js/"
       }
+    },
+    tokenColors(s) {
+      const c = p.tokenColors(s)
+      return port(c, ".js", ".js.jsx")
     }
   }
-}
-
-/**
- * @param {Syntax} s
- * @returns {Record<string, string>}
- */
-export function tokenColors(s) {
-  const c = js.tokenColors(s)
-  return port(c, ".js", ".js.jsx")
 }

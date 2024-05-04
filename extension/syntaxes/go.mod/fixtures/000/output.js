@@ -1,12 +1,12 @@
 /**
  * @typedef {import("hast").Root} Root
- * @typedef {import("../../../../colors/themes.js").Syntax} Syntax
+ * @typedef {import("../../../../colors/themes.js").ThemeSyntax} ThemeSyntax
  */
 
-import {r, w} from "../../../../../shared/test.js"
+import {r, w} from "../../../../test.js"
 
 /**
- * @param {Syntax} s
+ * @param {ThemeSyntax} s
  * @returns {Root}
  */
 export function fn(s) {

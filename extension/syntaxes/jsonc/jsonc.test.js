@@ -1,4 +1,4 @@
-import {t} from "../../../shared/test.js"
-import * as s from "./jsonc.js"
+import {t} from "../../test.js"
+import {jsonc} from "./jsonc.js"
 
-await t(s, import.meta.url)
+await t(jsonc, import.meta.url)
