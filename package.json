@@ -32,6 +32,7 @@
   },
   "scripts": {
     "build": "node ./makefile.js build",
+    "make": "node ./makefile.js",
     "test": "uvu"
   },
   "type": "module",
