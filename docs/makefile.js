@@ -19,14 +19,16 @@ import {transformerRenderWhitespace} from "@shikijs/transformers"
 import {minify} from "html-minifier-terser"
 import {transform} from "lightningcss"
 import {getHighlighter} from "shiki"
-import {fetchExample, fetchGrammars} from "../extension/syntaxes/syntax.js"
 import {dark, light} from "../extension/main.js"
+import {readExample, readGrammars, vendorDir} from "../vendor/main.js"
 import pack from "../package.json" with {type: "json"}
 
 /**
  * @returns {Promise<void>}
  */
 export async function build() {
+  const vd = vendorDir()
+
   const [lt, ect, _, as] = light()
   const [dt] = dark()
   const g = await grammars(as)
@@ -55,7 +57,7 @@ export async function build() {
     /** @type {Promise<any>[]} */
     const a = []
     for (const s of as) {
-      const p = fetchGrammars(s)
+      const p = readGrammars(vd, s.grammars)
       a.push(p)
     }
     return await Promise.all(a)
@@ -109,7 +111,7 @@ export async function build() {
     if (!existsSync(d)) {
       await mkdir(d)
     }
-    const e = await fetchExample(s)
+    const e = await readExample(vd, s.example)
     const c = await render(s, e)
     const f = join(d, "index.html")
     await writeFile(f, c)

@@ -18,6 +18,7 @@
   "include": [
     "./docs/*.js",
     "./extension/**/*.js",
+    "./vendor/*.js",
     "./makefile.js"
   ]
 }

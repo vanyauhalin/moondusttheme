@@ -24,7 +24,7 @@ import {test} from "uvu"
 import * as colorSchemas from "./colors/schemes.js"
 import * as colorThemes from "./colors/themes.js"
 import * as editorThemes from "./editor/themes.js"
-import {fetchGrammars} from "./syntaxes/syntax.js"
+import {readGrammars, vendorDir} from "../vendor/main.js"
 
 /**
  * @param {...Child} children
@@ -68,7 +68,8 @@ export async function t(m, u) {
 async function populate(t, s, u) {
   const l = light(s)
   const d = dark(s)
-  const g = await fetchGrammars(s)
+  const vd = vendorDir()
+  const g = await readGrammars(vd, s.grammars)
   const h = await getHighlighter({langs: g, themes: [l[0]]})
   const f = await fixtures(u)
   for (const e of Object.entries(f)) {

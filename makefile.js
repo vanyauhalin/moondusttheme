@@ -4,6 +4,7 @@ import {argv} from "node:process"
 import sade from "sade"
 import * as docs from "./docs/makefile.js"
 import * as extension from "./extension/makefile.js"
+import * as vendor from "./vendor/main.js"
 
 main()
 
@@ -14,6 +15,10 @@ function main() {
   sade("./makefile.js")
     .command("build")
     .action(build)
+    .command("vendor clean")
+    .action(vendor.clean)
+    .command("vendor pull")
+    .action(vendor.pull)
     .parse(argv)
 }
 
