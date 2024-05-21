@@ -31,6 +31,7 @@ export function sh() {
       return {
         "comment.line.number-sign.shell": c0,
         "constant.character.escape.line-continuation.shell": p0,
+        "entity.name.command.shell": p1,
         "keyword.control.break.shell": p0,
         "keyword.control.case.shell": p0,
         "keyword.control.continue.shell": p0,
@@ -73,7 +74,9 @@ export function sh() {
         "punctuation.definition.array.shell": p0,
         "punctuation.definition.evaluation.backticks.shell": s0,
         "punctuation.definition.logical-expression.shell": p0,
+        "punctuation.definition.string.begin.shell entity.name.command.shell": s0,
         "punctuation.definition.string.begin.shell": s0,
+        "punctuation.definition.string.end.shell entity.name.command.shell": s0,
         "punctuation.definition.string.end.shell": s0,
         "punctuation.definition.string.heredoc.delimiter.shell": p0,
         "punctuation.definition.string.heredoc.quote.shell": p0,
