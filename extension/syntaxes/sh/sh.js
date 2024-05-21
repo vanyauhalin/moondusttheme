@@ -98,8 +98,6 @@ export function sh() {
         "storage.modifier.typeset.shell": p0,
         "storage.type.alias.shell": p0,
         "storage.type.function.shell": p0,
-        "string.interpolated.backtick.shell": s1,
-        "string.interpolated.process-substitution.shell": s1,
         "string.quoted.double.shell": s1,
         "string.quoted.single.dollar.shell": s1,
         "string.quoted.single.shell": s1,
