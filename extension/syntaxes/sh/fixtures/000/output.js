@@ -17,7 +17,7 @@ export function fn(s) {
   const s1 = w(s.string[1])
 
   return r(
-    c0("#!/usr/sh"),
+    c0("#!/bin/sh"),
 
     s0('"'), s1("s"), s0('"'),
     s0("'"), s1("s"), s0("'"),
