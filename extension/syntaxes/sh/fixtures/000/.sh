@@ -1,4 +1,4 @@
-#!/usr/sh
+#!/bin/sh
 
 "s"
 's'
