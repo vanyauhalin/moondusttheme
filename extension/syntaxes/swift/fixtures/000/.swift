@@ -1,0 +1,106 @@
+// c
+/* c */
+/// c
+
+0
+0b0
+0o0
+0x0
+0.0
+1_000
+
+true
+false
+
+nil
+
+"s"
+"s\(a)"
+"""
+s
+"""
+#"s"#
+
+0 + 0
+0 - 0
+0 * 0
+0 / 0
+0 % 0
+0 ** 0
+
+var a = 0
+let a = 0
+let _ = 0
+let a = (a, b)
+
+let a: Int?
+let a = 0 as A
+
+if 0 == 0 {}
+else {}
+
+#if os(macOS)
+#else
+#endif
+
+if #available(iOS 15.4.1, *) {}
+
+0 ? 0 : 0
+
+switch a {
+case 0:
+  break
+}
+
+while 0 == 0 {}
+repeat {} while 0 == 0
+for a in 0...0 {}
+guard 0 == 0 else {}
+guard !0 else {}
+
+try? f(a: 0)
+try! f(a: 0)
+
+consume f
+copy f
+throw Error()
+return 0
+defer {}
+await f()
+
+import Foundation
+
+func f(b: Int) throws -> Int {}
+func f() async -> (Int, Int) {}
+func f<A, B>(a: A, b: B) -> B {}
+func f(a: A = 0)
+
+class C: C, P {
+  @available(*, unavailable)
+  var p: Int = 0
+  fileprivate var p = 0
+  internal var p = 0
+  private var p = 0
+  public var p = 0
+  static var p = 0
+}
+
+protocol P {
+  var p: Int {get set}
+}
+
+extension E {
+  var p: Int {0}
+}
+
+enum E {
+  case c
+}
+
+struct S: P {
+  var p: Int = 0
+}
+
+typealias T = T<[T: T], T>
+
+let a = {[weak self] in {}}
