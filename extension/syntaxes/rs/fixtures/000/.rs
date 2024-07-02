@@ -6,7 +6,7 @@
 /** a */
 /*! a */
 
-br#"aaa"#
+br#"a"#
 b'a'
 'a
 "{a:?}"
@@ -64,6 +64,7 @@ a().b();
 a::<b as D<A>>;
 a: ?Sized;
 #![a(b)]
+#!["s"]
 $ident:kind;
 $($a:b),*;
 *const u8;
@@ -119,3 +120,21 @@ typeof
 unsized
 virtual
 yield
+
+i8
+i16
+i32
+i64
+i128
+isize
+u8
+u16
+u32
+u64
+u128
+usize
+f32
+f64
+str
+char
+bool
