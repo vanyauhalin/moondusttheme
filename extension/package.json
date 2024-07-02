@@ -1,0 +1,76 @@
+{
+  "name": "moondusttheme",
+  "version": "0.6.0",
+  "description": "Handcrafted theme for those who haven't found syntax highlighting useful for themself",
+  "keywords": [
+    "color-scheme",
+    "color-theme",
+    "color",
+    "extension",
+    "syntax-highlighting",
+    "syntax-theme",
+    "syntax",
+    "theme",
+    "visual-studio-code",
+    "vscode-extension",
+    "vscode-theme",
+    "vscode"
+  ],
+  "homepage": "https://github.com/vanyauhalin/moondusttheme/",
+  "bugs": {
+    "url": "https://github.com/vanyauhalin/moondusttheme/issues/"
+  },
+  "repository": "github:vanyauhalin/moondusttheme",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/vanyauhalin/moondusttheme/blob/main/LICENSE/"
+  },
+  "author": {
+    "name": "Ivan Uhalin",
+    "email": "vanyauhalin@gmail.com",
+    "url": "https://github.com/vanyauhalin/"
+  },
+  "scripts": {
+    "build": "node main.js build",
+    "pull": "node main.js pull",
+    "test": "node main.test.js"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "docs",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@types/hast": "^3.0.4",
+    "@types/node": "^20.12.7",
+    "color": "^4.2.3",
+    "es-main": "^1.3.0",
+    "hastscript": "^9.0.0",
+    "sade": "^1.8.1",
+    "shiki": "^1.4.0",
+    "typescript": "^5.4.5",
+    "uvu": "^0.5.6"
+  },
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+
+  "displayName": "Moondust Theme",
+  "publisher": "vanyauhalin",
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Moondust: Near Side of the Moon",
+        "uiTheme": "vs",
+        "path": "./dist/light.json"
+      }
+    ]
+  },
+  "icon": "docs/icon.png"
+}

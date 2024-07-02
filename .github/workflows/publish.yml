@@ -13,41 +13,39 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
-    - name: Setup NodeJS
-      uses: actions/setup-node@v4
-      with:
-        node-version-file: "package.json"
-
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v3
-      with:
-        version: "^9"
-
-    - name: Install Dependencies
-      run: pnpm install --frozen-lockfile
-
-    - name: Build Documentation
-      run: pnpm build docs
-
     - name: Setup Git
       run: |
-        u=$(curl --silent --header "Accept: application/json" "https://api.github.com/users/${{github.actor}}")
-        id=$(echo "$u" | jq --raw-output ".id")
+        id=$(curl --silent "https://api.github.com/users/${{github.actor}}" | jq --raw-output ".id")
         git config --global user.name "${{github.actor}}"
         git config --global user.email "$id+${{github.actor}}@users.noreply.github.com"
 
-    - name: Publish Documentation
+    - name: Setup mise
+      uses: jdx/mise-action@v2
+
+    - name: Install Extension Dependencies
+      working-directory: extension
+      run: pnpm install --frozen-lockfile
+
+    - name: Install Site Dependencies
+      working-directory: site
+      run: pnpm install --frozen-lockfile
+
+    - name: Build Site
+      working-directory: site
+      run: pnpm build
+
+    - name: Publish Site
+      working-directory: site
       run: |
-        temp=$(mktemp -d)
-        cd ./docs/dist
-        git clone \
-          --quiet \
-          --no-checkout \
-          --single-branch \
-          --branch "gh-pages" \
-          "https://${{secrets.GIT_PUBLISH_TOKEN}}@github.com/${{github.repository}}.git" \
-          "$temp"
-        mv "$temp/.git" .
+        td=$(mktemp -d)
+        cd dist
+        git clone --quiet --no-checkout --single-branch --branch "gh-pages" \
+          "https://${{secrets.GIT_PUBLISH_TOKEN}}@github.com/${{github.repository}}.git" "$td"
+        mv "$td/.git" .
         git add .
-        git commit --quiet --message "$(date --utc)"
-        git push
+        if git diff-index --quiet HEAD --; then
+          echo "No changes to commit"
+        else
+          git commit --quiet --message "$(date --utc)"
+          git push
+        fi
