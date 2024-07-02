@@ -4,21 +4,10 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
-    "rootDir": ".",
     "noEmit": true,
-    "outDir": "./dist",
     "allowJs": true,
     "checkJs": true,
     "target": "ESNext",
     "skipLibCheck": true
-  },
-  "exclude": [
-    "./extension/syntaxes/*/fixtures/*/.js"
-  ],
-  "include": [
-    "./docs/*.js",
-    "./extension/**/*.js",
-    "./vendor/*.js",
-    "./makefile.js"
-  ]
+  }
 }

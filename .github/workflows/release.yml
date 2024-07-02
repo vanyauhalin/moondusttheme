@@ -13,15 +13,8 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
-    - name: Setup NodeJS
-      uses: actions/setup-node@v4
-      with:
-        node-version-file: "package.json"
-
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v3
-      with:
-        version: "^9"
+    - name: Setup mise
+      uses: jdx/mise-action@v2
 
     - name: Install VSCode Extension Manager
       run: pnpm install --global @vscode/vsce@2
@@ -29,28 +22,34 @@ jobs:
     - name: Install Open VSX Extension Manager
       run: pnpm install --global ovsx@0
 
-    - name: Install Dependencies
+    - name: Install Extension Dependencies
+      working-directory: extension
       run: pnpm install --frozen-lockfile
 
     - name: Build Extension
-      run: pnpm build extension
+      working-directory: extension
+      run: pnpm build
 
     - name: Package Extension
+      working-directory: extension
       run: vsce package --no-dependencies
 
     - name: Release Extension on VSCode Marketplace
       env:
         VSCE_PAT: ${{secrets.VSCE_RELEASE_TOKEN}}
+      working-directory: extension
       run: vsce publish --no-dependencies
 
     - name: Release Extension on Open VSX
       env:
         OVSX_PAT: ${{secrets.OVSX_RELEASE_TOKEN}}
+      working-directory: extension
       run: ovsx publish --no-dependencies
 
     - name: Release Extension on GitHub
       env:
         GH_TOKEN: ${{github.token}}
+      working-directory: extension
       run: |
         v=$(jq --raw-output ".version" package.json)
         gh release create "v${v}" --generate-notes
