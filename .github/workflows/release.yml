@@ -20,7 +20,9 @@ jobs:
       uses: jdx/mise-action@v2
 
     - name: Setup pnpm
-      run: mkdir -p ~/.local/share/pnpm
+      run: |
+        mkdir -p ~/.local/share/pnpm
+        echo ~/.local/share/pnpm >> $GITHUB_PATH
 
     - name: Install VSCode Extension Manager
       run: pnpm install --global @vscode/vsce@2
