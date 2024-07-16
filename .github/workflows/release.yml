@@ -16,6 +16,9 @@ jobs:
     - name: Setup mise
       uses: jdx/mise-action@v2
 
+    - name: Setup pnpm
+      run: pnpm setup
+
     - name: Install VSCode Extension Manager
       run: pnpm install --global @vscode/vsce@2
 

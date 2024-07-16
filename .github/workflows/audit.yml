@@ -15,6 +15,9 @@ jobs:
     - name: Setup mise
       uses: jdx/mise-action@v2
 
+    - name: Setup pnpm
+      run: pnpm setup
+
     - name: Install Extension Dependencies
       working-directory: extension
       run: pnpm install --frozen-lockfile
