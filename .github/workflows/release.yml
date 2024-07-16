@@ -6,6 +6,9 @@ permissions:
 on:
   workflow_dispatch:
 
+env:
+  PNPM_HOME: ~/.local/share/pnpm
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -15,6 +18,9 @@ jobs:
 
     - name: Setup mise
       uses: jdx/mise-action@v2
+
+    - name: Setup pnpm
+      run: mkdir -p ~/.local/share/pnpm
 
     - name: Install VSCode Extension Manager
       run: pnpm install --global @vscode/vsce@2
