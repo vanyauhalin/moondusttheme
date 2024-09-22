@@ -15,9 +15,11 @@ jobs:
 
     - name: Setup Git
       run: |
-        id=$(curl --silent "https://api.github.com/users/${{github.actor}}" | jq --raw-output ".id")
-        git config --global user.name "${{github.actor}}"
-        git config --global user.email "$id+${{github.actor}}@users.noreply.github.com"
+        re=$(curl --silent --header "Accept: application/json" "https://api.github.com/users/github-actions%5Bbot%5D")
+        lo=$(echo "$re" | jq --raw-output ".login")
+        id=$(echo "$re" | jq --raw-output ".id")
+        git config --global user.name "$lo"
+        git config --global user.email "$id+$lo@users.noreply.github.com"
 
     - name: Setup mise
       uses: jdx/mise-action@v2
@@ -35,14 +37,18 @@ jobs:
       run: pnpm build
 
     - name: Publish Site
-      working-directory: site
+      working-directory: site/dist
       run: |
+        un=$(git config --get user.name)
+        ru="${{github.server_url}}/${{github.repository}}.git"
+        ru=$(echo "$ru" | sed "s#https://#https://$un:${{github.token}}@#")
+
         td=$(mktemp -d)
-        cd dist
-        git clone --quiet --no-checkout --single-branch --branch "gh-pages" \
-          "https://${{secrets.GIT_PUBLISH_TOKEN}}@github.com/${{github.repository}}.git" "$td"
+        git clone --quiet --no-checkout --single-branch --branch gh-pages "$ru" "$td"
+
         mv "$td/.git" .
         git add .
+
         if git diff-index --quiet HEAD --; then
           echo "No changes to commit"
         else
