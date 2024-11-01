@@ -16,6 +16,36 @@ import Color from "color"
  */
 
 /**
+ * @typedef {ColorScheme & ColorTheme} ColorPalette
+ */
+
+/**
+ * @typedef {Object} ColorScheme
+ * @property {S10} gray
+ * @property {S10} blue
+ */
+
+/**
+ * @typedef {Object} ColorTheme
+ * @property {string} background
+ * @property {string} foreground
+ * @property {S10} neutral
+ * @property {S10} primary
+ * @property {S1} error
+ * @property {S1} info
+ * @property {S1} warning
+ * @property {S1} comment
+ * @property {S2} plain
+ * @property {S2} string
+ */
+
+/**
+ * @typedef {[string]} S1
+ * @typedef {[string, string]} S2
+ * @typedef {[string, string, string, string, string, string, string, string, string, string]} S10
+ */
+
+/**
  * @returns {EditorTheme}
  */
 export function lightTheme() {
@@ -35,6 +65,55 @@ export function lightTheme() {
   }
 
   return et
+}
+
+/**
+ * @returns {ColorPalette}
+ */
+export function lightPallette() {
+  /** @type {ColorScheme} */
+  let s = {
+    gray: [
+      "#F6F7F8",
+      "#E8EBED",
+      "#D7DCDF",
+      "#B6BEC3",
+      "#8E979F",
+      "#71787F",
+      "#575E66",
+      "#434A51",
+      "#33383D",
+      "#24292D",
+    ],
+    blue: [
+      "#F2F8FC",
+      "#E2EFF8",
+      "#BBD7EC",
+      "#8EBCE1",
+      "#65A4D7",
+      "#3882C2",
+      "#1F639E",
+      "#144B7B",
+      "#113C5F",
+      "#0E2E48",
+    ],
+  }
+
+  /** @type {ColorTheme} */
+  let t = {
+    background: "#FFFFFF",
+    foreground: s.gray[7],
+    neutral: s.gray,
+    primary: s.blue,
+    error: ["#B35900"],
+    info: [s.gray[4]],
+    warning: ["#7D4E00"],
+    comment: [s.gray[4]],
+    plain: [s.gray[5], s.gray[7]],
+    string: [s.blue[5], s.blue[7]],
+  }
+
+  return {...s, ...t}
 }
 
 /**
@@ -3137,83 +3216,4 @@ function port(t, from, to) {
   }
 
   return r
-}
-
-/**
- * @typedef {ColorScheme & ColorTheme} ColorPalette
- */
-
-/**
- * @typedef {Object} ColorScheme
- * @property {S10} gray
- * @property {S10} blue
- */
-
-/**
- * @typedef {Object} ColorTheme
- * @property {string} background
- * @property {string} foreground
- * @property {S10} neutral
- * @property {S10} primary
- * @property {S1} error
- * @property {S1} info
- * @property {S1} warning
- * @property {S1} comment
- * @property {S2} plain
- * @property {S2} string
- */
-
-/**
- * @typedef {[string]} S1
- * @typedef {[string, string]} S2
- * @typedef {[string, string, string, string, string, string, string, string, string, string]} S10
- */
-
-/**
- * @returns {ColorPalette}
- */
-export function lightPallette() {
-  /** @type {ColorScheme} */
-  let s = {
-    gray: [
-      "#F6F7F8",
-      "#E8EBED",
-      "#D7DCDF",
-      "#B6BEC3",
-      "#8E979F",
-      "#71787F",
-      "#575E66",
-      "#434A51",
-      "#33383D",
-      "#24292D",
-    ],
-    blue: [
-      "#F2F8FC",
-      "#E2EFF8",
-      "#BBD7EC",
-      "#8EBCE1",
-      "#65A4D7",
-      "#3882C2",
-      "#1F639E",
-      "#144B7B",
-      "#113C5F",
-      "#0E2E48",
-    ],
-  }
-
-  /** @type {ColorTheme} */
-  let t = {
-    background: "#FFFFFF",
-    foreground: s.gray[7],
-    neutral: s.gray,
-    primary: s.blue,
-    error: ["#B35900"],
-    info: [s.gray[4]],
-    warning: ["#7D4E00"],
-    comment: [s.gray[4]],
-    plain: [s.gray[5], s.gray[7]],
-    string: [s.blue[5], s.blue[7]],
-  }
-
-  return {...s, ...t}
 }
