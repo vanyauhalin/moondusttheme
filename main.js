@@ -978,6 +978,7 @@ export function tokenColors(ct, s) {
  */
 export function syntaxes() {
   return [
+    c,
     css,
     dockerfile,
     fish,
@@ -1023,6 +1024,108 @@ export function syntaxes() {
  * @property {string} example.source.file
  * @property {(c: ColorTheme) => Record<string, string>} tokenColors
  */
+
+/**
+ * @returns {Syntax}
+ */
+function c() {
+  return {
+    id: "c",
+    name: "C",
+    vscode: {
+      name: "C/C++ Language Basics (builtin)",
+      url: "https://github.com/microsoft/vscode/tree/1.93.1/extensions/cpp/",
+      scope: "source.c",
+      files: ["https://github.com/microsoft/vscode/blob/1.93.1/extensions/cpp/syntaxes/c.tmLanguage.json/"],
+    },
+    example: {
+      author: {
+        name: "CommonMark",
+        url: "https://github.com/commonmark/",
+      },
+      source: {
+        name: "cmark",
+        file: "https://github.com/commonmark/cmark/blob/master/src/inlines.c/",
+      },
+    },
+    tokenColors(c) {
+      let c0 = c.comment[0]
+      let p0 = c.plain[0]
+      let p1 = c.plain[1]
+      let s0 = c.string[0]
+      let s1 = c.string[1]
+      return {
+        "comment.block.c": c0,
+        "comment.block.documentation.c": c0,
+        "comment.line.double-slash.c": c0,
+        "comment.line.double-slash.documentation.c": c0,
+        "constant.numeric.decimal.point.c": p0,
+        "keyword.control.c": p0,
+        "keyword.control.case.c": p0,
+        "keyword.control.default.c": p0,
+        "keyword.control.directive.conditional.c": p0,
+        "keyword.control.directive.define.c": p0,
+        "keyword.control.directive.include.c": p0,
+        "keyword.control.directive.pragma.c": p0,
+        "keyword.control.directive.undef.c": p0,
+        "keyword.control.switch.c": p0,
+        "keyword.operator.assignment.c": p0,
+        "keyword.operator.assignment.compound.bitwise.c": p0,
+        "keyword.operator.assignment.compound.c": p0,
+        "keyword.operator.bitwise.shift.c": p0,
+        "keyword.operator.c": p0,
+        "keyword.operator.comparison.c": p0,
+        "keyword.operator.decrement.c": p0,
+        "keyword.operator.increment.c": p0,
+        "keyword.operator.logical.c": p0,
+        "keyword.operator.sizeof.c": p0,
+        "keyword.operator.ternary.c": p0,
+        "keyword.other.typedef.c": p0,
+        "meta.preprocessor.include.c punctuation.definition.string.begin.c": p0,
+        "meta.preprocessor.include.c punctuation.definition.string.end.c": p0,
+        "punctuation.definition.begin.bracket.square.c": p0,
+        "punctuation.definition.end.bracket.square.c": p0,
+        "punctuation.definition.parameters.begin.c": p0,
+        "punctuation.definition.parameters.end.c": p0,
+        "punctuation.definition.string.begin.assembly.c": s0,
+        "punctuation.definition.string.begin.c": s0,
+        "punctuation.definition.string.end.assembly.c": s0,
+        "punctuation.definition.string.end.c": s0,
+        "punctuation.section.arguments.begin.bracket.round.c": p0,
+        "punctuation.section.arguments.begin.bracket.round.function.member.c": p0,
+        "punctuation.section.arguments.end.bracket.round.c": p0,
+        "punctuation.section.arguments.end.bracket.round.function.member.c": p0,
+        "punctuation.section.block.begin.bracket.curly.c": p0,
+        "punctuation.section.block.begin.bracket.curly.switch.c": p0,
+        "punctuation.section.block.end.bracket.curly.c": p0,
+        "punctuation.section.block.end.bracket.curly.switch.c": p0,
+        "punctuation.section.parameters.begin.bracket.round.c": p0,
+        "punctuation.section.parameters.end.bracket.round.c": p0,
+        "punctuation.section.parens.begin.bracket.round.assembly.c": p0,
+        "punctuation.section.parens.begin.bracket.round.c": p0,
+        "punctuation.section.parens.begin.bracket.round.conditional.switch.c": p0,
+        "punctuation.section.parens.end.bracket.round.assembly.c": p0,
+        "punctuation.section.parens.end.bracket.round.c": p0,
+        "punctuation.section.parens.end.bracket.round.conditional.switch.c": p0,
+        "punctuation.separator.colon.case.c": p0,
+        "punctuation.separator.colon.case.default.c": p0,
+        "punctuation.separator.delimiter.c": p0,
+        "punctuation.separator.dot-access.c": p0,
+        "punctuation.separator.pointer-access.c": p0,
+        "punctuation.terminator.statement.c": p0,
+        "source.c": p1,
+        "storage.modifier.array.bracket.square.c": p0,
+        "storage.modifier.c": p0,
+        "storage.type.built-in.primitive.c": p0,
+        "storage.type.enum.c": p0,
+        "storage.type.struct.c": p0,
+        "storage.type.union.c": p0,
+        "string.quoted.double.c": s1,
+        "string.quoted.single.c": s1,
+      }
+    },
+  }
+}
 
 /**
  * @returns {Syntax}

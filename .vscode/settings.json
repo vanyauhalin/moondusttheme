@@ -1,5 +1,7 @@
 {
   "files.associations": {
+    "**/fixtures/c-*": "c",
+    "**/fixtures/c-*.js": "javascript",
     "**/fixtures/css-*": "css",
     "**/fixtures/css-*.js": "javascript",
     "**/fixtures/dockerfile-*": "dockerfile",

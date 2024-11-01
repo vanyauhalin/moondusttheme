@@ -1,0 +1,150 @@
+// c
+/// c
+/* c */
+/** c */
+
++
+-
+*
+/
+%
+
+++
+--
+
+==
+!=
+<
+>
+<=
+>=
+
+&&
+||
+!
+
+&
+|
+^
+~
+<<
+>>
+
+=
++=
+-=
+*=
+/=
+%=
+&=
+|=
+^=
+<<=
+>>=
+
+sizeof
+&
+*
+->
+?
+:
+,
+;
+
+#include <s>
+#include "s"
+
+#define A() A()
+#define A(a) A(a)
+#undef A
+
+#if
+#ifdef
+#ifndef
+#elif
+#else
+#endif
+
+#pragma
+
+int
+char
+float
+double
+void
+
+signed int
+unsigned int
+short int
+long int
+long long int
+
+const
+volatile
+restrict
+
+"s"
+'s'
+
+true
+false
+
+0
+0b0
+0B0
+0e0
+0E0
+0f
+0F
+0l
+0L
+0ll
+0LL
+0u
+0U
+0ull
+0ULL
+0x0
+0X0
+0.0
+
+int a[0]
+int *a
+
+typedef struct {
+	int a
+}
+
+union {
+	int a
+}
+
+enum {
+	A
+}
+
+if {}
+else {}
+
+switch () {
+	case 0: ;
+	default: ;
+}
+
+for {}
+while {}
+do {} while {}
+
+break
+continue
+return
+goto
+
+int a(int a, int *argv[]) {}
+
+{
+	a.a
+	a->a()
+}
+
+__asm__("s")
