@@ -2,7 +2,7 @@ import {mkdir, readFile, rm, writeFile} from "node:fs/promises"
 import {existsSync} from "node:fs"
 import * as path from "node:path"
 import process from "node:process"
-import {URL, fileURLToPath} from "node:url"
+import {URL} from "node:url"
 import es from "es-main"
 import sade from "sade"
 import {lightTheme, syntaxes} from "./main.js"
@@ -22,12 +22,27 @@ async function main() {
 /**
  * @returns {Promise<void>}
  */
-async function pull() {
-  let d = vendorDir()
+async function build() {
+  let d = "dist"
   if (existsSync(d)) {
     await rm(d, {recursive: true})
   }
+  await mkdir(d)
+  let n = "light.json"
+  let f = path.join(d, n)
+  let t = lightTheme()
+  let c = JSON.stringify(t, null, 2)
+  await writeFile(f, c)
+}
 
+/**
+ * @returns {Promise<void>}
+ */
+async function pull() {
+  let d = "vendor"
+  if (existsSync(d)) {
+    await rm(d, {recursive: true})
+  }
   await mkdir(d)
 
   /** @type {Promise<void>[]} */
@@ -143,7 +158,7 @@ async function fetchRaw(u) {
  */
 export async function readGrammar(u) {
   let [o, p, r, f] = statRaw(u)
-  f = path.join(vendorDir(), o, p, r, f)
+  f = path.join("vendor", o, p, r, f)
   let c = await readFile(f, "utf8")
   return JSON.parse(c)
 }
@@ -154,46 +169,8 @@ export async function readGrammar(u) {
  */
 export async function readExample(u) {
   let [o, p, r, f] = statRaw(u)
-  f = path.join(vendorDir(), o, p, r, f)
+  f = path.join("vendor", o, p, r, f)
   return await readFile(f, "utf8")
-}
-
-/**
- * @returns {Promise<void>}
- */
-async function build() {
-  let d = distDir()
-  if (existsSync(d)) {
-    await rm(d, {recursive: true})
-  }
-  await mkdir(d)
-  let n = "light.json"
-  let f = path.join(d, n)
-  let t = lightTheme()
-  let c = JSON.stringify(t, null, 2)
-  await writeFile(f, c)
-}
-
-/**
- * @returns {string}
- */
-function distDir() {
-  return path.join(rootDir(), "dist")
-}
-
-/**
- * @returns {string}
- */
-function vendorDir() {
-  return path.join(rootDir(), "vendor")
-}
-
-/**
- * @returns {string}
- */
-function rootDir() {
-  let u = new URL(".", import.meta.url)
-  return fileURLToPath(u)
 }
 
 if (es(import.meta)) {
