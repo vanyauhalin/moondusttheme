@@ -26,7 +26,7 @@
   "scripts": {
     "build": "node makefile.js build",
     "pull": "node makefile.js pull",
-    "test": "node main.test.js"
+    "test": "node makefile.js test"
   },
   "type": "module",
   "files": [

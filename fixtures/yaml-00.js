@@ -1,9 +1,9 @@
 /**
  * @typedef {import("hast").Root} Root
- * @typedef {import("../main.test.js").ColorTheme} ColorTheme
+ * @typedef {import("../makefile.js").ColorTheme} ColorTheme
  */
 
-import {r, w} from "../main.test.js"
+import {r, w} from "../makefile.js"
 
 /**
  * @param {ColorTheme} c
