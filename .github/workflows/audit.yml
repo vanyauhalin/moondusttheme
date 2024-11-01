@@ -16,9 +16,7 @@ jobs:
       uses: jdx/mise-action@v2
 
     - name: Install Extension Dependencies
-      working-directory: extension
       run: pnpm install --frozen-lockfile
 
     - name: Run Extension Tests
-      working-directory: extension
       run: pnpm test

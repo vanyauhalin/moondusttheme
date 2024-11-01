@@ -30,33 +30,27 @@ jobs:
       run: pnpm install --global ovsx@0
 
     - name: Install Extension Dependencies
-      working-directory: extension
       run: pnpm install --frozen-lockfile
 
     - name: Build Extension
-      working-directory: extension
       run: pnpm build
 
     - name: Package Extension
-      working-directory: extension
       run: vsce package --no-dependencies
 
     - name: Release Extension on VSCode Marketplace
       env:
         VSCE_PAT: ${{secrets.VSCE_RELEASE_TOKEN}}
-      working-directory: extension
       run: vsce publish --no-dependencies
 
     - name: Release Extension on Open VSX
       env:
         OVSX_PAT: ${{secrets.OVSX_RELEASE_TOKEN}}
-      working-directory: extension
       run: ovsx publish --no-dependencies
 
     - name: Release Extension on GitHub
       env:
         GH_TOKEN: ${{github.token}}
-      working-directory: extension
       run: |
         v=$(jq --raw-output ".version" package.json)
         gh release create "v${v}" --generate-notes
