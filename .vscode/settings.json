@@ -28,7 +28,7 @@
     "**/fixtures/rb-*.js": "javascript",
     "**/fixtures/rs-*": "rust",
     "**/fixtures/rs-*.js": "javascript",
-    "**/fixtures/sh-*": "shell",
+    "**/fixtures/sh-*": "shellscript",
     "**/fixtures/sh-*.js": "javascript",
     "**/fixtures/sql-*": "sql",
     "**/fixtures/sql-*.js": "javascript",
