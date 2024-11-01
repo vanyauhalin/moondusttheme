@@ -24,8 +24,8 @@
     "url": "https://vanyauhalin.me/"
   },
   "scripts": {
-    "build": "node main.js build",
-    "pull": "node main.js pull",
+    "build": "node makefile.js build",
+    "pull": "node makefile.js pull",
     "test": "node main.test.js"
   },
   "type": "module",

@@ -6,8 +6,8 @@
  * @typedef {import("shiki").ShikiTransformer} ShikiTransformer
  * @typedef {import("./main.js").ColorTheme} ColorTheme
  * @typedef {import("./main.js").EditorTheme} EditorTheme
- * @typedef {import("./main.js").Grammar} Grammar
  * @typedef {import("./main.js").Syntax} Syntax
+ * @typedef {import("./makefile.js").Grammar} Grammar
  */
 
 import {readFile, readdir} from "node:fs/promises"
@@ -18,7 +18,8 @@ import {h} from "hastscript"
 import {createHighlighter} from "shiki"
 import {is} from "uvu/assert"
 import {test} from "uvu"
-import {lightPallette, lightTheme, readGrammar, syntaxes, tokenColors} from "./main.js"
+import {lightPallette, lightTheme, syntaxes, tokenColors} from "./main.js"
+import {readGrammar} from "./makefile.js"
 
 /**
  * @param {...Child} children
