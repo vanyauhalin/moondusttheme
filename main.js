@@ -31,6 +31,7 @@ import Color from "color"
  * @property {string} foreground
  * @property {S10} neutral
  * @property {S10} primary
+ * @property {S10} accent
  * @property {S1} error
  * @property {S1} info
  * @property {S1} warning
@@ -54,7 +55,29 @@ export function lightTheme() {
   /** @type {EditorTheme} */
   let et = {
     name: "Moondust: Near Side of the Moon",
-    colors: colors(ct),
+    colors: lightColors(ct),
+    tokenColors: [],
+    semanticHighlighting: true,
+  }
+
+  for (let m of syntaxes()) {
+    let tp = tokenColors(ct, m())
+    et.tokenColors.push(...tp)
+  }
+
+  return et
+}
+
+/**
+ * @returns {EditorTheme}
+ */
+export function darkTheme() {
+  let ct = darkPallette()
+
+  /** @type {EditorTheme} */
+  let et = {
+    name: "Moondust: Far Side of the Moon",
+    colors: darkColors(ct),
     tokenColors: [],
     semanticHighlighting: true,
   }
@@ -117,12 +140,74 @@ export function lightPallette() {
 }
 
 /**
+ * @returns {ColorPalette}
+ */
+export function darkPallette() {
+  /** @type {ColorScheme} */
+  let s = {
+    gray: [
+      "#D2D4D5",
+      "#B1B6B9",
+      "#89949A",
+      "#637179",
+      "#455259",
+      "#343F46",
+      "#2C343A",
+      "#262C31",
+      "#22272B",
+      "#1E2225",
+    ],
+    slate: [
+      "#B2D0EB",
+      "#8FAFCC",
+      "#6885A1",
+      "#4D6680",
+      "#3C5167",
+      "#304255",
+      "#273545",
+      "#222D39",
+      "#1F262E",
+      "#1E2329",
+    ],
+    blue: [
+      "#4D8FDB",
+      "#3A82CF",
+      "#2C75C3",
+      "#2769B4",
+      "#235D9F",
+      "#1C4C82",
+      "#173E6E",
+      "#133358",
+      "#112945",
+      "#10243C",
+    ],
+  }
+
+  /** @type {ColorTheme} */
+  let t = {
+    background: "#161A1D",
+    foreground: s.gray[1],
+    neutral: s.gray,
+    // primary: s.slate,
+    accent: s.blue,
+    // error: [""],
+    // info: [""],
+    // warning: [""],
+    comment: [s.gray[3]],
+    plain: [s.gray[2], s.gray[1]],
+    string: [s.slate[2], s.slate[1]],
+  }
+
+  return {...s, ...t}
+}
+
+/**
  * @param {ColorTheme} c
  * @returns {Record<string, string>}
  *
  * {@link https://github.com/microsoft/vscode-docs/blob/ab2cce3016320617879c9b4d3aa6684c44a04a8f/api/references/theme-color.md/ Visual Studio Code Reference}
  */
-export function colors(c) {
+export function lightColors(c) {
   let wh  = "#FFFFFF"
   let tr  = "#FFFFFF00"
   let tr0 = "#FFFFFF33"
@@ -949,6 +1034,810 @@ export function colors(c) {
     // "commentsView.resolvedIcon"
     // "commentsView.unresolvedIcon"
   }
+}
+
+/**
+ * @param {ColorTheme} ct
+ * @returns {Record<string, string>}
+ *
+ * {@link https://github.com/microsoft/vscode-docs/blob/ab2cce3016320617879c9b4d3aa6684c44a04a8f/api/references/theme-color.md/ Visual Studio Code Reference}
+ */
+export function darkColors(ct) {
+  let wh  = "#FFFFFF"
+  let tr  = "#FFFFFF00"
+  let red = "#FF0000"
+
+  return compute({
+    // Contrast colors
+    // "contrastActiveBorder:"
+    // "contrastBorder:"
+
+    // Base colors
+    "focusBorder": ct.accent[3],
+    "foreground": ct.neutral[1],
+    // "disabledForeground":
+    "widget.border": ct.neutral[6],
+    "widget.shadow": tr,
+    "selection.background": ct.accent[5],
+    "descriptionForeground": ct.neutral[3],
+    // "errorForeground":
+    "icon.foreground": "descriptionForeground",
+    // "sash.hoverBorder":
+
+    // Window border
+    // "window.activeBorder": none
+    // "window.inactiveBorder": none
+
+    // Text colors
+    "textBlockQuote.background": "sideBar.background",
+    "textBlockQuote.border": "sideBar.border",
+    "textCodeBlock.background": "editor.background",
+    "textLink.activeForeground": ct.accent[0],
+    "textLink.foreground": ct.accent[0],
+    "textSeparator.foreground": "sideBar.border",
+    "textPreformat.foreground": "editor.foreground",
+
+    // Action colors
+    "toolbar.hoverBackground": ct.neutral[7],
+    "toolbar.hoverOutline": tr,
+    "toolbar.activeBackground": ct.neutral[7],
+
+    // Button control
+    "button.background": ct.accent[4],
+    "button.foreground": ct.neutral[0],
+    "button.border": tr,
+    "button.separator": Color(ct.neutral[0]).alpha(0.44).hexa(),
+    "button.hoverBackground": ct.accent[3],
+    "button.secondaryForeground": "editor.foreground",
+    "button.secondaryBackground": ct.neutral[5],
+    "button.secondaryHoverBackground": ct.neutral[4],
+    "checkbox.background": ct.neutral[9],
+    "checkbox.foreground": "editor.foreground",
+    "checkbox.border": "widget.border",
+    "checkbox.selectBackground": ct.neutral[9],
+    // "checkbox.selectBorder":
+
+    // Dropdown control
+    "dropdown.background": "editor.background",
+    "dropdown.listBackground": "editor.background",
+    "dropdown.border": ct.neutral[6],
+    "dropdown.foreground": "editor.foreground",
+
+    // Input control
+    "input.background": "editor.background",
+    "input.border": "widget.border",
+    "input.foreground": "editor.foreground",
+    "input.placeholderForeground": ct.neutral[3],
+    // "inputOption.activeBackground":
+    // "inputOption.activeBorder":
+    // "inputOption.activeForeground":
+    // "inputOption.hoverBackground":
+    // "inputValidation.errorBackground":
+    // "inputValidation.errorForeground":
+    // "inputValidation.errorBorder":
+    // "inputValidation.infoBackground":
+    // "inputValidation.infoForeground":
+    // "inputValidation.infoBorder":
+    // "inputValidation.warningBackground":
+    // "inputValidation.warningForeground":
+    // "inputValidation.warningBorder":
+
+    // Scrollbar control
+    "scrollbar.shadow": "widget.shadow",
+    "scrollbarSlider.activeBackground": Color(ct.neutral[3]).alpha(0.4).hexa(),
+    "scrollbarSlider.background": Color(ct.neutral[3]).alpha(0.2).hexa(),
+    "scrollbarSlider.hoverBackground": "scrollbarSlider.activeBackground",
+
+    // Badge
+    "badge.foreground": "button.foreground",
+    "badge.background": "button.background",
+
+    // Progress bar
+    "progressBar.background": "button.background",
+
+    // Lists and trees
+    "list.activeSelectionBackground": ct.accent[4],
+    "list.activeSelectionForeground": ct.neutral[0],
+    // "list.activeSelectionIconForeground":
+    // "list.dropBackground":
+    "list.focusBackground": tr,
+    "list.focusForeground": "editor.foreground",
+    "list.focusHighlightForeground": ct.accent[8],
+    "list.focusOutline": ct.accent[3],
+    "list.focusAndSelectionOutline": ct.accent[3],
+    "list.highlightForeground": ct.accent[1],
+    "list.hoverBackground": tr,
+    "list.hoverForeground": "editor.foreground",
+    "list.inactiveSelectionBackground": ct.neutral[7],
+    "list.inactiveSelectionForeground": "editor.foreground",
+    // "list.inactiveSelectionIconForeground":
+    "list.inactiveFocusBackground": tr,
+    "list.inactiveFocusOutline": tr,
+    // "list.invalidItemForeground":
+    "list.errorForeground": "editor.foreground",
+    "list.warningForeground": "editor.foreground",
+    "listFilterWidget.background": "editor.background",
+    // "listFilterWidget.outline":
+    // "listFilterWidget.noMatchesOutline":
+    "listFilterWidget.shadow": tr,
+    // "list.filterMatchBackground":
+    "list.filterMatchBorder": tr,
+    // "list.deemphasizedForeground":
+    // "tree.indentGuidesStroke":
+    // "tree.inactiveIndentGuidesStroke":
+    // "tree.tableColumnsBorder":
+    // "tree.tableOddRowsBackground":
+
+    // Activity Bar
+    "activityBar.background": "sideBar.background",
+    // "activityBar.dropBorder":
+    "activityBar.foreground": ct.neutral[2],
+    "activityBar.inactiveForeground": ct.neutral[4],
+    "activityBar.border": "widget.border",
+    "activityBarBadge.background": "badge.background",
+    "activityBarBadge.foreground": "badge.foreground",
+    "activityBar.activeBorder": tr,
+    "activityBar.activeBackground": tr,
+    // "activityBar.activeFocusBorder":
+
+    // Profiles
+    "profileBadge.background": "button.background",
+    "profileBadge.foreground": "button.foreground",
+
+    // Side Bar
+    "sideBar.background": ct.neutral[9],
+    "sideBar.foreground": "editor.foreground",
+    "sideBar.border": "widget.border",
+    // "sideBar.dropBackground":
+    "sideBarTitle.foreground": "editor.foreground",
+    "sideBarSectionHeader.background": "sideBar.background",
+    "sideBarSectionHeader.foreground": "editor.foreground",
+    "sideBarSectionHeader.border": tr,
+
+    // Minimap
+    // "minimap.findMatchHighlight"
+    // "minimap.selectionHighlight"
+    // "minimap.errorHighlight"
+    // "minimap.warningHighlight"
+    "minimap.background": "editor.background",
+    // "minimap.selectionOccurrenceHighlight"
+    "minimap.foregroundOpacity": Color(wh).alpha(0.6).hexa(),
+    "minimapSlider.background": "scrollbarSlider.background",
+    "minimapSlider.hoverBackground": "scrollbarSlider.hoverBackground",
+    "minimapSlider.activeBackground": "scrollbarSlider.activeBackground",
+    // "minimapGutter.addedBackground"
+    // "minimapGutter.modifiedBackground"
+    // "minimapGutter.deletedBackground"
+
+    // Editor Groups & Tabs
+    "editorGroup.border": "widget.border",
+    // "editorGroup.dropBackground"
+    "editorGroupHeader.noTabsBackground": "editor.background",
+    "editorGroupHeader.tabsBackground": "sideBar.background",
+    "editorGroupHeader.tabsBorder": "widget.border",
+    "editorGroupHeader.border": tr,
+    "editorGroup.emptyBackground": "editor.background",
+    // editorGroup.focusedEmptyBorder
+    // editorGroup.dropIntoPromptForeground
+    // editorGroup.dropIntoPromptBackground
+    // editorGroup.dropIntoPromptBorder
+    "tab.activeBackground": "editor.background",
+    "tab.unfocusedActiveBackground": "editor.background",
+    "tab.activeForeground": "editor.foreground",
+    "tab.border": "widget.border",
+    "tab.activeBorder": "editor.background",
+    "tab.unfocusedActiveBorder": "editor.background",
+    "tab.activeBorderTop": "editor.background",
+    "tab.unfocusedActiveBorderTop": "editor.background",
+    "tab.lastPinnedBorder": "widget.border",
+    "tab.inactiveBackground": "sideBar.background",
+    "tab.unfocusedInactiveBackground": "sideBar.background",
+    "tab.inactiveForeground": "editor.foreground",
+    "tab.unfocusedActiveForeground": "descriptionForeground",
+    "tab.unfocusedInactiveForeground": "descriptionForeground",
+    // "tab.hoverBackground": none
+    // "tab.unfocusedHoverBackground": none
+    // "tab.hoverForeground": none
+    // "tab.unfocusedHoverForeground": none
+    // "tab.hoverBorder": none
+    // "tab.unfocusedHoverBorder": none
+    // "tab.activeModifiedBorder":
+    // "tab.inactiveModifiedBorder":
+    // "tab.unfocusedActiveModifiedBorder":
+    // "tab.unfocusedInactiveModifiedBorder":
+    // "editorPane.background":
+    "sideBySideEditor.horizontalBorder": "widget.border",
+    "sideBySideEditor.verticalBorder": "widget.border",
+
+    // Editor colors
+    "editor.background": ct.background,
+    "editor.foreground": "foreground",
+    "editorLineNumber.foreground": ct.neutral[4],
+    "editorLineNumber.activeForeground": "editor.foreground",
+    // "editorLineNumber.dimmedForeground":
+    "editorCursor.background": ct.neutral[0],
+    "editorCursor.foreground": ct.neutral[3],
+    "editor.selectionBackground": ct.accent[5],
+    // "editor.selectionForeground": none
+    // "editor.inactiveSelectionBackground":
+    "editor.selectionHighlightBackground": ct.accent[5],
+    "editor.selectionHighlightBorder": tr,
+    "editor.wordHighlightBackground": tr,
+    "editor.wordHighlightBorder": tr,
+    "editor.wordHighlightStrongBackground": tr,
+    "editor.wordHighlightStrongBorder": tr,
+    // "editor.wordHighlightTextBackground":
+    // "editor.wordHighlightTextBorder":
+    // "editor.findMatchBackground":
+    // "editor.findMatchHighlightBackground":
+    // "editor.findRangeHighlightBackground":
+    // "editor.findMatchBorder":
+    // "editor.findMatchHighlightBorder":
+    // "editor.findRangeHighlightBorder":
+    "search.resultsInfoForeground": "editor.foreground",
+    // "searchEditor.findMatchBackground":
+    // "searchEditor.findMatchBorder":
+    // "searchEditor.textInputBorder":
+    "editor.hoverHighlightBackground": tr,
+    "editor.lineHighlightBackground": Color(ct.neutral[7]).alpha(0.44).hexa(),
+    "editor.lineHighlightBorder": tr,
+    // "editorUnicodeHighlight.border":
+    // "editorUnicodeHighlight.background":
+    "editorLink.activeForeground": "textLink.foreground",
+    // "editor.rangeHighlightBackground":
+    // "editor.rangeHighlightBorder":
+    // "editor.symbolHighlightBackground":
+    // "editor.symbolHighlightBorder":
+    "editorWhitespace.foreground": ct.neutral[5],
+    // "editorIndentGuide.background":
+    // "editorIndentGuide.activeBackground":
+    // "editorInlayHint.background":
+    // "editorInlayHint.foreground":
+    // "editorInlayHint.typeForeground":
+    // "editorInlayHint.typeBackground":
+    // "editorInlayHint.parameterForeground":
+    // "editorInlayHint.parameterBackground":
+    "editorRuler.foreground": ct.neutral[9],
+    // "editor.linkedEditingBackground":
+    // "editorCodeLens.foreground":
+    // "editorLightBulb.foreground":
+    // "editorLightBulbAutoFix.foreground":
+    "editorBracketMatch.background": tr,
+    "editorBracketMatch.border": tr,
+    "editorBracketHighlight.foreground1": tr,
+    "editorBracketHighlight.foreground2": tr,
+    "editorBracketHighlight.foreground3": tr,
+    "editorBracketHighlight.foreground4": tr,
+    "editorBracketHighlight.foreground5": tr,
+    "editorBracketHighlight.foreground6": tr,
+    "editorBracketHighlight.unexpectedBracket.foreground": tr,
+    "editorBracketPairGuide.activeBackground1": tr,
+    "editorBracketPairGuide.activeBackground2": tr,
+    "editorBracketPairGuide.activeBackground3": tr,
+    "editorBracketPairGuide.activeBackground4": tr,
+    "editorBracketPairGuide.activeBackground5": tr,
+    "editorBracketPairGuide.activeBackground6": tr,
+    "editorBracketPairGuide.background1": tr,
+    "editorBracketPairGuide.background2": tr,
+    "editorBracketPairGuide.background3": tr,
+    "editorBracketPairGuide.background4": tr,
+    "editorBracketPairGuide.background5": tr,
+    "editorBracketPairGuide.background6": tr,
+    "editor.foldBackground": tr,
+    "editorOverviewRuler.background": tr,
+    "editorOverviewRuler.border": tr,
+    "editorOverviewRuler.findMatchForeground": tr,
+    "editorOverviewRuler.rangeHighlightForeground": tr,
+    "editorOverviewRuler.selectionHighlightForeground": tr,
+    "editorOverviewRuler.wordHighlightForeground": tr,
+    "editorOverviewRuler.wordHighlightStrongForeground": tr,
+    "editorOverviewRuler.wordHighlightTextForeground": tr,
+    "editorOverviewRuler.modifiedForeground": tr,
+    "editorOverviewRuler.addedForeground": tr,
+    "editorOverviewRuler.deletedForeground": tr,
+    "editorOverviewRuler.errorForeground": tr,
+    "editorOverviewRuler.warningForeground": tr,
+    "editorOverviewRuler.infoForeground": tr,
+    "editorOverviewRuler.bracketMatchForeground": tr,
+    // "editorError.foreground":
+    // "editorError.border":
+    // "editorError.background":
+    // "editorWarning.foreground":
+    // "editorWarning.border":
+    // "editorWarning.background":
+    // "editorInfo.foreground":
+    // "editorInfo.border":
+    // "editorInfo.background":
+    // "editorHint.foreground":
+    // "editorHint.border":
+    // "problemsErrorIcon.foreground":
+    // "problemsWarningIcon.foreground":
+    // "problemsInfoIcon.foreground":
+    "editorUnnecessaryCode.border": tr,
+    "editorUnnecessaryCode.opacity": Color(wh).alpha(0.54).hexa(),
+    "editorGutter.background": "editor.background",
+    "editorGutter.modifiedBackground": ct.neutral[5],
+    "editorGutter.addedBackground": "editorGutter.modifiedBackground",
+    "editorGutter.deletedBackground": "editorGutter.modifiedBackground",
+    // "editorGutter.commentRangeForeground":
+    // "editorGutter.commentGlyphForeground":
+    // "editorGutter.commentUnresolvedGlyphForeground":
+    // "editorGutter.foldingControlForeground":
+    // "editorCommentsWidget.resolvedBorder":
+    // "editorCommentsWidget.unresolvedBorder":
+    // "editorCommentsWidget.rangeBackground":
+    // "editorCommentsWidget.rangeBorder":
+    // "editorCommentsWidget.rangeActiveBackground":
+    // "editorCommentsWidget.rangeActiveBorder":
+
+    // Diff editor colors
+    // "diffEditor.insertedTextBackground":
+    // "diffEditor.insertedTextBorder":
+    // "diffEditor.removedTextBackground":
+    // "diffEditor.removedTextBorder":
+    // "diffEditor.border":
+    // "diffEditor.diagonalFill":
+    // "diffEditor.insertedLineBackground":
+    // "diffEditor.removedLineBackground":
+    "diffEditorGutter.insertedLineBackground": "editor.background",
+    "diffEditorGutter.removedLineBackground": "editor.background",
+    // "diffEditorOverview.insertedForeground":
+    // "diffEditorOverview.removedForeground":
+    // "diffEditor.unchangedRegionBackground":
+    // "diffEditor.unchangedRegionForeground":
+    // "diffEditor.unchangedCodeBackground":
+    // "diffEditor.move.border":
+
+    // Chat colors
+    // "chat.requestBackground":
+    // "chat.requestBorder":
+
+    // Inline Chat colors
+    // "inlineChat.background":
+    "inlineChat.border": "widget.border",
+    "inlineChat.shadow": "widget.shadow",
+    // "inlineChat.regionHighlight":
+    // "inlineChatInput.border":
+    // "inlineChatInput.focusBorder":
+    // "inlineChatInput.placeholderForeground":
+    // "inlineChatInput.background":
+    // "inlineChatDiff.inserted":
+    // "inlineChatDiff.removed":
+
+    // Editor widget colors
+    "editorWidget.foreground": "editor.foreground",
+    "editorWidget.background": "editor.background",
+    "editorWidget.border": "widget.border",
+    "editorWidget.resizeBorder": "widget.border",
+    "editorSuggestWidget.background": "editor.background",
+    "editorSuggestWidget.border": "widget.border",
+    "editorSuggestWidget.foreground": "editor.foreground",
+    "editorSuggestWidget.focusHighlightForeground": "list.focusHighlightForeground",
+    "editorSuggestWidget.highlightForeground": "list.highlightForeground",
+    "editorSuggestWidget.selectedBackground": "list.activeSelectionBackground",
+    "editorSuggestWidget.selectedForeground": "list.activeSelectionForeground",
+    // "editorSuggestWidget.selectedIconForeground":
+    // "editorSuggestWidgetStatus.foreground":
+    // "editorHoverWidget.foreground":
+    // "editorHoverWidget.background":
+    // "editorHoverWidget.border":
+    // "editorHoverWidget.highlightForeground":
+    // "editorHoverWidget.statusBarBackground":
+    // "editorGhostText.border":
+    // "editorGhostText.background":
+    // "editorGhostText.foreground":
+    // "editorStickyScroll.background":
+    // "editorStickyScrollHover.background":
+    // "debugExceptionWidget.background":
+    // "debugExceptionWidget.border":
+    // "editorMarkerNavigation.background":
+    // "editorMarkerNavigationError.background":
+    // "editorMarkerNavigationWarning.background":
+    // "editorMarkerNavigationInfo.background":
+    // "editorMarkerNavigationError.headerBackground":
+    // "editorMarkerNavigationWarning.headerBackground":
+    // "editorMarkerNavigationInfo.headerBackground":
+
+    // Peek view colors
+    "peekView.border": "widget.border",
+    "peekViewEditor.background": "editor.background",
+    "peekViewEditorGutter.background": "peekViewEditor.background",
+    // "peekViewEditor.matchHighlightBackground":
+    "peekViewEditor.matchHighlightBorder": tr,
+    "peekViewResult.background": "sideBar.background",
+    "peekViewResult.fileForeground": "foreground",
+    "peekViewResult.lineForeground": "foreground",
+    // "peekViewResult.matchHighlightBackground":
+    "peekViewResult.selectionBackground": ct.accent[4],
+    "peekViewResult.selectionForeground": "foreground",
+    "peekViewTitle.background": "sideBar.background",
+    "peekViewTitleDescription.foreground": "descriptionForeground",
+    "peekViewTitleLabel.foreground": "foreground",
+    // "peekViewEditorStickyScroll.background":
+
+    // Merge conflicts colors
+    // "merge.currentHeaderBackground":
+    // "merge.currentContentBackground":
+    // "merge.incomingHeaderBackground":
+    // "merge.incomingContentBackground":
+    // "merge.border":
+    // "merge.commonContentBackground":
+    // "merge.commonHeaderBackground":
+    // "editorOverviewRuler.currentContentForeground":
+    // "editorOverviewRuler.incomingContentForeground":
+    // "editorOverviewRuler.commonContentForeground":
+    // "editorOverviewRuler.commentForeground":
+    // "editorOverviewRuler.commentUnresolvedForeground":
+    // "mergeEditor.change.background":
+    // "mergeEditor.change.word.background":
+    // "mergeEditor.conflict.unhandledUnfocused.border":
+    // "mergeEditor.conflict.unhandledFocused.border":
+    // "mergeEditor.conflict.handledUnfocused.border":
+    // "mergeEditor.conflict.handledFocused.border":
+    // "mergeEditor.conflict.handled.minimapOverViewRuler":
+    // "mergeEditor.conflict.unhandled.minimapOverViewRuler":
+    // "mergeEditor.conflictingLines.background":
+    // "mergeEditor.changeBase.background":
+    // "mergeEditor.changeBase.word.background":
+    // "mergeEditor.conflict.input1.background":
+    // "mergeEditor.conflict.input2.background":
+
+    // Panel colors
+    "panel.background": "sideBar.background",
+    "panel.border": "sideBar.border",
+    // "panel.dropBorder":
+    "panelTitle.activeBorder": tr,
+    "panelTitle.activeForeground": "foreground",
+    "panelTitle.inactiveForeground": "descriptionForeground",
+    "panelInput.border": "widget.border",
+    // "panelSection.border":
+    // "panelSection.dropBackground":
+    // "panelSectionHeader.background":
+    // "panelSectionHeader.foreground":
+    // "panelSectionHeader.border":
+
+    // Status Bar colors
+    "statusBar.background": "editor.background",
+    "statusBar.foreground": ct.neutral[2],
+    "statusBar.border": "widget.border",
+    // "statusBar.debuggingBackground":
+    // "statusBar.debuggingForeground":
+    // "statusBar.debuggingBorder":
+    // "statusBar.noFolderForeground":
+    "statusBar.noFolderBackground": "editor.background",
+    // "statusBar.noFolderBorder":
+    "statusBarItem.activeBackground": tr,
+    "statusBarItem.hoverBackground": tr,
+    // "statusBarItem.prominentForeground":
+    "statusBarItem.prominentBackground": "editor.background",
+    "statusBarItem.prominentHoverBackground": tr,
+    "statusBarItem.remoteBackground": "editor.background",
+    // "statusBarItem.remoteForeground":
+    // "statusBarItem.errorBackground":
+    // "statusBarItem.errorForeground":
+    // "statusBarItem.warningBackground":
+    // "statusBarItem.warningForeground":
+    // "statusBarItem.compactHoverBackground":
+    "statusBarItem.focusBorder": "focusBorder",
+    "statusBar.focusBorder": "focusBorder",
+    // "statusBar.offlineBackground":
+    // "statusBar.offlineForeground":
+
+    // Title Bar colors
+    "titleBar.activeBackground": "sideBar.background",
+    "titleBar.activeForeground": "editor.foreground",
+    "titleBar.inactiveBackground": "sideBar.background",
+    "titleBar.inactiveForeground": "editor.foreground",
+    "titleBar.border": "widget.border",
+
+    // Menu Bar colors
+    // "menubar.selectionForeground":
+    // "menubar.selectionBackground":
+    // "menubar.selectionBorder":
+    // "menu.foreground":
+    // "menu.background":
+    // "menu.selectionForeground":
+    // "menu.selectionBackground":
+    // "menu.selectionBorder":
+    // "menu.separatorBackground":
+    // "menu.border":
+
+    // Command Center colors
+    "commandCenter.foreground": "foreground",
+    "commandCenter.activeForeground": "foreground",
+    "commandCenter.background": ct.neutral[8],
+    "commandCenter.activeBackground": ct.neutral[8],
+    "commandCenter.border": "widget.border",
+    // "commandCenter.inactiveForeground":
+    // "commandCenter.inactiveBorder":
+    "commandCenter.activeBorder": "widget.border",
+
+    // Notification colors
+    "notificationCenter.border": "widget.border",
+    // "notificationCenterHeader.foreground":
+    // "notificationCenterHeader.background":
+    // "notificationToast.border":
+    // "notifications.foreground":
+    // "notifications.background":
+    // "notifications.border":
+    // "notificationLink.foreground":
+    // "notificationsErrorIcon.foreground":
+    // "notificationsWarningIcon.foreground":
+    // "notificationsInfoIcon.foreground":
+
+    // Banner colors
+    // "banner.background":
+    // "banner.foreground":
+    // "banner.iconForeground":
+
+    // Extensions colors
+    // "extensionButton.prominentForeground":
+    // "extensionButton.prominentBackground":
+    // "extensionButton.prominentHoverBackground":
+    "extensionButton.background": "button.background",
+    "extensionButton.foreground": "button.foreground",
+    "extensionButton.hoverBackground": "button.hoverBackground",
+    "extensionButton.separator": "button.separator",
+    // "extensionBadge.remoteBackground":
+    // "extensionBadge.remoteForeground":
+    "extensionIcon.starForeground": "textLink.foreground",
+    "extensionIcon.verifiedForeground": "textLink.foreground",
+    // "extensionIcon.preReleaseForeground":
+    // "extensionIcon.sponsorForeground":
+
+    // Quick picker colors
+    // "pickerGroup.border"
+    // "pickerGroup.foreground"
+    "quickInput.background": "editor.background",
+    // "quickInput.foreground"
+    // "quickInputList.focusBackground"
+    // "quickInputList.focusForeground"
+    // "quickInputList.focusIconForeground"
+    // "quickInputTitle.background"
+
+    // Keybinding label colors
+    "keybindingLabel.background": "sideBar.background",
+    "keybindingLabel.foreground": "foreground",
+    "keybindingLabel.border": "widget.border",
+    "keybindingLabel.bottomBorder": "widget.border",
+
+    // Keyboard shortcut table colors
+    // "keybindingTable.headerBackground"
+    // "keybindingTable.rowsBackground"
+
+    // Integrated Terminal colors
+    // "terminal.background"
+    // "terminal.border"
+    // "terminal.foreground"
+    // "terminal.ansiBlack"
+    // "terminal.ansiBlue"
+    // "terminal.ansiBrightBlack"
+    // "terminal.ansiBrightBlue"
+    // "terminal.ansiBrightCyan"
+    // "terminal.ansiBrightGreen"
+    // "terminal.ansiBrightMagenta"
+    // "terminal.ansiBrightRed"
+    // "terminal.ansiBrightWhite"
+    // "terminal.ansiBrightYellow"
+    // "terminal.ansiCyan"
+    // "terminal.ansiGreen"
+    // "terminal.ansiMagenta"
+    // "terminal.ansiRed"
+    // "terminal.ansiWhite"
+    // "terminal.ansiYellow"
+    // "terminal.selectionBackground"
+    // "terminal.selectionForeground"
+    // "terminal.inactiveSelectionBackground"
+    // "terminal.findMatchBackground"
+    // "terminal.findMatchBorder"
+    // "terminal.findMatchHighlightBackground"
+    // "terminal.findMatchHighlightBorder"
+    // "terminal.hoverHighlightBackground"
+    // "terminalCursor.background"
+    // "terminalCursor.foreground"
+    // "terminal.dropBackground"
+    // "terminal.tab.activeBorder"
+    // "terminalCommandDecoration.defaultBackground"
+    // "terminalCommandDecoration.successBackground"
+    // "terminalCommandDecoration.errorBackground"
+    // "terminalOverviewRuler.cursorForeground"
+    // "terminalOverviewRuler.findMatchForeground"
+
+    // Debug colors
+    // "debugToolBar.background"
+    // "debugToolBar.border"
+    // "editor.stackFrameHighlightBackground"
+    // "editor.focusedStackFrameHighlightBackground"
+    // "editor.inlineValuesForeground"
+    // "editor.inlineValuesBackground"
+    // "debugView.exceptionLabelForeground"
+    // "debugView.exceptionLabelBackground"
+    // "debugView.stateLabelForeground"
+    // "debugView.stateLabelBackground"
+    // "debugView.valueChangedHighlight"
+    // "debugTokenExpression.name"
+    // "debugTokenExpression.value"
+    // "debugTokenExpression.string"
+    // "debugTokenExpression.boolean"
+    // "debugTokenExpression.number"
+    // "debugTokenExpression.error"
+
+    // Testing colors
+    // "testing.iconFailed"
+    // "testing.iconErrored"
+    // "testing.iconPassed"
+    // "testing.runAction"
+    // "testing.iconQueued"
+    // "testing.iconUnset"
+    // "testing.iconSkipped"
+    // "testing.peekBorder"
+    // "testing.peekHeaderBackground"
+    // "testing.message.error.decorationForeground"
+    // "testing.message.error.lineBackground"
+    // "testing.message.info.decorationForeground"
+    // "testing.message.info.lineBackground"
+
+    // Welcome page colors
+    "welcomePage.background": "editor.background",
+    // "welcomePage.progress.background"
+    // "welcomePage.progress.foreground"
+    // "welcomePage.tileBackground"
+    // "welcomePage.tileHoverBackground"
+    // "welcomePage.tileBorder"
+    // "walkThrough.embeddedEditorBackground"
+    // "walkthrough.stepTitle.foreground"
+
+    // Source Control colors
+    // "scm.providerBorder"
+
+    // Git colors
+    "gitDecoration.addedResourceForeground": "foreground",
+    "gitDecoration.modifiedResourceForeground": "foreground",
+    "gitDecoration.deletedResourceForeground": "foreground",
+    "gitDecoration.renamedResourceForeground": "foreground",
+    "gitDecoration.stageModifiedResourceForeground": "foreground",
+    "gitDecoration.stageDeletedResourceForeground": "foreground",
+    "gitDecoration.untrackedResourceForeground": "foreground",
+    "gitDecoration.ignoredResourceForeground": "descriptionForeground",
+    "gitDecoration.conflictingResourceForeground": "foreground",
+    "gitDecoration.submoduleResourceForeground": "descriptionForeground",
+
+    // Settings Editor colors
+    // "settings.headerForeground"
+    // "settings.modifiedItemIndicator"
+    // "settings.dropdownBackground"
+    // "settings.dropdownForeground"
+    // "settings.dropdownBorder"
+    // "settings.dropdownListBorder"
+    // "settings.checkboxBackground"
+    // "settings.checkboxForeground"
+    // "settings.checkboxBorder"
+    // "settings.rowHoverBackground"
+    // "settings.textInputBackground"
+    // "settings.textInputForeground"
+    // "settings.textInputBorder"
+    // "settings.numberInputBackground"
+    // "settings.numberInputForeground"
+    // "settings.numberInputBorder"
+    // "settings.focusedRowBackground"
+    // "settings.focusedRowBorder"
+    // "settings.headerBorder"
+    // "settings.sashBorder"
+    // "settings.settingsHeaderHoverForeground"
+
+    // Breadcrumbs colors
+    "breadcrumb.foreground": "descriptionForeground",
+    "breadcrumb.background": "editor.background",
+    "breadcrumb.focusForeground": "editor.foreground",
+    "breadcrumb.activeSelectionForeground": "editor.foreground",
+    "breadcrumbPicker.background": "editor.background",
+
+    // Snippets colors
+    // "editor.snippetTabstopHighlightBackground"
+    // "editor.snippetTabstopHighlightBorder"
+    // "editor.snippetFinalTabstopHighlightBackground"
+    // "editor.snippetFinalTabstopHighlightBorder"
+
+    // Symbol Icons colors
+    // "symbolIcon.arrayForeground"
+    // "symbolIcon.booleanForeground"
+    // "symbolIcon.classForeground"
+    // "symbolIcon.colorForeground"
+    // "symbolIcon.constantForeground"
+    // "symbolIcon.constructorForeground"
+    // "symbolIcon.enumeratorForeground"
+    // "symbolIcon.enumeratorMemberForeground"
+    // "symbolIcon.eventForeground"
+    // "symbolIcon.fieldForeground"
+    // "symbolIcon.fileForeground"
+    // "symbolIcon.folderForeground"
+    // "symbolIcon.functionForeground"
+    // "symbolIcon.interfaceForeground"
+    // "symbolIcon.keyForeground"
+    // "symbolIcon.keywordForeground"
+    // "symbolIcon.methodForeground"
+    // "symbolIcon.moduleForeground"
+    // "symbolIcon.namespaceForeground"
+    // "symbolIcon.nullForeground"
+    // "symbolIcon.numberForeground"
+    // "symbolIcon.objectForeground"
+    // "symbolIcon.operatorForeground"
+    // "symbolIcon.packageForeground"
+    // "symbolIcon.propertyForeground"
+    // "symbolIcon.referenceForeground"
+    // "symbolIcon.snippetForeground"
+    // "symbolIcon.stringForeground"
+    // "symbolIcon.structForeground"
+    // "symbolIcon.textForeground"
+    // "symbolIcon.typeParameterForeground"
+    // "symbolIcon.unitForeground"
+    // "symbolIcon.variableForeground"
+
+    // Debug Icons colors
+    "debugIcon.breakpointForeground": ct.neutral[3],
+    "debugIcon.breakpointDisabledForeground": ct.neutral[5],
+    // "debugIcon.breakpointUnverifiedForeground":
+    // "debugIcon.breakpointCurrentStackframeForeground":
+    // "debugIcon.breakpointStackframeForeground":
+    // "debugIcon.startForeground"
+    // "debugIcon.pauseForeground"
+    // "debugIcon.stopForeground"
+    // "debugIcon.disconnectForeground"
+    // "debugIcon.restartForeground"
+    // "debugIcon.stepOverForeground"
+    // "debugIcon.stepIntoForeground"
+    // "debugIcon.stepOutForeground"
+    // "debugIcon.continueForeground"
+    // "debugIcon.stepBackForeground"
+    // "debugConsole.infoForeground"
+    // "debugConsole.warningForeground"
+    // "debugConsole.errorForeground"
+    // "debugConsole.sourceForeground"
+    // "debugConsoleInputIcon.foreground"
+
+    // Notebook colors
+    // "notebook.editorBackground"
+    // "notebook.cellBorderColor"
+    // "notebook.cellHoverBackground"
+    // "notebook.cellInsertionIndicator"
+    // "notebook.cellStatusBarItemHoverBackground"
+    // "notebook.cellToolbarSeparator"
+    // "notebook.cellEditorBackground"
+    // "notebook.focusedCellBackground"
+    // "notebook.focusedCellBorder"
+    // "notebook.focusedEditorBorder"
+    // "notebook.inactiveFocusedCellBorder"
+    // "notebook.inactiveSelectedCellBorder"
+    // "notebook.outputContainerBackgroundColor"
+    // "notebook.outputContainerBorderColor"
+    // "notebook.selectedCellBackground"
+    // "notebook.selectedCellBorder"
+    // "notebook.symbolHighlightBackground"
+    // "notebookScrollbarSlider.activeBackground"
+    // "notebookScrollbarSlider.background"
+    // "notebookScrollbarSlider.hoverBackground"
+    // "notebookStatusErrorIcon.foreground"
+    // "notebookStatusRunningIcon.foreground"
+    // "notebookStatusSuccessIcon.foreground"
+    // "notebookEditorOverviewRuler.runningCellForeground"
+
+    // Chart colors
+    // "charts.foreground"
+    // "charts.lines"
+    // "charts.red"
+    // "charts.blue"
+    // "charts.yellow"
+    // "charts.orange"
+    // "charts.green"
+    // "charts.purple"
+
+    // Ports Colors
+    // "ports.iconRunningProcessForeground"
+
+    // Comments View colors
+    // "commentsView.resolvedIcon"
+    // "commentsView.unresolvedIcon"
+  })
 }
 
 /**
@@ -3300,6 +4189,32 @@ function yaml() {
       }
     },
   }
+}
+
+/**
+ * @param {Record<string, string>} r
+ * @returns {Record<string, string>}
+ */
+function compute(r) {
+  /** @type {Record<string, string>} */
+  let o = {}
+
+  for (let [k, v] of Object.entries(r)) {
+    while (true) {
+      if (!v) {
+        throw new Error(`Could not compute '${k}'`)
+      }
+
+      if (v.startsWith("#")) {
+        o[k] = v
+        break
+      }
+
+      v = r[v]
+    }
+  }
+
+  return o
 }
 
 /**

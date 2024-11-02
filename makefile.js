@@ -20,7 +20,7 @@ import sade from "sade"
 import {createHighlighter} from "shiki"
 import {is} from "uvu/assert"
 import {test as uvu} from "uvu"
-import {lightPallette, lightTheme, syntaxes, tokenColors} from "./main.js"
+import * as ex from "./main.js"
 
 /**
  * @returns {Promise<void>}
@@ -45,10 +45,17 @@ async function build() {
     await rm(d, {recursive: true})
   }
   await mkdir(d)
+
   let n = "light.json"
   let f = path.join(d, n)
-  let t = lightTheme()
+  let t = ex.lightTheme()
   let c = JSON.stringify(t, null, 2)
+  await writeFile(f, c)
+
+  n = "dark.json"
+  f = path.join(d, n)
+  t = ex.darkTheme()
+  c = JSON.stringify(t, null, 2)
   await writeFile(f, c)
 }
 
@@ -65,7 +72,7 @@ async function pull() {
   /** @type {Promise<void>[]} */
   let a = []
 
-  for (let m of Object.values(syntaxes())) {
+  for (let m of Object.values(ex.syntaxes())) {
     let s = m()
 
     for (let i = 0; i < s.vscode.files.length; i += 1) {
@@ -250,14 +257,14 @@ async function test() {
     c[i] = path.join(d, f)
   }
 
-  for (let m of syntaxes()) {
+  for (let m of ex.syntaxes()) {
     let s = m()
 
     let id = s.id
     if (s.extends) {
       /** @type {Record<string, Syntax>} */
       let t = {}
-      for (let m of syntaxes()) {
+      for (let m of ex.syntaxes()) {
         let s = m()
         t[s.id] = s
       }
@@ -275,9 +282,9 @@ async function test() {
       throw new Error(`No fixtures for '${s.id}'`)
     }
 
-    let ct = lightPallette()
-    let et = lightTheme()
-    et.tokenColors = tokenColors(ct, s)
+    let ct = ex.lightPallette()
+    let et = ex.lightTheme()
+    et.tokenColors = ex.tokenColors(ct, s)
 
     for (let [n, [i, o]] of Object.entries(r)) {
       let t = uvu

@@ -62,6 +62,11 @@
         "label": "Moondust: Near Side of the Moon",
         "uiTheme": "vs",
         "path": "./dist/light.json"
+      },
+      {
+        "label": "Moondust: Far Side of the Moon",
+        "uiTheme": "vs-dark",
+        "path": "./dist/dark.json"
       }
     ]
   },
