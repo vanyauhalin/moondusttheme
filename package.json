@@ -30,8 +30,9 @@
   },
   "type": "module",
   "files": [
-    "dist",
-    "docs",
+    "dist/dark.json",
+    "dist/light.json",
+    "docs/icon.png",
     "LICENSE",
     "package.json",
     "README.md"
