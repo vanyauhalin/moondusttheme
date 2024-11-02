@@ -24,7 +24,7 @@ jobs:
         echo "${d}" >> "$GITHUB_PATH"
 
     - name: Install VSCode Extension Manager
-      run: pnpm install --global @vscode/vsce@2
+      run: pnpm install --global @vscode/vsce@3
 
     - name: Install Open VSX Extension Manager
       run: pnpm install --global ovsx@0
@@ -35,8 +35,9 @@ jobs:
     - name: Build Extension
       run: pnpm build
 
+    # https://github.com/microsoft/vscode-vsce/issues/1073
     - name: Package Extension
-      run: vsce package --no-dependencies
+      run: vsce package --allow-unused-files-pattern --no-dependencies
 
     - name: Release Extension on VSCode Marketplace
       env:
