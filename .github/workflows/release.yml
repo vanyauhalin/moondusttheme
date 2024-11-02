@@ -37,17 +37,21 @@ jobs:
 
     # https://github.com/microsoft/vscode-vsce/issues/1073
     - name: Package Extension
-      run: vsce package --allow-unused-files-pattern --no-dependencies
+      run: |
+        vsce package \
+          --allow-unused-files-pattern \
+          --no-dependencies \
+          --out moondusttheme.vsix
 
     - name: Release Extension on VSCode Marketplace
       env:
         VSCE_PAT: ${{secrets.VSCE_RELEASE_TOKEN}}
-      run: vsce publish --no-dependencies
+      run: vsce publish --packagePath moondusttheme.vsix
 
     - name: Release Extension on Open VSX
       env:
         OVSX_PAT: ${{secrets.OVSX_RELEASE_TOKEN}}
-      run: ovsx publish --no-dependencies
+      run: ovsx publish --packagePath moondusttheme.vsix
 
     - name: Release Extension on GitHub
       env:
@@ -55,4 +59,4 @@ jobs:
       run: |
         v=$(jq --raw-output ".version" package.json)
         gh release create "v${v}" --generate-notes
-        gh release upload "v${v}" *.vsix
+        gh release upload "v${v}" moondusttheme.vsix
