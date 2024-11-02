@@ -1882,6 +1882,7 @@ export function syntaxes() {
     jsonl,
     jsx,
     makefile,
+    py,
     rb,
     rs,
     sh,
@@ -3529,6 +3530,120 @@ function makefile() {
         "support.function.target.SECONDEXPANSION.makefile": p0,
         "support.function.target.SILENT.makefile": p0,
         "support.function.target.SUFFIXES.makefile": p0,
+      }
+    },
+  }
+}
+
+/**
+ * @returns {Syntax}
+ */
+function py() {
+  return {
+    id: "py",
+    name: "Python",
+    vscode: {
+      name: "Python Language Basics (builtin)",
+      url: "https://github.com/microsoft/vscode/tree/1.95.1/extensions/python/",
+      scope: "source.python",
+      files: ["https://github.com/microsoft/vscode/blob/1.95.1/extensions/python/syntaxes/MagicPython.tmLanguage.json/"],
+    },
+    example: {
+      author: {
+        name: "Max Bain",
+        url: "https://github.com/m-bain/",
+      },
+      source: {
+        name: "WhisperX",
+        file: "https://github.com/m-bain/whisperX/blob/v3.1.1/whisperx/asr.py/",
+      },
+    },
+    tokenColors(c) {
+      let c0 = c.comment[0]
+      let p0 = c.plain[0]
+      let p1 = c.plain[1]
+      let s0 = c.string[0]
+      let s1 = c.string[1]
+
+      return {
+        "comment.line.number-sign.python": c0,
+        "constant.character.format.placeholder.other.python": p0,
+        "constant.other.ellipsis.python": p0,
+        "keyword.control.flow.python": p0,
+        "keyword.control.import.python": p0,
+        "keyword.operator.arithmetic.python": p0,
+        "keyword.operator.assignment.python": p0,
+        "keyword.operator.bitwise.python": p0,
+        "keyword.operator.comparison.python": p0,
+        "keyword.operator.logical.python": p0,
+        "keyword.operator.python": p0,
+        "keyword.operator.unpacking.arguments.python": p0,
+        "keyword.operator.unpacking.parameter.python": p0,
+        "punctuation.definition.arguments.begin.python": p0,
+        "punctuation.definition.arguments.end.python": p0,
+        "punctuation.definition.decorator.python": p0,
+        "punctuation.definition.dict.begin.python": p0,
+        "punctuation.definition.dict.end.python": p0,
+        "punctuation.definition.inheritance.begin.python": p0,
+        "punctuation.definition.inheritance.end.python": p0,
+        "punctuation.definition.list.begin.python": p0,
+        "punctuation.definition.list.end.python": p0,
+        "punctuation.definition.parameters.begin.python": p0,
+        "punctuation.definition.parameters.end.python": p0,
+        "punctuation.definition.string.begin.python string.quoted.multi.python": s0,
+        "punctuation.definition.string.begin.python string.quoted.single.python": s0,
+        "punctuation.definition.string.begin.python": s0,
+        "punctuation.definition.string.end.python string.quoted.multi.python": s0,
+        "punctuation.definition.string.end.python string.quoted.single.python": s0,
+        "punctuation.definition.string.end.python": s0,
+        "punctuation.parenthesis.begin.python": p0,
+        "punctuation.parenthesis.end.python": p0,
+        "punctuation.section.class.begin.python": p0,
+        "punctuation.section.function.begin.python": p0,
+        "punctuation.section.function.lambda.begin.python": p0,
+        "punctuation.separator.annotation.python": p0,
+        "punctuation.separator.annotation.result.python": p0,
+        "punctuation.separator.arguments.python": p0,
+        "punctuation.separator.colon.python": p0,
+        "punctuation.separator.continuation.line.python": p0,
+        "punctuation.separator.dict.python": p0,
+        "punctuation.separator.element.python": p0,
+        "punctuation.separator.inheritance.python": p0,
+        "punctuation.separator.parameters.python": p0,
+        "punctuation.separator.period.python": p0,
+        "punctuation.separator.slice.python": p0,
+        "source.python": p1,
+        "storage.type.class.python": p0,
+        "storage.type.format.python": p0,
+        "storage.type.function.async.python": p0,
+        "storage.type.function.lambda.python": p0,
+        "storage.type.function.python": p0,
+        "string.quoted.binary.multi.python storage.type.string.python": s0,
+        "string.quoted.binary.multi.python": s1,
+        "string.quoted.binary.single.python storage.type.string.python": s0,
+        "string.quoted.binary.single.python": s1,
+        "string.quoted.docstring.multi.python punctuation.definition.string.begin.python": c0,
+        "string.quoted.docstring.multi.python punctuation.definition.string.end.python": c0,
+        "string.quoted.docstring.multi.python": c0,
+        "string.quoted.docstring.raw.multi.python punctuation.definition.string.begin.python": c0,
+        "string.quoted.docstring.raw.multi.python punctuation.definition.string.end.python": c0,
+        "string.quoted.docstring.raw.multi.python storage.type.string.python": c0,
+        "string.quoted.docstring.raw.multi.python": c0,
+        "string.quoted.docstring.raw.single.python punctuation.definition.string.begin.python": c0,
+        "string.quoted.docstring.raw.single.python punctuation.definition.string.end.python": c0,
+        "string.quoted.docstring.raw.single.python storage.type.string.python": c0,
+        "string.quoted.docstring.raw.single.python": c0,
+        "string.quoted.docstring.single.python punctuation.definition.string.begin.python": c0,
+        "string.quoted.docstring.single.python punctuation.definition.string.end.python": c0,
+        "string.quoted.docstring.single.python": c0,
+        "string.quoted.multi.python storage.type.string.python": s0,
+        "string.quoted.multi.python": s1,
+        "string.quoted.single.python storage.type.string.python": s0,
+        "string.quoted.single.python": s1,
+        "string.regexp.quoted.multi.python storage.type.string.python": s0,
+        "string.regexp.quoted.multi.python": s1,
+        "string.regexp.quoted.single.python storage.type.string.python": s0,
+        "string.regexp.quoted.single.python": s1,
       }
     },
   }

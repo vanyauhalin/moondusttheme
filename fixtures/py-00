@@ -1,0 +1,77 @@
+# c
+
+"s"
+'s'
+"""s"""
+r"s"
+r"""s"""
+
+="s"
+='s'
+="""s"""
+=r"s"
+=r"""s"""
+
+f"s{a:.2f}"
+f"""s"""
+b"s"
+b"""s"""
+
+0
+0.0
+0xf
+0b0
+0o3
+
+True
+False
+
+[0,0]
+{a:0,a:0}
+(a,a)
+
+a[0:0:0,...]
+
+\
+
++
+=
+&
+
+and
+!=
+
+if
+elif
+else
+
+match
+case
+
+while
+for a in a:
+break
+continue
+yield
+return
+pass
+
+try
+with
+except
+finally
+
+from a import a
+a as a
+
+async
+await
+
+@a
+
+async def a(a=a, a: a, *a: a, **a: a) -> a:
+lambda a: a
+
+a.a(*a, **a)
+
+class a(a, a):
