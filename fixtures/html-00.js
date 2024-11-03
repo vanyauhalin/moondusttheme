@@ -1,402 +1,382 @@
-/**
- * @typedef {import("hast").Root} Root
- * @typedef {import("../makefile.js").ColorTheme} ColorTheme
- */
+c0("<!-- c -->")
+s1("t")
 
-import {r, w} from "../makefile.js"
+p0("<"); p1("a"); p0("></a>")
+p0("<"); p1("abbr"); p0("></abbr>")
+p0("<"); p1("acronym"); p0("></acronym>")
+p0("<"); p1("address"); p0("></address>")
+p0("<"); p1("applet"); p0("></applet>")
+p0("<"); p1("area"); p0(">")
+p0("<"); p1("article"); p0("></article>")
+p0("<"); p1("aside"); p0("></aside>")
+p0("<"); p1("audio"); p0("></audio>")
+p0("<"); p1("b"); p0("></b>")
+p0("<"); p1("base"); p0(">")
+p0("<"); p1("basefont"); p0(">")
+p0("<"); p1("bdi"); p0("></bdi>")
+p0("<"); p1("bdo"); p0("></bdo>")
+p0("<"); p1("big"); p0("></big>")
+p0("<"); p1("blink"); p0("></blink>")
+p0("<"); p1("blockquote"); p0("></blockquote>")
+p0("<"); p1("body"); p0("></body>")
+p0("<"); p1("br"); p0(">")
+p0("<"); p1("button"); p0("></button>")
+p0("<"); p1("canvas"); p0("></canvas>")
+p0("<"); p1("caption"); p0("></caption>")
+p0("<"); p1("center"); p0("></center>")
+p0("<"); p1("cite"); p0("></cite>")
+p0("<"); p1("code"); p0("></code>")
+p0("<"); p1("col"); p0(">")
+p0("<"); p1("colgroup"); p0("></colgroup>")
+p0("<"); p1("data"); p0("></data>")
+p0("<"); p1("datalist"); p0("></datalist>")
+p0("<"); p1("dd"); p0("></dd>")
+p0("<"); p1("del"); p0("></del>")
+p0("<"); p1("details"); p0("></details>")
+p0("<"); p1("dfn"); p0("></dfn>")
+p0("<"); p1("dialog"); p0("></dialog>")
+p0("<"); p1("dir"); p0("></dir>")
+p0("<"); p1("div"); p0("></div>")
+p0("<"); p1("dl"); p0("></dl>")
+p0("<"); p1("dt"); p0("></dt>")
+p0("<"); p1("em"); p0("></em>")
+p0("<"); p1("embed"); p0(">")
+p0("<"); p1("fieldset"); p0("></fieldset>")
+p0("<"); p1("figcaption"); p0("></figcaption>")
+p0("<"); p1("figure"); p0("></figure>")
+p0("<"); p1("font"); p0("></font>")
+p0("<"); p1("footer"); p0("></footer>")
+p0("<"); p1("form"); p0("></form>")
+p0("<"); p1("frame"); p0(">")
+p0("<"); p1("frameset"); p0("></frameset>")
+p0("<"); p1("h1"); p0("></h1>")
+p0("<"); p1("h2"); p0("></h2>")
+p0("<"); p1("h3"); p0("></h3>")
+p0("<"); p1("h4"); p0("></h4>")
+p0("<"); p1("h5"); p0("></h5>")
+p0("<"); p1("h6"); p0("></h6>")
+p0("<"); p1("head"); p0("></head>")
+p0("<"); p1("header"); p0("></header>")
+p0("<"); p1("hgroup"); p0("></hgroup>")
+p0("<"); p1("hr"); p0(">")
+p0("<"); p1("html"); p0("></html>")
+p0("<"); p1("i"); p0("></i>")
+p0("<"); p1("iframe"); p0("></iframe>")
+p0("<"); p1("img"); p0(">")
+p0("<"); p1("input"); p0(">")
+p0("<"); p1("ins"); p0("></ins>")
+p0("<"); p1("kbd"); p0("></kbd>")
+p0("<"); p1("keygen"); p0("></keygen>")
+p0("<"); p1("label"); p0("></label>")
+p0("<"); p1("legend"); p0("></legend>")
+p0("<"); p1("li"); p0("></li>")
+p0("<"); p1("link"); p0(">")
+p0("<"); p1("listing"); p0("></listing>")
+p0("<"); p1("main"); p0("></main>")
+p0("<"); p1("map"); p0("></map>")
+p0("<"); p1("mark"); p0("></mark>")
+p0("<"); p1("menu"); p0("></menu>")
+p0("<"); p1("menuitem"); p0("></menuitem>")
+p0("<"); p1("meta"); p0(">")
+p0("<"); p1("meter"); p0("></meter>")
+p0("<"); p1("nav"); p0("></nav>")
+p0("<"); p1("noembed"); p0("></noembed>")
+p0("<"); p1("noframes"); p0("></noframes>")
+p0("<"); p1("noscript"); p0("></noscript>")
+p0("<"); p1("object"); p0("></object>")
+p0("<"); p1("ol"); p0("></ol>")
+p0("<"); p1("optgroup"); p0("></optgroup>")
+p0("<"); p1("option"); p0("></option>")
+p0("<"); p1("output"); p0("></output>")
+p0("<"); p1("p"); p0("></p>")
+p0("<"); p1("param"); p0(">")
+p0("<"); p1("picture"); p0("></picture>")
+p0("<"); p1("plaintext"); p0("></plaintext>")
+p0("<"); p1("pre"); p0("></pre>")
+p0("<"); p1("progress"); p0("></progress>")
+p0("<"); p1("q"); p0("></q>")
+p0("<"); p1("rp"); p0("></rp>")
+p0("<"); p1("rt"); p0("></rt>")
+p0("<"); p1("ruby"); p0("></ruby>")
+p0("<"); p1("s"); p0("></s>")
+p0("<"); p1("samp"); p0("></samp>")
+p0("<"); p1("script"); p0("></script>")
+p0("<"); p1("section"); p0("></section>")
+p0("<"); p1("select"); p0("></select>")
+p0("<"); p1("slot"); p0("></slot>")
+p0("<"); p1("small"); p0("></small>")
+p0("<"); p1("source"); p0(">")
+p0("<"); p1("spacer"); p0("></spacer>")
+p0("<"); p1("span"); p0("></span>")
+p0("<"); p1("strike"); p0("></strike>")
+p0("<"); p1("strong"); p0("></strong>")
+p0("<"); p1("style"); p0("></style>")
+p0("<"); p1("sub"); p0("></sub>")
+p0("<"); p1("summary"); p0("></summary>")
+p0("<"); p1("sup"); p0("></sup>")
+p0("<"); p1("table"); p0("></table>")
+p0("<"); p1("tbody"); p0("></tbody>")
+p0("<"); p1("td"); p0("></td>")
+p0("<"); p1("template"); p0("></template>")
+p0("<"); p1("textarea"); p0("></textarea>")
+p0("<"); p1("tfoot"); p0("></tfoot>")
+p0("<"); p1("th"); p0("></th>")
+p0("<"); p1("thead"); p0("></thead>")
+p0("<"); p1("time"); p0("></time>")
+p0("<"); p1("title"); p0("></title>")
+p0("<"); p1("tr"); p0("></tr>")
+p0("<"); p1("track"); p0(">")
+p0("<"); p1("tt"); p0("></tt>")
+p0("<"); p1("u"); p0("></u>")
+p0("<"); p1("ul"); p0("></ul>")
+p0("<"); p1("var"); p0("></var>")
+p0("<"); p1("video"); p0("></video>")
+p0("<"); p1("wbr"); p0(">")
+p0("<"); p1("xmp"); p0("></xmp>")
 
-/**
- * @param {ColorTheme} c
- * @returns {Root}
- */
-export function f(c) {
-  const c0 = w(c.comment[0])
-  const p0 = w(c.plain[0])
-  const p1 = w(c.plain[1])
-  const s1 = w(c.string[1])
+p0("<"); p1("math"); p0(">")
+p0("<"); p1("annotation"); p0("/>")
+p0("<"); p1("annotation-xml"); p0("/>")
+p0("<"); p1("annotation-xml"); p0("></annotation-xml>")
+p0("<"); p1("annotation"); p0("></annotation>")
+p0("<"); p1("maction"); p0("/>")
+p0("<"); p1("maction"); p0("></maction>")
+p0("<"); p1("maligngroup"); p0("/>")
+p0("<"); p1("maligngroup"); p0("></maligngroup>")
+p0("<"); p1("malignmark"); p0("/>")
+p0("<"); p1("malignmark"); p0("></malignmark>")
+p0("<"); p1("menclose"); p0("/>")
+p0("<"); p1("menclose"); p0("></menclose>")
+p0("<"); p1("merror"); p0("/>")
+p0("<"); p1("merror"); p0("></merror>")
+p0("<"); p1("mfenced"); p0("/>")
+p0("<"); p1("mfenced"); p0("></mfenced>")
+p0("<"); p1("mfrac"); p0("/>")
+p0("<"); p1("mfrac"); p0("></mfrac>")
+p0("<"); p1("mglyph"); p0("/>")
+p0("<"); p1("mglyph"); p0("></mglyph>")
+p0("<"); p1("mi"); p0("/>")
+p0("<"); p1("mi"); p0("></mi>")
+p0("<"); p1("mlabeledtr"); p0("/>")
+p0("<"); p1("mlabeledtr"); p0("></mlabeledtr>")
+p0("<"); p1("mlongdiv"); p0("/>")
+p0("<"); p1("mlongdiv"); p0("></mlongdiv>")
+p0("<"); p1("mmultiscripts"); p0("/>")
+p0("<"); p1("mmultiscripts"); p0("></mmultiscripts>")
+p0("<"); p1("mn"); p0("/>")
+p0("<"); p1("mn"); p0("></mn>")
+p0("<"); p1("mo"); p0("/>")
+p0("<"); p1("mo"); p0("></mo>")
+p0("<"); p1("mover"); p0("/>")
+p0("<"); p1("mover"); p0("></mover>")
+p0("<"); p1("mpadded"); p0("/>")
+p0("<"); p1("mpadded"); p0("></mpadded>")
+p0("<"); p1("mphantom"); p0("/>")
+p0("<"); p1("mphantom"); p0("></mphantom>")
+p0("<"); p1("mprescripts"); p0("/>")
+p0("<"); p1("mprescripts"); p0("></mprescripts>")
+p0("<"); p1("mroot"); p0("/>")
+p0("<"); p1("mroot"); p0("></mroot>")
+p0("<"); p1("mrow"); p0("/>")
+p0("<"); p1("mrow"); p0("></mrow>")
+p0("<"); p1("ms"); p0("/>")
+p0("<"); p1("ms"); p0("></ms>")
+p0("<"); p1("mscarries"); p0("/>")
+p0("<"); p1("mscarries"); p0("></mscarries>")
+p0("<"); p1("mscarry"); p0("/>")
+p0("<"); p1("mscarry"); p0("></mscarry>")
+p0("<"); p1("msgroup"); p0("/>")
+p0("<"); p1("msgroup"); p0("></msgroup>")
+p0("<"); p1("msline"); p0("/>")
+p0("<"); p1("msline"); p0("></msline>")
+p0("<"); p1("mspace"); p0("/>")
+p0("<"); p1("mspace"); p0("></mspace>")
+p0("<"); p1("msqrt"); p0("/>")
+p0("<"); p1("msqrt"); p0("></msqrt>")
+p0("<"); p1("msrow"); p0("/>")
+p0("<"); p1("msrow"); p0("></msrow>")
+p0("<"); p1("mstack"); p0("/>")
+p0("<"); p1("mstack"); p0("></mstack>")
+p0("<"); p1("mstyle"); p0("/>")
+p0("<"); p1("mstyle"); p0("></mstyle>")
+p0("<"); p1("msub"); p0("/>")
+p0("<"); p1("msub"); p0("></msub>")
+p0("<"); p1("msubsup"); p0("/>")
+p0("<"); p1("msubsup"); p0("></msubsup>")
+p0("<"); p1("msup"); p0("/>")
+p0("<"); p1("msup"); p0("></msup>")
+p0("<"); p1("mtable"); p0("/>")
+p0("<"); p1("mtable"); p0("></mtable>")
+p0("<"); p1("mtd"); p0("/>")
+p0("<"); p1("mtd"); p0("></mtd>")
+p0("<"); p1("mtext"); p0("/>")
+p0("<"); p1("mtext"); p0("></mtext>")
+p0("<"); p1("mtr"); p0("/>")
+p0("<"); p1("mtr"); p0("></mtr>")
+p0("<"); p1("munder"); p0("/>")
+p0("<"); p1("munder"); p0("></munder>")
+p0("<"); p1("munderover"); p0("/>")
+p0("<"); p1("munderover"); p0("></munderover>")
+p0("<"); p1("none"); p0("/>")
+p0("<"); p1("none"); p0("></none>")
+p0("<"); p1("semantics"); p0("/>")
+p0("<"); p1("semantics"); p0("></semantics>")
+p0("</math>")
 
-  return r(
-    c0("<!-- c -->"),
-    s1("t"),
+p0("<"); p1("svg"); p0(">")
+p0("<"); p1("a"); p0("/>")
+p0("<"); p1("a"); p0("></a>")
+p0("<"); p1("altGlyph"); p0("/>")
+p0("<"); p1("altGlyph"); p0("></altGlyph>")
+p0("<"); p1("altGlyphDef"); p0("/>")
+p0("<"); p1("altGlyphDef"); p0("></altGlyphDef>")
+p0("<"); p1("altGlyphItem"); p0("/>")
+p0("<"); p1("altGlyphItem"); p0("></altGlyphItem>")
+p0("<"); p1("animate"); p0("/>")
+p0("<"); p1("animate"); p0("></animate>")
+p0("<"); p1("animateColor"); p0("/>")
+p0("<"); p1("animateColor"); p0("></animateColor>")
+p0("<"); p1("animateMotion"); p0("/>")
+p0("<"); p1("animateMotion"); p0("></animateMotion>")
+p0("<"); p1("animateTransform"); p0("/>")
+p0("<"); p1("animateTransform"); p0("></animateTransform>")
+p0("<"); p1("clipPath"); p0("/>")
+p0("<"); p1("clipPath"); p0("></clipPath>")
+p0("<"); p1("color-profile"); p0("></color-profile>")
+p0("<"); p1("cursor"); p0("/>")
+p0("<"); p1("cursor"); p0("></cursor>")
+p0("<"); p1("defs"); p0("/>")
+p0("<"); p1("defs"); p0("></defs>")
+p0("<"); p1("desc"); p0("/>")
+p0("<"); p1("desc"); p0("></desc>")
+p0("<"); p1("discard"); p0("/>")
+p0("<"); p1("discard"); p0("></discard>")
+p0("<"); p1("feBlend"); p0("/>")
+p0("<"); p1("feBlend"); p0("></feBlend>")
+p0("<"); p1("feColorMatrix"); p0("/>")
+p0("<"); p1("feColorMatrix"); p0("></feColorMatrix>")
+p0("<"); p1("feComponentTransfer"); p0("/>")
+p0("<"); p1("feComponentTransfer"); p0("></feComponentTransfer>")
+p0("<"); p1("feComposite"); p0("/>")
+p0("<"); p1("feComposite"); p0("></feComposite>")
+p0("<"); p1("feConvolveMatrix"); p0("/>")
+p0("<"); p1("feConvolveMatrix"); p0("></feConvolveMatrix>")
+p0("<"); p1("feDiffuseLighting"); p0("/>")
+p0("<"); p1("feDiffuseLighting"); p0("></feDiffuseLighting>")
+p0("<"); p1("feDisplacementMap"); p0("/>")
+p0("<"); p1("feDisplacementMap"); p0("></feDisplacementMap>")
+p0("<"); p1("feDistantLight"); p0("/>")
+p0("<"); p1("feDistantLight"); p0("></feDistantLight>")
+p0("<"); p1("feDropShadow"); p0("/>")
+p0("<"); p1("feDropShadow"); p0("></feDropShadow>")
+p0("<"); p1("feFlood"); p0("/>")
+p0("<"); p1("feFlood"); p0("></feFlood>")
+p0("<"); p1("feFuncA"); p0("/>")
+p0("<"); p1("feFuncA"); p0("></feFuncA>")
+p0("<"); p1("feFuncB"); p0("/>")
+p0("<"); p1("feFuncB"); p0("></feFuncB>")
+p0("<"); p1("feFuncG"); p0("/>")
+p0("<"); p1("feFuncG"); p0("></feFuncG>")
+p0("<"); p1("feFuncR"); p0("/>")
+p0("<"); p1("feFuncR"); p0("></feFuncR>")
+p0("<"); p1("feGaussianBlur"); p0("/>")
+p0("<"); p1("feGaussianBlur"); p0("></feGaussianBlur>")
+p0("<"); p1("feMerge"); p0("/>")
+p0("<"); p1("feMerge"); p0("></feMerge>")
+p0("<"); p1("feMergeNode"); p0("/>")
+p0("<"); p1("feMergeNode"); p0("></feMergeNode>")
+p0("<"); p1("feMorphology"); p0("/>")
+p0("<"); p1("feMorphology"); p0("></feMorphology>")
+p0("<"); p1("feOffset"); p0("/>")
+p0("<"); p1("feOffset"); p0("></feOffset>")
+p0("<"); p1("fePointLight"); p0("/>")
+p0("<"); p1("fePointLight"); p0("></fePointLight>")
+p0("<"); p1("feSpecularLighting"); p0("/>")
+p0("<"); p1("feSpecularLighting"); p0("></feSpecularLighting>")
+p0("<"); p1("feSpotLight"); p0("/>")
+p0("<"); p1("feSpotLight"); p0("></feSpotLight>")
+p0("<"); p1("feTile"); p0("/>")
+p0("<"); p1("feTile"); p0("></feTile>")
+p0("<"); p1("feTurbulence"); p0("/>")
+p0("<"); p1("feTurbulence"); p0("></feTurbulence>")
+p0("<"); p1("filter"); p0("/>")
+p0("<"); p1("filter"); p0("></filter>")
+p0("<"); p1("font"); p0("/>")
+p0("<"); p1("font-face"); p0("/>")
+p0("<"); p1("font-face-format"); p0("/>")
+p0("<"); p1("font-face-format"); p0("></font-face-format>")
+p0("<"); p1("font-face-name"); p0("/>")
+p0("<"); p1("font-face-name"); p0("></font-face-name>")
+p0("<"); p1("font-face-src"); p0("/>")
+p0("<"); p1("font-face-src"); p0("></font-face-src>")
+p0("<"); p1("font-face-uri"); p0("/>")
+p0("<"); p1("font-face-uri"); p0("></font-face-uri>")
+p0("<"); p1("font-face"); p0("></font-face>")
+p0("<"); p1("font"); p0("></font>")
+p0("<"); p1("g"); p0("/>")
+p0("<"); p1("g"); p0("></g>")
+p0("<"); p1("glyph"); p0("/>")
+p0("<"); p1("glyph"); p0("></glyph>")
+p0("<"); p1("glyphRef"); p0("/>")
+p0("<"); p1("glyphRef"); p0("></glyphRef>")
+p0("<"); p1("hatch"); p0("/>")
+p0("<"); p1("hatch"); p0("></hatch>")
+p0("<"); p1("hatchPath"); p0("/>")
+p0("<"); p1("hatchPath"); p0("></hatchPath>")
+p0("<"); p1("hkern"); p0("/>")
+p0("<"); p1("hkern"); p0("></hkern>")
+p0("<"); p1("linearGradient"); p0("/>")
+p0("<"); p1("linearGradient"); p0("></linearGradient>")
+p0("<"); p1("marker"); p0("/>")
+p0("<"); p1("marker"); p0("></marker>")
+p0("<"); p1("mask"); p0("/>")
+p0("<"); p1("mask"); p0("></mask>")
+p0("<"); p1("mesh"); p0("/>")
+p0("<"); p1("mesh"); p0("></mesh>")
+p0("<"); p1("meshgradient"); p0("/>")
+p0("<"); p1("meshgradient"); p0("></meshgradient>")
+p0("<"); p1("meshpatch"); p0("/>")
+p0("<"); p1("meshpatch"); p0("></meshpatch>")
+p0("<"); p1("meshrow"); p0("/>")
+p0("<"); p1("meshrow"); p0("></meshrow>")
+p0("<"); p1("metadata"); p0("/>")
+p0("<"); p1("metadata"); p0("></metadata>")
+p0("<"); p1("missing-glyph"); p0("/>")
+p0("<"); p1("missing-glyph"); p0("></missing-glyph>")
+p0("<"); p1("mpath"); p0("/>")
+p0("<"); p1("mpath"); p0("></mpath>")
+p0("<"); p1("pattern"); p0("/>")
+p0("<"); p1("pattern"); p0("></pattern>")
+p0("<"); p1("radialGradient"); p0("/>")
+p0("<"); p1("radialGradient"); p0("></radialGradient>")
+p0("<"); p1("script"); p0("/>")
+p0("<"); p1("script"); p0("></script>")
+p0("<"); p1("set"); p0("/>")
+p0("<"); p1("set"); p0("></set>")
+p0("<"); p1("solidcolor"); p0("/>")
+p0("<"); p1("solidcolor"); p0("></solidcolor>")
+p0("<"); p1("stop"); p0("/>")
+p0("<"); p1("stop"); p0("></stop>")
+p0("<"); p1("style"); p0("/>")
+p0("<"); p1("style"); p0("></style>")
+p0("<"); p1("switch"); p0("/>")
+p0("<"); p1("switch"); p0("></switch>")
+p0("<"); p1("text"); p0("/>")
+p0("<"); p1("text"); p0("></text>")
+p0("<"); p1("textPath"); p0("/>")
+p0("<"); p1("textPath"); p0("></textPath>")
+p0("<"); p1("title"); p0("/>")
+p0("<"); p1("title"); p0("></title>")
+p0("<"); p1("tref"); p0("/>")
+p0("<"); p1("tref"); p0("></tref>")
+p0("<"); p1("tspan"); p0("/>")
+p0("<"); p1("tspan"); p0("></tspan>")
+p0("<"); p1("vkern"); p0("/>")
+p0("<"); p1("vkern"); p0("></vkern>")
+p0("</svg>")
 
-    p0("<"), p1("a"), p0("></a>"),
-    p0("<"), p1("abbr"), p0("></abbr>"),
-    p0("<"), p1("acronym"), p0("></acronym>"),
-    p0("<"), p1("address"), p0("></address>"),
-    p0("<"), p1("applet"), p0("></applet>"),
-    p0("<"), p1("area"), p0(">"),
-    p0("<"), p1("article"), p0("></article>"),
-    p0("<"), p1("aside"), p0("></aside>"),
-    p0("<"), p1("audio"), p0("></audio>"),
-    p0("<"), p1("b"), p0("></b>"),
-    p0("<"), p1("base"), p0(">"),
-    p0("<"), p1("basefont"), p0(">"),
-    p0("<"), p1("bdi"), p0("></bdi>"),
-    p0("<"), p1("bdo"), p0("></bdo>"),
-    p0("<"), p1("big"), p0("></big>"),
-    p0("<"), p1("blink"), p0("></blink>"),
-    p0("<"), p1("blockquote"), p0("></blockquote>"),
-    p0("<"), p1("body"), p0("></body>"),
-    p0("<"), p1("br"), p0(">"),
-    p0("<"), p1("button"), p0("></button>"),
-    p0("<"), p1("canvas"), p0("></canvas>"),
-    p0("<"), p1("caption"), p0("></caption>"),
-    p0("<"), p1("center"), p0("></center>"),
-    p0("<"), p1("cite"), p0("></cite>"),
-    p0("<"), p1("code"), p0("></code>"),
-    p0("<"), p1("col"), p0(">"),
-    p0("<"), p1("colgroup"), p0("></colgroup>"),
-    p0("<"), p1("data"), p0("></data>"),
-    p0("<"), p1("datalist"), p0("></datalist>"),
-    p0("<"), p1("dd"), p0("></dd>"),
-    p0("<"), p1("del"), p0("></del>"),
-    p0("<"), p1("details"), p0("></details>"),
-    p0("<"), p1("dfn"), p0("></dfn>"),
-    p0("<"), p1("dialog"), p0("></dialog>"),
-    p0("<"), p1("dir"), p0("></dir>"),
-    p0("<"), p1("div"), p0("></div>"),
-    p0("<"), p1("dl"), p0("></dl>"),
-    p0("<"), p1("dt"), p0("></dt>"),
-    p0("<"), p1("em"), p0("></em>"),
-    p0("<"), p1("embed"), p0(">"),
-    p0("<"), p1("fieldset"), p0("></fieldset>"),
-    p0("<"), p1("figcaption"), p0("></figcaption>"),
-    p0("<"), p1("figure"), p0("></figure>"),
-    p0("<"), p1("font"), p0("></font>"),
-    p0("<"), p1("footer"), p0("></footer>"),
-    p0("<"), p1("form"), p0("></form>"),
-    p0("<"), p1("frame"), p0(">"),
-    p0("<"), p1("frameset"), p0("></frameset>"),
-    p0("<"), p1("h1"), p0("></h1>"),
-    p0("<"), p1("h2"), p0("></h2>"),
-    p0("<"), p1("h3"), p0("></h3>"),
-    p0("<"), p1("h4"), p0("></h4>"),
-    p0("<"), p1("h5"), p0("></h5>"),
-    p0("<"), p1("h6"), p0("></h6>"),
-    p0("<"), p1("head"), p0("></head>"),
-    p0("<"), p1("header"), p0("></header>"),
-    p0("<"), p1("hgroup"), p0("></hgroup>"),
-    p0("<"), p1("hr"), p0(">"),
-    p0("<"), p1("html"), p0("></html>"),
-    p0("<"), p1("i"), p0("></i>"),
-    p0("<"), p1("iframe"), p0("></iframe>"),
-    p0("<"), p1("img"), p0(">"),
-    p0("<"), p1("input"), p0(">"),
-    p0("<"), p1("ins"), p0("></ins>"),
-    p0("<"), p1("kbd"), p0("></kbd>"),
-    p0("<"), p1("keygen"), p0("></keygen>"),
-    p0("<"), p1("label"), p0("></label>"),
-    p0("<"), p1("legend"), p0("></legend>"),
-    p0("<"), p1("li"), p0("></li>"),
-    p0("<"), p1("link"), p0(">"),
-    p0("<"), p1("listing"), p0("></listing>"),
-    p0("<"), p1("main"), p0("></main>"),
-    p0("<"), p1("map"), p0("></map>"),
-    p0("<"), p1("mark"), p0("></mark>"),
-    p0("<"), p1("menu"), p0("></menu>"),
-    p0("<"), p1("menuitem"), p0("></menuitem>"),
-    p0("<"), p1("meta"), p0(">"),
-    p0("<"), p1("meter"), p0("></meter>"),
-    p0("<"), p1("nav"), p0("></nav>"),
-    p0("<"), p1("noembed"), p0("></noembed>"),
-    p0("<"), p1("noframes"), p0("></noframes>"),
-    p0("<"), p1("noscript"), p0("></noscript>"),
-    p0("<"), p1("object"), p0("></object>"),
-    p0("<"), p1("ol"), p0("></ol>"),
-    p0("<"), p1("optgroup"), p0("></optgroup>"),
-    p0("<"), p1("option"), p0("></option>"),
-    p0("<"), p1("output"), p0("></output>"),
-    p0("<"), p1("p"), p0("></p>"),
-    p0("<"), p1("param"), p0(">"),
-    p0("<"), p1("picture"), p0("></picture>"),
-    p0("<"), p1("plaintext"), p0("></plaintext>"),
-    p0("<"), p1("pre"), p0("></pre>"),
-    p0("<"), p1("progress"), p0("></progress>"),
-    p0("<"), p1("q"), p0("></q>"),
-    p0("<"), p1("rp"), p0("></rp>"),
-    p0("<"), p1("rt"), p0("></rt>"),
-    p0("<"), p1("ruby"), p0("></ruby>"),
-    p0("<"), p1("s"), p0("></s>"),
-    p0("<"), p1("samp"), p0("></samp>"),
-    p0("<"), p1("script"), p0("></script>"),
-    p0("<"), p1("section"), p0("></section>"),
-    p0("<"), p1("select"), p0("></select>"),
-    p0("<"), p1("slot"), p0("></slot>"),
-    p0("<"), p1("small"), p0("></small>"),
-    p0("<"), p1("source"), p0(">"),
-    p0("<"), p1("spacer"), p0("></spacer>"),
-    p0("<"), p1("span"), p0("></span>"),
-    p0("<"), p1("strike"), p0("></strike>"),
-    p0("<"), p1("strong"), p0("></strong>"),
-    p0("<"), p1("style"), p0("></style>"),
-    p0("<"), p1("sub"), p0("></sub>"),
-    p0("<"), p1("summary"), p0("></summary>"),
-    p0("<"), p1("sup"), p0("></sup>"),
-    p0("<"), p1("table"), p0("></table>"),
-    p0("<"), p1("tbody"), p0("></tbody>"),
-    p0("<"), p1("td"), p0("></td>"),
-    p0("<"), p1("template"), p0("></template>"),
-    p0("<"), p1("textarea"), p0("></textarea>"),
-    p0("<"), p1("tfoot"), p0("></tfoot>"),
-    p0("<"), p1("th"), p0("></th>"),
-    p0("<"), p1("thead"), p0("></thead>"),
-    p0("<"), p1("time"), p0("></time>"),
-    p0("<"), p1("title"), p0("></title>"),
-    p0("<"), p1("tr"), p0("></tr>"),
-    p0("<"), p1("track"), p0(">"),
-    p0("<"), p1("tt"), p0("></tt>"),
-    p0("<"), p1("u"), p0("></u>"),
-    p0("<"), p1("ul"), p0("></ul>"),
-    p0("<"), p1("var"), p0("></var>"),
-    p0("<"), p1("video"), p0("></video>"),
-    p0("<"), p1("wbr"), p0(">"),
-    p0("<"), p1("xmp"), p0("></xmp>"),
+p0("<"); p1("w-c"); p0('a="'); p1("v"); p0(`" b='`); p1("v"); p0("' c="); p1("v"); p0("></w-c>")
 
-    p0("<"), p1("math"), p0(">"),
-    p0("<"), p1("annotation"), p0("/>"),
-    p0("<"), p1("annotation-xml"), p0("/>"),
-    p0("<"), p1("annotation-xml"), p0("></annotation-xml>"),
-    p0("<"), p1("annotation"), p0("></annotation>"),
-    p0("<"), p1("maction"), p0("/>"),
-    p0("<"), p1("maction"), p0("></maction>"),
-    p0("<"), p1("maligngroup"), p0("/>"),
-    p0("<"), p1("maligngroup"), p0("></maligngroup>"),
-    p0("<"), p1("malignmark"), p0("/>"),
-    p0("<"), p1("malignmark"), p0("></malignmark>"),
-    p0("<"), p1("menclose"), p0("/>"),
-    p0("<"), p1("menclose"), p0("></menclose>"),
-    p0("<"), p1("merror"), p0("/>"),
-    p0("<"), p1("merror"), p0("></merror>"),
-    p0("<"), p1("mfenced"), p0("/>"),
-    p0("<"), p1("mfenced"), p0("></mfenced>"),
-    p0("<"), p1("mfrac"), p0("/>"),
-    p0("<"), p1("mfrac"), p0("></mfrac>"),
-    p0("<"), p1("mglyph"), p0("/>"),
-    p0("<"), p1("mglyph"), p0("></mglyph>"),
-    p0("<"), p1("mi"), p0("/>"),
-    p0("<"), p1("mi"), p0("></mi>"),
-    p0("<"), p1("mlabeledtr"), p0("/>"),
-    p0("<"), p1("mlabeledtr"), p0("></mlabeledtr>"),
-    p0("<"), p1("mlongdiv"), p0("/>"),
-    p0("<"), p1("mlongdiv"), p0("></mlongdiv>"),
-    p0("<"), p1("mmultiscripts"), p0("/>"),
-    p0("<"), p1("mmultiscripts"), p0("></mmultiscripts>"),
-    p0("<"), p1("mn"), p0("/>"),
-    p0("<"), p1("mn"), p0("></mn>"),
-    p0("<"), p1("mo"), p0("/>"),
-    p0("<"), p1("mo"), p0("></mo>"),
-    p0("<"), p1("mover"), p0("/>"),
-    p0("<"), p1("mover"), p0("></mover>"),
-    p0("<"), p1("mpadded"), p0("/>"),
-    p0("<"), p1("mpadded"), p0("></mpadded>"),
-    p0("<"), p1("mphantom"), p0("/>"),
-    p0("<"), p1("mphantom"), p0("></mphantom>"),
-    p0("<"), p1("mprescripts"), p0("/>"),
-    p0("<"), p1("mprescripts"), p0("></mprescripts>"),
-    p0("<"), p1("mroot"), p0("/>"),
-    p0("<"), p1("mroot"), p0("></mroot>"),
-    p0("<"), p1("mrow"), p0("/>"),
-    p0("<"), p1("mrow"), p0("></mrow>"),
-    p0("<"), p1("ms"), p0("/>"),
-    p0("<"), p1("ms"), p0("></ms>"),
-    p0("<"), p1("mscarries"), p0("/>"),
-    p0("<"), p1("mscarries"), p0("></mscarries>"),
-    p0("<"), p1("mscarry"), p0("/>"),
-    p0("<"), p1("mscarry"), p0("></mscarry>"),
-    p0("<"), p1("msgroup"), p0("/>"),
-    p0("<"), p1("msgroup"), p0("></msgroup>"),
-    p0("<"), p1("msline"), p0("/>"),
-    p0("<"), p1("msline"), p0("></msline>"),
-    p0("<"), p1("mspace"), p0("/>"),
-    p0("<"), p1("mspace"), p0("></mspace>"),
-    p0("<"), p1("msqrt"), p0("/>"),
-    p0("<"), p1("msqrt"), p0("></msqrt>"),
-    p0("<"), p1("msrow"), p0("/>"),
-    p0("<"), p1("msrow"), p0("></msrow>"),
-    p0("<"), p1("mstack"), p0("/>"),
-    p0("<"), p1("mstack"), p0("></mstack>"),
-    p0("<"), p1("mstyle"), p0("/>"),
-    p0("<"), p1("mstyle"), p0("></mstyle>"),
-    p0("<"), p1("msub"), p0("/>"),
-    p0("<"), p1("msub"), p0("></msub>"),
-    p0("<"), p1("msubsup"), p0("/>"),
-    p0("<"), p1("msubsup"), p0("></msubsup>"),
-    p0("<"), p1("msup"), p0("/>"),
-    p0("<"), p1("msup"), p0("></msup>"),
-    p0("<"), p1("mtable"), p0("/>"),
-    p0("<"), p1("mtable"), p0("></mtable>"),
-    p0("<"), p1("mtd"), p0("/>"),
-    p0("<"), p1("mtd"), p0("></mtd>"),
-    p0("<"), p1("mtext"), p0("/>"),
-    p0("<"), p1("mtext"), p0("></mtext>"),
-    p0("<"), p1("mtr"), p0("/>"),
-    p0("<"), p1("mtr"), p0("></mtr>"),
-    p0("<"), p1("munder"), p0("/>"),
-    p0("<"), p1("munder"), p0("></munder>"),
-    p0("<"), p1("munderover"), p0("/>"),
-    p0("<"), p1("munderover"), p0("></munderover>"),
-    p0("<"), p1("none"), p0("/>"),
-    p0("<"), p1("none"), p0("></none>"),
-    p0("<"), p1("semantics"), p0("/>"),
-    p0("<"), p1("semantics"), p0("></semantics>"),
-    p0("</math>"),
-
-    p0("<"), p1("svg"), p0(">"),
-    p0("<"), p1("a"), p0("/>"),
-    p0("<"), p1("a"), p0("></a>"),
-    p0("<"), p1("altGlyph"), p0("/>"),
-    p0("<"), p1("altGlyph"), p0("></altGlyph>"),
-    p0("<"), p1("altGlyphDef"), p0("/>"),
-    p0("<"), p1("altGlyphDef"), p0("></altGlyphDef>"),
-    p0("<"), p1("altGlyphItem"), p0("/>"),
-    p0("<"), p1("altGlyphItem"), p0("></altGlyphItem>"),
-    p0("<"), p1("animate"), p0("/>"),
-    p0("<"), p1("animate"), p0("></animate>"),
-    p0("<"), p1("animateColor"), p0("/>"),
-    p0("<"), p1("animateColor"), p0("></animateColor>"),
-    p0("<"), p1("animateMotion"), p0("/>"),
-    p0("<"), p1("animateMotion"), p0("></animateMotion>"),
-    p0("<"), p1("animateTransform"), p0("/>"),
-    p0("<"), p1("animateTransform"), p0("></animateTransform>"),
-    p0("<"), p1("clipPath"), p0("/>"),
-    p0("<"), p1("clipPath"), p0("></clipPath>"),
-    p0("<"), p1("color-profile"), p0("></color-profile>"),
-    p0("<"), p1("cursor"), p0("/>"),
-    p0("<"), p1("cursor"), p0("></cursor>"),
-    p0("<"), p1("defs"), p0("/>"),
-    p0("<"), p1("defs"), p0("></defs>"),
-    p0("<"), p1("desc"), p0("/>"),
-    p0("<"), p1("desc"), p0("></desc>"),
-    p0("<"), p1("discard"), p0("/>"),
-    p0("<"), p1("discard"), p0("></discard>"),
-    p0("<"), p1("feBlend"), p0("/>"),
-    p0("<"), p1("feBlend"), p0("></feBlend>"),
-    p0("<"), p1("feColorMatrix"), p0("/>"),
-    p0("<"), p1("feColorMatrix"), p0("></feColorMatrix>"),
-    p0("<"), p1("feComponentTransfer"), p0("/>"),
-    p0("<"), p1("feComponentTransfer"), p0("></feComponentTransfer>"),
-    p0("<"), p1("feComposite"), p0("/>"),
-    p0("<"), p1("feComposite"), p0("></feComposite>"),
-    p0("<"), p1("feConvolveMatrix"), p0("/>"),
-    p0("<"), p1("feConvolveMatrix"), p0("></feConvolveMatrix>"),
-    p0("<"), p1("feDiffuseLighting"), p0("/>"),
-    p0("<"), p1("feDiffuseLighting"), p0("></feDiffuseLighting>"),
-    p0("<"), p1("feDisplacementMap"), p0("/>"),
-    p0("<"), p1("feDisplacementMap"), p0("></feDisplacementMap>"),
-    p0("<"), p1("feDistantLight"), p0("/>"),
-    p0("<"), p1("feDistantLight"), p0("></feDistantLight>"),
-    p0("<"), p1("feDropShadow"), p0("/>"),
-    p0("<"), p1("feDropShadow"), p0("></feDropShadow>"),
-    p0("<"), p1("feFlood"), p0("/>"),
-    p0("<"), p1("feFlood"), p0("></feFlood>"),
-    p0("<"), p1("feFuncA"), p0("/>"),
-    p0("<"), p1("feFuncA"), p0("></feFuncA>"),
-    p0("<"), p1("feFuncB"), p0("/>"),
-    p0("<"), p1("feFuncB"), p0("></feFuncB>"),
-    p0("<"), p1("feFuncG"), p0("/>"),
-    p0("<"), p1("feFuncG"), p0("></feFuncG>"),
-    p0("<"), p1("feFuncR"), p0("/>"),
-    p0("<"), p1("feFuncR"), p0("></feFuncR>"),
-    p0("<"), p1("feGaussianBlur"), p0("/>"),
-    p0("<"), p1("feGaussianBlur"), p0("></feGaussianBlur>"),
-    p0("<"), p1("feMerge"), p0("/>"),
-    p0("<"), p1("feMerge"), p0("></feMerge>"),
-    p0("<"), p1("feMergeNode"), p0("/>"),
-    p0("<"), p1("feMergeNode"), p0("></feMergeNode>"),
-    p0("<"), p1("feMorphology"), p0("/>"),
-    p0("<"), p1("feMorphology"), p0("></feMorphology>"),
-    p0("<"), p1("feOffset"), p0("/>"),
-    p0("<"), p1("feOffset"), p0("></feOffset>"),
-    p0("<"), p1("fePointLight"), p0("/>"),
-    p0("<"), p1("fePointLight"), p0("></fePointLight>"),
-    p0("<"), p1("feSpecularLighting"), p0("/>"),
-    p0("<"), p1("feSpecularLighting"), p0("></feSpecularLighting>"),
-    p0("<"), p1("feSpotLight"), p0("/>"),
-    p0("<"), p1("feSpotLight"), p0("></feSpotLight>"),
-    p0("<"), p1("feTile"), p0("/>"),
-    p0("<"), p1("feTile"), p0("></feTile>"),
-    p0("<"), p1("feTurbulence"), p0("/>"),
-    p0("<"), p1("feTurbulence"), p0("></feTurbulence>"),
-    p0("<"), p1("filter"), p0("/>"),
-    p0("<"), p1("filter"), p0("></filter>"),
-    p0("<"), p1("font"), p0("/>"),
-    p0("<"), p1("font-face"), p0("/>"),
-    p0("<"), p1("font-face-format"), p0("/>"),
-    p0("<"), p1("font-face-format"), p0("></font-face-format>"),
-    p0("<"), p1("font-face-name"), p0("/>"),
-    p0("<"), p1("font-face-name"), p0("></font-face-name>"),
-    p0("<"), p1("font-face-src"), p0("/>"),
-    p0("<"), p1("font-face-src"), p0("></font-face-src>"),
-    p0("<"), p1("font-face-uri"), p0("/>"),
-    p0("<"), p1("font-face-uri"), p0("></font-face-uri>"),
-    p0("<"), p1("font-face"), p0("></font-face>"),
-    p0("<"), p1("font"), p0("></font>"),
-    p0("<"), p1("g"), p0("/>"),
-    p0("<"), p1("g"), p0("></g>"),
-    p0("<"), p1("glyph"), p0("/>"),
-    p0("<"), p1("glyph"), p0("></glyph>"),
-    p0("<"), p1("glyphRef"), p0("/>"),
-    p0("<"), p1("glyphRef"), p0("></glyphRef>"),
-    p0("<"), p1("hatch"), p0("/>"),
-    p0("<"), p1("hatch"), p0("></hatch>"),
-    p0("<"), p1("hatchPath"), p0("/>"),
-    p0("<"), p1("hatchPath"), p0("></hatchPath>"),
-    p0("<"), p1("hkern"), p0("/>"),
-    p0("<"), p1("hkern"), p0("></hkern>"),
-    p0("<"), p1("linearGradient"), p0("/>"),
-    p0("<"), p1("linearGradient"), p0("></linearGradient>"),
-    p0("<"), p1("marker"), p0("/>"),
-    p0("<"), p1("marker"), p0("></marker>"),
-    p0("<"), p1("mask"), p0("/>"),
-    p0("<"), p1("mask"), p0("></mask>"),
-    p0("<"), p1("mesh"), p0("/>"),
-    p0("<"), p1("mesh"), p0("></mesh>"),
-    p0("<"), p1("meshgradient"), p0("/>"),
-    p0("<"), p1("meshgradient"), p0("></meshgradient>"),
-    p0("<"), p1("meshpatch"), p0("/>"),
-    p0("<"), p1("meshpatch"), p0("></meshpatch>"),
-    p0("<"), p1("meshrow"), p0("/>"),
-    p0("<"), p1("meshrow"), p0("></meshrow>"),
-    p0("<"), p1("metadata"), p0("/>"),
-    p0("<"), p1("metadata"), p0("></metadata>"),
-    p0("<"), p1("missing-glyph"), p0("/>"),
-    p0("<"), p1("missing-glyph"), p0("></missing-glyph>"),
-    p0("<"), p1("mpath"), p0("/>"),
-    p0("<"), p1("mpath"), p0("></mpath>"),
-    p0("<"), p1("pattern"), p0("/>"),
-    p0("<"), p1("pattern"), p0("></pattern>"),
-    p0("<"), p1("radialGradient"), p0("/>"),
-    p0("<"), p1("radialGradient"), p0("></radialGradient>"),
-    p0("<"), p1("script"), p0("/>"),
-    p0("<"), p1("script"), p0("></script>"),
-    p0("<"), p1("set"), p0("/>"),
-    p0("<"), p1("set"), p0("></set>"),
-    p0("<"), p1("solidcolor"), p0("/>"),
-    p0("<"), p1("solidcolor"), p0("></solidcolor>"),
-    p0("<"), p1("stop"), p0("/>"),
-    p0("<"), p1("stop"), p0("></stop>"),
-    p0("<"), p1("style"), p0("/>"),
-    p0("<"), p1("style"), p0("></style>"),
-    p0("<"), p1("switch"), p0("/>"),
-    p0("<"), p1("switch"), p0("></switch>"),
-    p0("<"), p1("text"), p0("/>"),
-    p0("<"), p1("text"), p0("></text>"),
-    p0("<"), p1("textPath"), p0("/>"),
-    p0("<"), p1("textPath"), p0("></textPath>"),
-    p0("<"), p1("title"), p0("/>"),
-    p0("<"), p1("title"), p0("></title>"),
-    p0("<"), p1("tref"), p0("/>"),
-    p0("<"), p1("tref"), p0("></tref>"),
-    p0("<"), p1("tspan"), p0("/>"),
-    p0("<"), p1("tspan"), p0("></tspan>"),
-    p0("<"), p1("vkern"), p0("/>"),
-    p0("<"), p1("vkern"), p0("></vkern>"),
-    p0("</svg>"),
-
-    p0("<"), p1("w-c"), p0('a="'), p1("v"), p0(`" b='`), p1("v"), p0("' c="), p1("v"), p0("></w-c>"),
-
-    p0("<![CDATA[v]]>"),
-    p0('<!doctype html a="v">'),
-    p0(`<?xml a="v" b='v' c=v>`)
-  )
-}
+p0("<![CDATA[v]]>")
+p0('<!doctype html a="v">')
+p0(`<?xml a="v" b='v' c=v>`)

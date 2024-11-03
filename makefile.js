@@ -13,7 +13,7 @@ import {mkdir, readFile, readdir, rm, writeFile} from "node:fs/promises"
 import {existsSync} from "node:fs"
 import * as path from "node:path"
 import process from "node:process"
-import {URL, fileURLToPath} from "node:url"
+import {URL} from "node:url"
 import es from "es-main"
 import {h} from "hastscript"
 import sade from "sade"
@@ -198,35 +198,13 @@ export async function readExample(u) {
 }
 
 /**
- * @param {...Child} children
- * @returns {Root}
- */
-export function r(...children) {
-  return h(null, ...children)
-}
-
-/**
- * @param {string} c
- * @returns {(t: string) => Element}
- */
-export function w(c) {
-  /**
-   * @param {string} t
-   * @returns {Element}
-   */
-  return function (t) {
-    return h("span", {style: `color:${c}`}, t)
-  }
-}
-
-/**
  * @returns {Promise<void>}
  */
 async function test() {
   /** @type {Record<string, Record<string, [string, string]>>} */
   let t = {}
 
-  let d = fixturesDir()
+  let d = "fixtures"
   let a = await readdir(d)
 
   for (let f of a) {
@@ -306,16 +284,12 @@ async function test() {
 
         try {
           let c = await readFile(i, "utf8")
-          let x = h.codeToHast(c, {
-            lang: s.vscode.scope,
-            theme: et.name,
-            transformers: [transformer()]
-          })
-          let a = simplify(ct, x)
+          let r = highlight(h, et, s, c)
+          let a = simplify(ct, r)
 
-          let {f} = await import(o)
-          let y = f(ct)
-          let e = simplify(ct, y)
+          c = await readFile(o, "utf8")
+          r = evaluate(ct, c)
+          let e = simplify(ct, r)
 
           is(a, e)
         } catch (e) {
@@ -331,129 +305,174 @@ async function test() {
 }
 
 /**
- * @returns {ShikiTransformer}
- */
-function transformer() {
-  return {root}
-}
-
-/**
- * @param {Root} r
+ * @param {Awaited<ReturnType<typeof createHighlighter>>} h
+ * @param {ex.EditorTheme} t
+ * @param {ex.Syntax} s
+ * @param {string} c
  * @returns {Root}
  */
-function root(r) {
-  // <></>
-  let [rc] = r.children
-  if (rc.type !== "element") {
+function highlight(h, t, s, c) {
+  return h.codeToHast(c, {
+    lang: s.vscode.scope,
+    theme: t.name,
+    transformers: [transformer()]
+  })
+
+  /**
+   * @returns {ShikiTransformer}
+   */
+  function transformer() {
+    return {root}
+  }
+
+  /**
+   * @param {Root} r
+   * @returns {Root}
+   */
+  function root(r) {
+    // <></>
+    let [rc] = r.children
+    if (rc.type !== "element") {
+      return r
+    }
+    let p = pre(rc)
+    r.children = p.children
     return r
   }
-  let p = pre(rc)
-  r.children = p.children
-  return r
-}
 
-/**
- * @param {Element} e
- * @returns {Element}
- */
-function pre(e) {
-  // <pre></pre>
-  let [ec] = e.children
-  if (ec.type !== "element") {
-    return e
-  }
-  let c = code(ec)
-  e.children = c.children
-  return e
-}
-
-/**
- * @param {Element} e
- * @returns {Element}
- */
-function code(e) {
-  // <code></code>
-  /** @type {ElementContent[]} */
-  let a = []
-  for (let ec of e.children) {
-    if (ec.type !== "element") {
-      continue
-    }
-    let e = line(ec)
-    a.push(...e.children)
-    continue
-  }
-  e.children = a
-  return e
-}
-
-/**
- * @param {Element} e
- * @returns {Element}
- */
-function line(e) {
-  // <span class="line"></span>
-  if (e.properties.class !== "line") {
-    return e
-  }
-
-  /** @type {Element[]} */
-  let a = []
-
-  let j = 0
-
-  for (let i = 0; i < e.children.length; i += 1) {
-    let ec = e.children[i]
-    if (ec.type !== "element") {
-      continue
-    }
-
-    let [c] = ec.children
-    if (c.type !== "text") {
-      continue
-    }
-
-    j = i
-    a.push(ec)
-    break
-  }
-
-  for (let i = j + 1; i < e.children.length; i += 1) {
-    let y = e.children[i]
-    if (y.type !== "element") {
-      continue
-    }
-
-    let [d] = y.children
-    if (d.type !== "text") {
-      continue
-    }
-
-    let x = a[a.length - 1]
-    if (x.properties.style !== y.properties.style) {
-      a.push(y)
-      continue
-    }
-
-    let [c] = x.children
-    if (c.type !== "text") {
-      continue
-    }
-
-    c.value += d.value
-  }
-
-  for (let e of a) {
+  /**
+   * @param {Element} e
+   * @returns {Element}
+   */
+  function pre(e) {
+    // <pre></pre>
     let [ec] = e.children
-    if (ec.type !== "text") {
-      continue
+    if (ec.type !== "element") {
+      return e
     }
-    ec.value = ec.value.trim()
+    let c = code(ec)
+    e.children = c.children
+    return e
   }
 
-  e.children = a
+  /**
+   * @param {Element} e
+   * @returns {Element}
+   */
+  function code(e) {
+    // <code></code>
+    /** @type {ElementContent[]} */
+    let a = []
+    for (let ec of e.children) {
+      if (ec.type !== "element") {
+        continue
+      }
+      let e = line(ec)
+      a.push(...e.children)
+      continue
+    }
+    e.children = a
+    return e
+  }
 
-  return e
+  /**
+   * @param {Element} e
+   * @returns {Element}
+   */
+  function line(e) {
+    // <span class="line"></span>
+    if (e.properties.class !== "line") {
+      return e
+    }
+
+    /** @type {Element[]} */
+    let a = []
+
+    let j = 0
+
+    for (let i = 0; i < e.children.length; i += 1) {
+      let ec = e.children[i]
+      if (ec.type !== "element") {
+        continue
+      }
+
+      let [c] = ec.children
+      if (c.type !== "text") {
+        continue
+      }
+
+      j = i
+      a.push(ec)
+      break
+    }
+
+    for (let i = j + 1; i < e.children.length; i += 1) {
+      let y = e.children[i]
+      if (y.type !== "element") {
+        continue
+      }
+
+      let [d] = y.children
+      if (d.type !== "text") {
+        continue
+      }
+
+      let x = a[a.length - 1]
+      if (x.properties.style !== y.properties.style) {
+        a.push(y)
+        continue
+      }
+
+      let [c] = x.children
+      if (c.type !== "text") {
+        continue
+      }
+
+      c.value += d.value
+    }
+
+    for (let e of a) {
+      let [ec] = e.children
+      if (ec.type !== "text") {
+        continue
+      }
+      ec.value = ec.value.trim()
+    }
+
+    e.children = a
+
+    return e
+  }
+}
+
+/**
+ * @param {ex.ColorPalette} cp
+ * @param {string} c
+ * @returns {Root}
+ */
+function evaluate(cp, c) {
+  let r = h(null)
+
+  let c0 = w.bind(undefined, cp.comment[0])
+  let p0 = w.bind(undefined, cp.plain[0])
+  let p1 = w.bind(undefined, cp.plain[1])
+  let s0 = w.bind(undefined, cp.string[0])
+  let s1 = w.bind(undefined, cp.string[1])
+
+  let f = new Function("c0", "p0", "p1", "s0", "s1", c)
+  f(c0, p0, p1, s0, s1)
+
+  return r
+
+  /**
+   * @param {string} c
+   * @param {string} t
+   * @returns {void}
+   */
+  function w(c, t) {
+    let e = h("span", {style: `color:${c}`}, t)
+    r.children.push(e)
+  }
 }
 
 /**
@@ -496,21 +515,6 @@ function simplify(ct, r) {
   t = t.slice(0, -1)
 
   return t
-}
-
-/**
- * @returns {string}
- */
-function fixturesDir() {
-  return path.join(rootDir(), "fixtures")
-}
-
-/**
- * @returns {string}
- */
-function rootDir() {
-  let u = new URL(".", import.meta.url)
-  return fileURLToPath(u)
 }
 
 if (es(import.meta)) {
