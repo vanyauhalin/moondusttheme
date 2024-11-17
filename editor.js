@@ -12,9 +12,7 @@ const red = "#FF0000"
 /**
  * @typedef {Object} EditorTheme
  * @property {string} background
- * @property {string} foreground
  * @property {S10} neutral
- * @property {S10} primary
  * @property {S10} accent
  * @property {S1} error
  * @property {S1} info
@@ -39,9 +37,8 @@ export function light() {
   /** @type {EditorTheme} */
   let et = {
     background: "#FFFFFF",
-    foreground: cs.gray[7],
     neutral: cs.gray,
-    primary: cs.blue,
+    accent: cs.blue,
     error: ["#B35900"],
     info: [cs.gray[4]],
     warning: ["#7D4E00"],
@@ -67,9 +64,7 @@ export function dark() {
   /** @type {EditorTheme} */
   let et = {
     background: "#161A1D",
-    foreground: cs.gray[1],
     neutral: cs.gray,
-    // primary: cs.slate,
     accent: cs.blue,
     error: [""],
     info: [""],
@@ -94,26 +89,26 @@ export function dark() {
 function lightColors(et) {
   return {
     // Base colors
-    "focusBorder": et.primary[3],
+    "focusBorder": et.accent[3],
     "foreground": et.neutral[7],
     "widget.border": et.neutral[2],
-    "selection.background": et.primary[2],
+    "selection.background": et.accent[2],
     "descriptionForeground": et.neutral[5],
     "errorForeground": et.error[0],
 
     // Text colors
-    "textLink.activeForeground": et.primary[5],
-    "textLink.foreground": et.primary[5],
+    "textLink.activeForeground": et.accent[5],
+    "textLink.foreground": et.accent[5],
 
     // Action colors
     "toolbar.hoverBackground": et.neutral[1],
     "toolbar.activeBackground": et.neutral[1],
 
     // Button control
-    "button.background": et.primary[5],
+    "button.background": et.accent[5],
     "button.foreground": wh,
     "button.separator": Color(wh).alpha(0.2).hexa(),
-    "button.hoverBackground": et.primary[6],
+    "button.hoverBackground": et.accent[6],
     "button.secondaryForeground": wh,
     "button.secondaryBackground": et.neutral[6],
     "button.secondaryHoverBackground": et.neutral[8],
@@ -123,12 +118,12 @@ function lightColors(et) {
     "scrollbarSlider.background": Color(et.neutral[3]).alpha(0.4).hexa(),
 
     // Lists and trees
-    "list.activeSelectionBackground": et.primary[5],
+    "list.activeSelectionBackground": et.accent[5],
     "list.activeSelectionForeground": wh,
-    "list.focusHighlightForeground": et.primary[2],
-    "list.focusOutline": et.primary[3],
-    "list.focusAndSelectionOutline": et.primary[3],
-    "list.highlightForeground": et.primary[5],
+    "list.focusHighlightForeground": et.accent[2],
+    "list.focusOutline": et.accent[3],
+    "list.focusAndSelectionOutline": et.accent[3],
+    "list.highlightForeground": et.accent[5],
     "list.inactiveSelectionBackground": et.neutral[1],
 
     // Activity Bar
@@ -146,8 +141,8 @@ function lightColors(et) {
     "editorLineNumber.foreground": et.neutral[4],
     "editorCursor.background": wh,
     "editorCursor.foreground": et.neutral[5],
-    "editor.selectionBackground": et.primary[2],
-    "editor.selectionHighlightBackground": et.primary[1],
+    "editor.selectionBackground": et.accent[2],
+    "editor.selectionHighlightBackground": et.accent[1],
     "editor.lineHighlightBackground": Color(et.neutral[1]).alpha(0.4).hexa(),
     "editorWhitespace.foreground": et.neutral[2],
     "editorRuler.foreground": et.neutral[0],
@@ -170,7 +165,7 @@ function lightColors(et) {
     "peekView.border": et.neutral[3],
     "peekViewEditor.background": Color(et.neutral[0]).alpha(0.4).hexa(),
     "peekViewEditorGutter.background": Color(et.neutral[0]).alpha(0.4).hexa(),
-    "peekViewResult.selectionBackground": et.primary[5],
+    "peekViewResult.selectionBackground": et.accent[5],
     "peekViewResult.selectionForeground": wh,
 
     // Panel colors
