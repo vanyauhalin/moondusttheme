@@ -25,6 +25,7 @@
   },
   "scripts": {
     "build": "node makefile.js build",
+    "clear": "clear-package-json package.json --output package.json",
     "pull": "node makefile.js pull",
     "test": "node makefile.js test"
   },
@@ -40,6 +41,7 @@
   "devDependencies": {
     "@types/hast": "^3.0.4",
     "@types/node": "^20.12.7",
+    "clean-publish": "^5.1.0",
     "color": "^4.2.3",
     "hastscript": "^9.0.0",
     "sade": "^1.8.1",
