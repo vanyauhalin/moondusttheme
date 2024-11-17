@@ -1716,16 +1716,18 @@ function darkColors(et) {
  */
 function compute(r) {
   /** @type {Record<string, string>} */
-  let o = {}
+  let t = {}
 
-  for (let [k, v] of Object.entries(r)) {
+  for (let k of Object.keys(r).sort()) {
+    let v = r[k]
+
     while (true) {
       if (!v) {
         throw new Error(`Could not compute '${k}'`)
       }
 
       if (v.startsWith("#")) {
-        o[k] = v
+        t[k] = v
         break
       }
 
@@ -1733,5 +1735,5 @@ function compute(r) {
     }
   }
 
-  return o
+  return t
 }

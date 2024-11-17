@@ -1800,6 +1800,8 @@ function compute(sa) {
     f.tokenColors.push(...x.tokenColors)
   }
 
+  f.tokenColors = f.tokenColors.sort()
+
   return f
 }
 
