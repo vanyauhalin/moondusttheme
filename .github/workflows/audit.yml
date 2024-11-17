@@ -18,5 +18,8 @@ jobs:
     - name: Install Extension Dependencies
       run: pnpm install --frozen-lockfile
 
+    - name: Pull Extension Dependencies
+      run: pnpm pull
+
     - name: Run Extension Tests
       run: pnpm test
