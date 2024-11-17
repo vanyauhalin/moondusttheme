@@ -4,7 +4,9 @@ permissions:
   contents: write
 
 on:
-  workflow_dispatch:
+  push:
+    tags:
+    - v*
 
 jobs:
   release:
@@ -60,6 +62,10 @@ jobs:
       env:
         GH_TOKEN: ${{github.token}}
       run: |
-        v=$(jq --raw-output ".version" package.json)
-        gh release create "v${v}" --generate-notes
-        gh release upload "v${v}" moondusttheme.vsix
+        gh release create \
+          --notes-from-tag \
+          --title "${{github.ref_name}}" \
+          "${{github.ref_name}}"
+        gh release upload \
+          "${{github.ref_name}}" \
+          moondusttheme.vsix
