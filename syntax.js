@@ -1776,7 +1776,6 @@ function compute(sa) {
     }
 
     /** @type {SyntaxFragment} */
-    // let x = {id: s.id, tokenColors: []}
     let x = {tokenColors: []}
 
     if (s.colors) {
@@ -1787,11 +1786,9 @@ function compute(sa) {
         throw new Error(`Syntax '${s.extends.id}' is not found`)
       }
 
-      // x.extends = y.id
       x.tokenColors = extend(y.tokenColors, s.extends.replace)
     }
 
-    // t[x.id] = x
     t[s.id] = x
   }
 
@@ -1804,16 +1801,6 @@ function compute(sa) {
   }
 
   return f
-
-  // /** @type {SyntaxFragment[]} */
-  // let a = []
-
-  // for (let k of Object.keys(t).sort()) {
-  //   let f = t[k]
-  //   a.push(f)
-  // }
-
-  // return a
 }
 
 /**
