@@ -33,7 +33,7 @@
   "files": [
     "dist/dark.json",
     "dist/light.json",
-    "docs/icon.png",
+    "icon.png",
     "LICENSE",
     "package.json",
     "README.md"
@@ -72,5 +72,5 @@
       }
     ]
   },
-  "icon": "docs/icon.png"
+  "icon": "icon.png"
 }
