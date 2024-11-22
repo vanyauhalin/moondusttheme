@@ -14,7 +14,11 @@ import {test} from "uvu"
 import * as grammar from "./grammar.js"
 import * as theme from "./main.js"
 
-export async function run() {
+/**
+ * @param {string[]} ta
+ * @returns {Promise<void>}
+ */
+export async function run(ta) {
   let ga = await grammar.list()
   let ah = [theme.light(), theme.dark()]
   let ac = configs()
@@ -27,6 +31,10 @@ export async function run() {
     let st = restore(th)
 
     for (let [id, s, n, a, e] of at) {
+      if (ta.length !== 0 && !ta.includes(id)) {
+        continue
+      }
+
       let t = test
 
       if (!e) {

@@ -23,7 +23,11 @@ function main() {
     .command("pull")
     .action(grammar.pull)
     .command("test")
-    .action(test.run)
+    .describe("Run tests for all syntaxes or a specific one.")
+    .example("test")
+    .example("test html")
+    .example("test css js")
+    .action((p) => test.run(p._))
     .parse(process.argv)
 }
 
