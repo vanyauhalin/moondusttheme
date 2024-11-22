@@ -13,25 +13,30 @@ import * as test from "./test.js"
 function main() {
   sade("makefile.js")
     .command("build")
+    .describe("Build themes.")
     .action(build)
+
     .command("grep")
     .describe("List TextMate scopes for all syntaxes or a specific one.")
     .example("grep")
     .example("grep html")
     .example("grep css js")
     .action((p) => grammar.grep(p._))
+
     .command("pull")
     .describe("Download TextMate grammars for all syntaxes or a specific one.")
     .example("pull")
     .example("pull html")
     .example("pull css js")
     .action((p) => grammar.pull(p._))
+
     .command("test")
     .describe("Run tests for all syntaxes or a specific one.")
     .example("test")
     .example("test html")
     .example("test css js")
     .action((p) => test.run(p._))
+
     .parse(process.argv)
 }
 
