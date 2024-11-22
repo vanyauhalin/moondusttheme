@@ -7,6 +7,78 @@ import {URL} from "node:url"
  */
 
 /**
+ * @param {string[]} ta
+ * @returns {Promise<void>}
+ */
+export async function grep(ta) {
+  /** @type {string[]} */
+  let a = [...ta]
+
+  if (a.length === 0) {
+    for (let c of Object.values(configs())) {
+      a.push(c.id)
+    }
+  }
+
+  /** @type {Promise<Grammar>[]} */
+  let b = []
+
+  for (const id of a) {
+    for (let c of Object.values(configs())) {
+      if (c.id === id) {
+        for (let f of c.files) {
+          let p = readGrammar(f)
+          b.push(p)
+        }
+      }
+    }
+  }
+
+  /** @type {string[]} */
+  let c = []
+
+  for (let g of await Promise.all(b)) {
+    collect(g)
+  }
+
+  for (let n of [...new Set(c)].sort()) {
+    console.log(n)
+  }
+
+  return
+
+  /**
+   * @param {unknown} v
+   * @returns {void}
+   */
+  function collect(v) {
+    if (Array.isArray(v)) {
+      for (let e of v) {
+        collect(e)
+      }
+
+      return
+    }
+
+    if (typeof v === "object" && v !== null && !Array.isArray(v)) {
+      for (let k in v) {
+        // @ts-ignore
+        let u = v[k]
+
+        if (k === "name" && typeof u === "string") {
+          c.push(u)
+          continue
+        }
+
+        collect(u)
+      }
+
+      return
+    }
+  }
+}
+
+/**
  * @returns {Promise<void>}
  */
 export async function pull() {

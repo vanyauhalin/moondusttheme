@@ -26,6 +26,7 @@
   "scripts": {
     "build": "node makefile.js build",
     "clear": "clear-package-json package.json --output package.json",
+    "grep": "node makefile.js grep",
     "pull": "node makefile.js pull",
     "test": "node makefile.js test"
   },
