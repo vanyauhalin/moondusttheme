@@ -79,20 +79,34 @@ export async function grep(ta) {
 }
 
 /**
+ * @param {string[]} ta
  * @returns {Promise<void>}
  */
-export async function pull() {
-  /** @type {Promise<void>[]} */
-  let a = []
+export async function pull(ta) {
+  /** @type {string[]} */
+  let a = [...ta]
 
-  for (let s of Object.values(configs())) {
-    for (let f of s.files) {
-      let g = pullGrammar(f)
-      a.push(g)
+  if (a.length === 0) {
+    for (let c of Object.values(configs())) {
+      a.push(c.id)
     }
   }
 
-  await Promise.all(a)
+  /** @type {Promise<void>[]} */
+  let b = []
+
+  for (const id of a) {
+    for (let c of Object.values(configs())) {
+      if (c.id === id) {
+        for (let f of c.files) {
+          let g = pullGrammar(f)
+          b.push(g)
+        }
+      }
+    }
+  }
+
+  await Promise.all(b)
 }
 
 /**
