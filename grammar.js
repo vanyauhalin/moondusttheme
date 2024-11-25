@@ -23,7 +23,7 @@ export async function grep(ta) {
   /** @type {Promise<Grammar>[]} */
   let b = []
 
-  for (const id of a) {
+  for (let id of a) {
     for (let c of Object.values(configs())) {
       if (c.id === id) {
         for (let f of c.files) {
@@ -95,7 +95,7 @@ export async function pull(ta) {
   /** @type {Promise<void>[]} */
   let b = []
 
-  for (const id of a) {
+  for (let id of a) {
     for (let c of Object.values(configs())) {
       if (c.id === id) {
         for (let f of c.files) {
