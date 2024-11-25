@@ -1,6 +1,4 @@
-import {mkdir, readFile, writeFile} from "node:fs/promises"
-import * as path from "node:path"
-import {URL} from "node:url"
+import * as vendor from "./vendor.js"
 
 /**
  * @typedef {any} Grammar
@@ -296,23 +294,7 @@ function configs() {
  * @returns {Promise<void>}
  */
 async function pullGrammar(u) {
-  let [o, p, r, f] = statRaw(u)
-  let g = await fetchGrammar(u)
-
-  let d = path.join("vendor", o, p, r)
-  await mkdir(d, {recursive: true})
-
-  f = path.join(d, f)
-  let c = JSON.stringify(g, null, 2)
-  await writeFile(f, c)
-}
-
-/**
- * @param {string} u
- * @returns {Promise<Grammar>}
- */
-async function fetchGrammar(u) {
-  let r = await fetchRaw(u)
+  let r = await vendor.fetch(u)
 
   let g = await r.json()
   if (g === undefined) {
@@ -326,16 +308,8 @@ async function fetchGrammar(u) {
 
   g.name = n
 
-  return g
-}
-
-/**
- * @param {string} u
- * @returns {Promise<Response>}
- */
-async function fetchRaw(u) {
-  u = u.replace("/blob/", "/raw/")
-  return await fetch(u, {redirect: "follow"})
+  let c = JSON.stringify(g, null, 2)
+  await vendor.write(u, c)
 }
 
 /**
@@ -343,18 +317,6 @@ async function fetchRaw(u) {
  * @returns {Promise<Grammar>}
  */
 async function readGrammar(u) {
-  let [o, p, r, f] = statRaw(u)
-  f = path.join("vendor", o, p, r, f)
-  let c = await readFile(f, "utf8")
-  return JSON.parse(c)
-}
-
-/**
- * @param {string} u
- * @returns {[string, string, string, string]}
- */
-function statRaw(u) {
-  let o = new URL(".", u)
-  let a = o.pathname.split("/")
-  return [a[1], a[2], a.slice(4, a.length - 2).join("/"), a[a.length - 2]]
+  let s = await vendor.read(u)
+  return JSON.parse(s)
 }

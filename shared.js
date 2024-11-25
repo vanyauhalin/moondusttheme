@@ -7,6 +7,10 @@
  */
 
 /**
+ * @typedef {[string, string, string, string]} S4
+ */
+
+/**
  * @typedef {[string, string]} S2
  */
 
