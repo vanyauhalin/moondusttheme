@@ -1,7 +1,7 @@
 /**
  * @import {Element, ElementContent, Root} from "hast"
  * @import {ShikiTransformer} from "shiki"
- * @import {S5} from "./shared.js"
+ * @import {S4} from "./shared.js"
  */
 
 import {readFile, readdir} from "node:fs/promises"
@@ -23,14 +23,15 @@ export async function run(ta) {
   let ah = [theme.light(), theme.dark()]
   let ac = configs()
   let at = await setup(ac)
-
-  let hp = {langs: ga, themes: structuredClone(ah)}
-  let ht = await createHighlighter(hp)
+  let ht = await createHighlighter({
+    langs: ga,
+    themes: structuredClone(ah),
+  })
 
   for (let th of ah) {
     let st = syntax.theme(th)
 
-    for (let [id, s, n, a, e] of at) {
+    for (let [id, n, a, e] of at) {
       if (ta.length !== 0 && !ta.includes(id)) {
         continue
       }
@@ -44,8 +45,11 @@ export async function run(ta) {
 
       t(`${id} #${n} (${th.name})`, async () => {
         let ac = await readFile(a, "utf8")
-        let ap = {lang: s, theme: th.name, transformers: [transformer()]}
-        let ar = ht.codeToHast(ac, ap)
+        let ar = ht.codeToHast(ac, {
+          lang: grammar.scope(id),
+          theme: th.name,
+          transformers: [transformer()],
+        })
         let as = simplify(st, ar)
 
         let ec = await readFile(e, "utf8")
@@ -64,7 +68,6 @@ export async function run(ta) {
  * @typedef {Object} TestConfig
  * @property {string} id
  * @property {string} [extends]
- * @property {string} scope
  */
 
 /**
@@ -74,115 +77,90 @@ function configs() {
   return [
     {
       id: "c",
-      scope: "source.c",
     },
     {
       id: "css",
-      scope: "source.css"
     },
     {
       id: "dockerfile",
-      scope: "source.dockerfile",
     },
     {
       id: "fish",
-      scope: "source.fish",
     },
     {
       id: "go",
-      scope: "source.go",
     },
     {
       id: "go.mod",
-      scope: "go.mod",
     },
     {
       id: "go.sum",
-      scope: "go.sum",
     },
     {
       id: "html",
-      scope: "text.html.basic",
     },
     {
       id: "ini",
-      scope: "source.ini",
     },
     {
       id: "js",
-      scope: "source.js",
     },
     {
       id: "json",
-      scope: "source.json",
     },
     {
       id: "jsonc",
       extends: "json",
-      scope: "source.json.comments",
     },
     {
       id: "jsonl",
       extends: "json",
-      scope: "source.json.lines",
     },
     {
       id: "jsx",
       extends: "js",
-      scope: "source.js.jsx",
     },
     {
       id: "makefile",
-      scope: "source.makefile",
     },
     {
       id: "py",
-      scope: "source.python",
     },
     {
       id: "rb",
-      scope: "source.ruby",
     },
     {
       id: "rs",
-      scope: "source.rust",
     },
     {
       id: "sh",
-      scope: "source.shell",
     },
     {
       id: "sql",
-      scope: "source.sql",
     },
     {
       id: "swift",
-      scope: "source.swift",
     },
     {
       id: "toml",
-      scope: "source.toml",
     },
     {
       id: "ts",
       extends: "js",
-      scope: "source.ts",
     },
     {
       id: "tsx",
       extends: "jsx",
-      scope: "source.tsx",
     },
     {
       id: "yaml",
-      scope: "source.yaml",
     },
   ]
 }
 
 /**
  * @param {TestConfig[]} ac
- * @returns {Promise<S5[]>}
+ * @returns {Promise<S4[]>}
  */
 async function setup(ac) {
   /** @type {Record<string, Record<string, [string, string]>>} */
@@ -249,25 +227,12 @@ async function setup(ac) {
     }
   }
 
-  /** @type {S5[]} */
+  /** @type {S4[]} */
   let r = []
 
   for (let [id, o] of Object.entries(t)) {
-    let s = ""
-
-    for (let c of ac) {
-      if (c.id === id) {
-        s = c.scope
-        break
-      }
-    }
-
-    if (!s) {
-      throw new Error(`No scope for '${id}'`)
-    }
-
     for (let [n, [a, e]] of Object.entries(o)) {
-      r.push([id, s, n, a, e])
+      r.push([id, n, a, e])
     }
   }
 

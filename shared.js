@@ -3,10 +3,6 @@
  */
 
 /**
- * @typedef {[string, string, string, string, string]} S5
- */
-
-/**
  * @typedef {[string, string, string, string]} S4
  */
 
