@@ -2,7 +2,6 @@
  * @import {Element, ElementContent, Root} from "hast"
  * @import {ShikiTransformer} from "shiki"
  * @import {S5} from "./shared.js"
- * @import {SyntaxTheme} from "./syntax.js"
  */
 
 import {readFile, readdir} from "node:fs/promises"
@@ -13,6 +12,7 @@ import {is} from "uvu/assert"
 import {test} from "uvu"
 import * as grammar from "./grammar.js"
 import * as theme from "./main.js"
+import * as syntax from "./syntax.js"
 
 /**
  * @param {string[]} ta
@@ -28,7 +28,7 @@ export async function run(ta) {
   let ht = await createHighlighter(hp)
 
   for (let th of ah) {
-    let st = restore(th)
+    let st = syntax.theme(th)
 
     for (let [id, s, n, a, e] of at) {
       if (ta.length !== 0 && !ta.includes(id)) {
@@ -178,90 +178,6 @@ function configs() {
       scope: "source.yaml",
     },
   ]
-}
-
-/**
- * @param {theme.Theme} th
- * @returns {SyntaxTheme}
- */
-function restore(th) {
-  /** @type {SyntaxTheme} */
-  let st = {
-    comment: [""],
-    plain: ["", ""],
-    string: ["", ""],
-  }
-
-  for (let tc of th.tokenColors) {
-    let c0 = ""
-    let p0 = ""
-    let p1 = ""
-    let s0 = ""
-    let s1 = ""
-
-    for (let s of tc.scope) {
-      if (s === "comment.block.js") {
-        c0 = tc.settings.foreground
-        continue
-      }
-
-      if (s === "keyword.control.js") {
-        p0 = tc.settings.foreground
-        continue
-      }
-
-      if (s === "source.js") {
-        p1 = tc.settings.foreground
-        continue
-      }
-
-      if (s === "punctuation.definition.string.begin.js") {
-        s0 = tc.settings.foreground
-        continue
-      }
-
-      if (s === "string.quoted.double.js") {
-        s1 = tc.settings.foreground
-        continue
-      }
-    }
-
-    if (c0) {
-      st.comment[0] = c0
-    }
-
-    if (p0) {
-      st.plain[0] = p0
-    }
-
-    if (p1) {
-      st.plain[1] = p1
-    }
-
-    if (s0) {
-      st.string[0] = s0
-    }
-
-    if (s1) {
-      st.string[1] = s1
-    }
-
-    if (c0 && p0 && p1 && s0 && s1) {
-      break
-    }
-  }
-
-  let c0 = st.comment[0]
-  let p0 = st.plain[0]
-  let p1 = st.plain[1]
-  let s0 = st.string[0]
-  let s1 = st.string[1]
-
-  if (!c0 || !p0 || !p1 || !s0 || !s1) {
-    throw new Error("Could not restore the syntax theme")
-  }
-
-  return st
 }
 
 /**
@@ -487,7 +403,7 @@ function transformer() {
 }
 
 /**
- * @param {SyntaxTheme} st
+ * @param {syntax.SyntaxTheme} st
  * @param {string} c
  * @returns {Root}
  */
@@ -517,7 +433,7 @@ function evaluate(st, c) {
 }
 
 /**
- * @param {SyntaxTheme} st
+ * @param {syntax.SyntaxTheme} st
  * @param {Root} r
  * @returns {string}
  */
