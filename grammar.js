@@ -43,8 +43,6 @@ export async function grep(ta) {
     console.log(n)
   }
 
-  return
-
   /**
    * @param {unknown} v
    * @returns {void}
