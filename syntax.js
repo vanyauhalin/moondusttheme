@@ -53,9 +53,9 @@ export function dark() {
 
   /** @type {SyntaxTheme} */
   let st = {
-    comment: [cs.gray[4]],
-    plain: [cs.gray[5], cs.gray[7]],
-    string: [cs.blue[5], cs.blue[7]],
+    comment: [cs.gray[3]],
+    plain: [cs.gray[2], cs.gray[1]],
+    string: [cs.slate[2], cs.slate[1]],
   }
 
   let ac = configs(st)
