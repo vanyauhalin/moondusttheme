@@ -2,31 +2,17 @@
 
 Handcrafted theme for those who have not found syntax highlighting useful for themself.
 
-<br>
+<p align="center">
+  <img alt="Showcase of Near Side of the Moon" src="https://raw.githubusercontent.com/vanyauhalin/moondusttheme/refs/heads/main/light.webp">
+  Showcase of Near Side of the Moon<br>
+  Source code of <a href="https://github.com/lukeed/uvu/blob/v0.5.6/src/assert.js/">uvu</a> by <a href="https://github.com/lukeed/">Luke Edwards</a>
+</p>
 
-<figure>
-  <img alt="Showcase of Near Side of the Moon" src="https://github.com/vanyauhalin/moondusttheme/blob/main//light.webp">
-  <figcaption align="center">
-
-<small>Showcase of Near Side of the Moon</small> \
-<small>Source code of [uvu] by [Luke Edwards]</small>
-
-  </figcaption>
-</figure>
-
-<br>
-
-<figure>
-  <img alt="Showcase of Far Side of the Moon" src="https://github.com/vanyauhalin/moondusttheme/blob/main//dark.webp">
-  <figcaption align="center">
-
-<small>Showcase of Far Side of the Moon</small> \
-<small>Source code of [Kong] by [Alec Thomas]</small>
-
-  </figcaption>
-</figure>
-
-<br>
+<p align="center">
+  <img alt="Showcase of Near Side of the Moon" src="https://raw.githubusercontent.com/vanyauhalin/moondusttheme/refs/heads/main/dark.webp">
+  Showcase of Far Side of the Moon<br>
+  Source code of <a href="https://github.com/alecthomas/kong/blob/v0.9.0/kong.go/">Kong</a> by <a href="https://github.com/alecthomas/">Alec Thomas</a>
+</p>
 
 Please visit [moondustthe.me] to view more examples of syntax highlighting.
 
@@ -51,12 +37,6 @@ A special shout-out goes to the entire community that focuses on creating minima
 <!-- Footnotes -->
 
 [moondustthe.me]: https://moondustthe.me/
-
-[uvu]: https://github.com/lukeed/uvu/blob/v0.5.6/src/assert.js/
-[Luke Edwards]: https://github.com/lukeed/
-
-[Kong]: https://github.com/alecthomas/kong/blob/v0.9.0/kong.go/
-[Alec Thomas]: https://github.com/alecthomas/
 
 [A case against syntax highlighting]: https://www.linusakesson.net/programming/syntaxhighlighting/
 [Syntax highlighting is a waste of an information channel]: https://buttondown.email/hillelwayne/archive/syntax-highlighting-is-a-waste-of-an-information/
