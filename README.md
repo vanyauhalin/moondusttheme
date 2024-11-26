@@ -2,17 +2,9 @@
 
 Handcrafted theme for those who have not found syntax highlighting useful for themself.
 
-<p align="center">
-  <img alt="Showcase of Near Side of the Moon" src="https://raw.githubusercontent.com/vanyauhalin/moondusttheme/refs/heads/main/light.webp">
-  Showcase of Near Side of the Moon<br>
-  Source code of <a href="https://github.com/lukeed/uvu/blob/v0.5.6/src/assert.js/">uvu</a> by <a href="https://github.com/lukeed/">Luke Edwards</a>
-</p>
+![Showcase of Near Side of the Moon](https://raw.githubusercontent.com/vanyauhalin/moondusttheme/refs/heads/main/light.webp)
 
-<p align="center">
-  <img alt="Showcase of Near Side of the Moon" src="https://raw.githubusercontent.com/vanyauhalin/moondusttheme/refs/heads/main/dark.webp">
-  Showcase of Far Side of the Moon<br>
-  Source code of <a href="https://github.com/alecthomas/kong/blob/v0.9.0/kong.go/">Kong</a> by <a href="https://github.com/alecthomas/">Alec Thomas</a>
-</p>
+![Showcase of Near Side of the Moon](https://raw.githubusercontent.com/vanyauhalin/moondusttheme/refs/heads/main/dark.webp)
 
 Please visit [moondustthe.me] to view more examples of syntax highlighting.
 
