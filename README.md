@@ -16,7 +16,7 @@ Moondust is crafted to reduce eye strain, allowing to focus on code. It challeng
 
 For a more in-depth discussion on the issues associated with the conventional approach to syntax highlighting, recommend reading the articles [A case against syntax highlighting] and [Syntax highlighting is a waste of an information channel].
 
-Moondust is tailored for each syntax individually. At present, it supports [CSS], [Dockerfile], [fish], [Go], [Go Module], [Go Sum], [HTML], [INI], [JavaScript], [JSON], [JSON with Comments], [JSON Lines], [JSX], [Makefile], [Ruby], [Rust], [Shell Script], [SQL], [Swift], [TOML], [TypeScript], [TSX], and [YAML].
+Moondust is tailored for each syntax individually. At present, it supports [CSS], [Dockerfile], [fish], [Go], [Go Module], [Go Sum], [HTML], [INI], [JavaScript], [JSON], [JSON with Comments], [JSON Lines], [JSX], [Makefile], [Python], [Ruby], [Rust], [Shell Script], [SQL], [Swift], [TOML], [TypeScript], [TSX], and [YAML].
 
 In the [initial phase], Moondust was primarily a modification of the [GitHub Theme]. I owe a great deal of gratitude to the Primer team for their work.
 
@@ -47,6 +47,7 @@ A special shout-out goes to the entire community that focuses on creating minima
 [JSON Lines]: https://moondustthe.me/#jsonl
 [JSX]: https://moondustthe.me/#jsx
 [Makefile]: https://moondustthe.me/#makefile
+[Python]: https://moondustthe.me/#py
 [Ruby]: https://moondustthe.me/#rb
 [Rust]: https://moondustthe.me/#rs
 [Shell Script]: https://moondustthe.me/#sh
