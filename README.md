@@ -6,7 +6,7 @@ Handcrafted theme for those who have not found syntax highlighting useful for th
 
 ![Showcase of Near Side of the Moon](https://raw.githubusercontent.com/vanyauhalin/moondusttheme/refs/heads/main/dark.webp)
 
-Please visit [moondustthe.me] to view more examples of syntax highlighting.
+Moondust is available on the [VSCode Marketplace], [Open VSX Registry], and [GitHub Releases]. Visit [moondustthe.me] to view more examples of syntax highlighting. Enjoy.
 
 ## About
 
@@ -27,6 +27,10 @@ A special shout-out goes to the entire community that focuses on creating minima
 [MIT] (c) [Ivan Uhalin]
 
 <!-- Footnotes -->
+
+[VSCode Marketplace]: https://marketplace.visualstudio.com/items?itemName=vanyauhalin.moondusttheme
+[Open VSX Registry]: https://open-vsx.org/extension/vanyauhalin/moondusttheme/
+[GitHub Releases]: https://github.com/vanyauhalin/moondusttheme/releases/
 
 [moondustthe.me]: https://moondustthe.me/
 
