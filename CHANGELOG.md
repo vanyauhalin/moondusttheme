@@ -4,7 +4,9 @@ This document records all notable changes to the project, following the [Keep a 
 
 ## [Unreleased]
 
-There are no noticeable changes in version [unreleased].
+### Added
+
+- Support syntax highlighting for the PHP syntax ([7b39b42]).
 
 ## [0.7.0] - 2024-11-02
 
@@ -112,6 +114,7 @@ There are no noticeable changes in version [0.1.0].
 [0.1.0]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.1.0/
 [0.0.1]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.0.1/
 
+[7b39b42]: https://github.com/vanyauhalin/moondusttheme/commit/7b39b42ff4a371d87423cd4b09453b251a78aaef/
 [5755a5d]: https://github.com/vanyauhalin/moondusttheme/commit/5755a5d0f74f30e81776658024ea9a2e196b159e/
 [7eb998e]: https://github.com/vanyauhalin/moondusttheme/commit/7eb998ed6dcbcae92fa97872d93d63c275b0dfba/
 [aaabc25]: https://github.com/vanyauhalin/moondusttheme/commit/aaabc256b52cf7bc9118a01790cf873f6f877bab/
