@@ -124,6 +124,9 @@ function configs() {
       id: "makefile",
     },
     {
+      id: "php",
+    },
+    {
       id: "py",
     },
     {

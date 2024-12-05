@@ -24,6 +24,8 @@
     "**/fixtures/json-*.js": "javascript",
     "**/fixtures/makefile-*": "makefile",
     "**/fixtures/makefile-*.js": "javascript",
+    "**/fixtures/php-*": "php",
+    "**/fixtures/php-*.js": "javascript",
     "**/fixtures/py-*": "python",
     "**/fixtures/py-*.js": "javascript",
     "**/fixtures/rb-*": "ruby",

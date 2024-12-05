@@ -255,6 +255,14 @@ function configs() {
       ],
     },
     {
+      id: "php",
+      scope: "text.html.php",
+      files: [
+        "https://github.com/microsoft/vscode/blob/1.95.3/extensions/php/syntaxes/html.tmLanguage.json/",
+        "https://github.com/microsoft/vscode/blob/1.95.3/extensions/php/syntaxes/php.tmLanguage.json/",
+      ],
+    },
+    {
       id: "py",
       scope: "source.python",
       files: [

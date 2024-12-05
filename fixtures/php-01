@@ -1,0 +1,9 @@
+<?php
+
+// PHP grammar has no rule for the colon after the label.
+a:
+
+// PHP grammar has no rule for quotes around the label in the nowdoc.
+<<<'EOD'
+s
+EOD

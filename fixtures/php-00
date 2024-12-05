@@ -1,0 +1,137 @@
+#!
+
+<?php
+
+// c
+# c
+/* c */
+
+include "s"
+include 's'
+include `s`
+
+;
+
+"s"
+'s'
+`s`
+
+"/s{5}/"
+'/s{5}/'
+
+<<<EOD
+s
+EOD
+
+<<<'EOD'
+s
+EOD
+
+true
+false
+
+0
+0.0
+0b0
+0x0
+0o0
+
+$a
+
+$a+$a
+$a+=$a
+$a>$a
+$a~$a
+$a++
+$a??$a
+$a->a
+...$a
+?$a:$a
+$a.$a
+
+&&
+
+[$a,$a]
+{$a=>$a}
+
+a:
+goto a
+
+continue
+declare
+default
+die
+do
+else
+elseif
+enddeclare
+endfor
+endforeach
+endif
+endswitch
+endwhile
+exit
+for
+foreach
+if
+return
+while
+yield
+yield from
+
+@$a
+
+use a as a;
+use a {
+	insteadof a;
+}
+
+if ($a instanceof a) {}
+
+switch ($a) {
+case $a:
+	break
+}
+
+try {
+	throw
+} catch () {
+} finally {}
+
+match () {
+	200 => $a,
+	default => $a
+}
+
+enum a {
+	case a
+}
+
+function a(?int $a, &$a, ...$a): never {}
+fn() => $a
+a()
+array(a)
+
+class a extends {}
+class a implements {}
+
+class a {
+	public $a
+}
+
+abstract class a {}
+final class a {}
+
+new a()
+
+$a::class
+
+trait a {}
+namespace a {}
+interface a {}
+
+clone $a
+print $a
+echo $a
+
+?>
