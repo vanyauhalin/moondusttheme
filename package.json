@@ -32,10 +32,10 @@
   },
   "type": "module",
   "files": [
+    "dist/moondusttheme-far-side-of-the-moon.json",
+    "dist/moondusttheme-near-side-of-the-moon.json",
     "icon.png",
     "LICENSE",
-    "moondusttheme-far-side-of-the-moon.json",
-    "moondusttheme-near-side-of-the-moon.json",
     "package.json",
     "README.md"
   ],
@@ -64,12 +64,12 @@
       {
         "label": "Moondust: Near Side of the Moon",
         "uiTheme": "vs",
-        "path": "./moondusttheme-near-side-of-the-moon.json"
+        "path": "./dist/moondusttheme-near-side-of-the-moon.json"
       },
       {
         "label": "Moondust: Far Side of the Moon",
         "uiTheme": "vs-dark",
-        "path": "./moondusttheme-far-side-of-the-moon.json"
+        "path": "./dist/moondusttheme-far-side-of-the-moon.json"
       }
     ]
   },

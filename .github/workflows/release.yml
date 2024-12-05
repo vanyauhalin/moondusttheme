@@ -68,5 +68,5 @@ jobs:
           "${{github.ref_name}}"
         gh release upload \
           "${{github.ref_name}}" \
-          moondusttheme-*.json \
+          dist/moondusttheme-*.json \
           moondusttheme.vsix
