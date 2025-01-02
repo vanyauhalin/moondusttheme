@@ -543,7 +543,7 @@ function sharedColors() {
     "editorBracketHighlight.foreground4": tr,
     "editorBracketHighlight.foreground5": tr,
     "editorBracketHighlight.foreground6": tr,
-    "editorBracketHighlight.unexpectedBracket.foreground": tr,
+    // "editorBracketHighlight.unexpectedBracket.foreground"
     "editorBracketPairGuide.activeBackground1": tr,
     "editorBracketPairGuide.activeBackground2": tr,
     "editorBracketPairGuide.activeBackground3": tr,
