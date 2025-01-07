@@ -46,7 +46,7 @@ Now, we are ready to move on.
 
 ## Development
 
-I would like to describe specific potential goals for contribution,but you are welcome to pursue other ideas; these are just suggestions.
+I would like to describe specific potential goals for contribution, but you are welcome to pursue other ideas; these are just suggestions.
 
 ### Support a New Syntax
 
