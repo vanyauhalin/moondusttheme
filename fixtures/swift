@@ -104,3 +104,6 @@ struct S: P {
 typealias T = T<[T: T], T>
 
 let a = {[weak self] in {}}
+
+let v: some V = _
+let v: any V = _
