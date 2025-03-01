@@ -2,8 +2,8 @@ import {mkdir, writeFile} from "node:fs/promises"
 import path from "node:path"
 import sade from "sade"
 import * as grammars from "./lib/grammars.js"
-import * as themes from "./lib/main.js"
 import * as test from "./lib/test.js"
+import * as themes from "./lib/themes.js"
 import pack from "./package.json" with {type: "json"}
 
 /**
