@@ -1,0 +1,8 @@
+# The grammar defines the user as a method, which is a bug.
+RUN \
+	user
+
+# There is no scope for backslash.
+RUN \
+	echo \
+	echo

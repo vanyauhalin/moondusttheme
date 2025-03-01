@@ -8,3 +8,10 @@ const of = ""
 // It is not a part of the core javascript grammar.
 // https://github.com/0x00000001A/es6-string-html/issues/51/
 /*css*/``
+
+// I would like to highlight the text inside JSX tags in the same way as it is
+// highlighted in regular HTML tags.
+<div>txt</div>
+
+// I would like to have a scope that includes everything after the as keyword.
+let a = a as number | Error | string
