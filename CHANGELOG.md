@@ -8,6 +8,10 @@ This document records all notable changes to the project, following the [Keep a 
 
 - Support syntax highlighting for the PHP syntax ([7b39b42]).
 
+### Changed
+
+- Synchronize themes by extracting shared links between tokens ([78ffc6f])
+
 ### Fixed
 
 - Remove the transparency of the unexpected bracket ([6aaabc9]).
@@ -118,6 +122,7 @@ There are no noticeable changes in version [0.1.0].
 [0.1.0]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.1.0/
 [0.0.1]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.0.1/
 
+[78ffc6f]: https://github.com/vanyauhalin/moondusttheme/commit/78ffc6ff4f4b9db1e98b9efd88039804f28285a7/
 [6aaabc9]: https://github.com/vanyauhalin/moondusttheme/commit/6aaabc9d17ec3aa7508b0d8eb190818eda10854d/
 [7b39b42]: https://github.com/vanyauhalin/moondusttheme/commit/7b39b42ff4a371d87423cd4b09453b251a78aaef/
 [5755a5d]: https://github.com/vanyauhalin/moondusttheme/commit/5755a5d0f74f30e81776658024ea9a2e196b159e/
