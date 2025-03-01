@@ -4,25 +4,30 @@ This document records all notable changes to the project, following the [Keep a 
 
 ## [Unreleased]
 
+<!-- There are no noticeable changes in version [unreleased]. -->
+
 ### Added
 
-- Support syntax highlighting for the PHP syntax ([7b39b42]).
+- Support the PHP syntax ([7b39b42]).
+- Support highlighting `some` and `any` keywords in the Swift syntax ([9b35127]).
 
 ### Changed
 
-- Synchronize themes by extracting shared links between tokens ([78ffc6f])
+- Synchronize themes by extracting shared links between tokens ([78ffc6f]).
+- Update grammars for C, CSS, Dockerfile, Go, `go.mod`, `go.sum`, HTML, INI, JavaScript, JSON, JSON with Comments, JSON Lines, JSX, Makefile, PHP, Python, Ruby, Rust, Shell, SQL, Swift, TOML, TypeScript, TSX, and YAML syntaxes ([162c920...c42dd98]).
 
 ### Fixed
 
 - Remove the transparency of the unexpected bracket ([6aaabc9]).
+- Remove attempts to highlight anything inside the TypeScript type declaration ([a139d2b]).
 
 ## [0.7.0] - 2024-11-02
 
 ### Added
 
 - Add the "Far Side of the Moon" variant of the theme ([7eb998e]).
-- Support syntax highlighting for the Python syntax ([5755a5d]).
-- Support syntax highlighting for the C syntax ([aaabc25]).
+- Support the Python syntax ([5755a5d]).
+- Support the C syntax ([aaabc25]).
 
 ## [0.6.1] - 2024-07-16
 
@@ -32,13 +37,13 @@ There are no noticeable changes in version [0.6.1].
 
 ### Added
 
-- Support syntax highlighting for the Rust syntax by [Super-Pizza] ([0a02e58...59b1f5d]).
+- Support the Rust syntax by [@Super-Pizza] ([0a02e58...59b1f5d]).
 
 ## [0.5.0] - 2024-06-28
 
 ### Added
 
-- Support syntax highlighting for the Swift syntax ([158f0b6]).
+- Support the Swift syntax ([158f0b6]).
 
 ## [0.4.1] - 2024-05-21
 
@@ -54,25 +59,25 @@ There are no noticeable changes in version [0.6.1].
 
 ### Added
 
-- Support syntax highlighting for the Shell syntax ([3385ad4]).
+- Support the Shell syntax ([3385ad4]).
 
 ## [0.3.0] - 2024-05-04
 
 ### Added
 
-- Support syntax highlighting for the SQL syntax ([5b7c040]).
+- Support the SQL syntax ([5b7c040]).
 
 ## [0.2.0] - 2024-04-20
 
 ### Added
 
-- Support syntax highlighting for the fish syntax ([f1978d3]).
+- Support the fish syntax ([f1978d3]).
 
 ## [0.1.2] - 2024-04-01
 
 ### Fixed
 
-- Fix syntax highlighting of keywords in a method of an object in the JavaScript syntax ([b09f1ba]).
+- Fix highlighting of keywords in a method of an object in the JavaScript syntax ([b09f1ba]).
 
 ## [0.1.1] - 2024-03-31
 
@@ -87,41 +92,27 @@ There are no noticeable changes in version [0.1.0].
 ### Added
 
 - Add the "Near Side of the Moon" variant of the theme ([704d29a]).
-- Support syntax highlighting for the CSS syntax ([704d29a]).
-- Support syntax highlighting for the Dockerfile syntax ([704d29a]).
-- Support syntax highlighting for the `go.mod` syntax ([704d29a]).
-- Support syntax highlighting for the `go.sum` syntax ([704d29a]).
-- Support syntax highlighting for the Go syntax ([704d29a]).
-- Support syntax highlighting for the HTML syntax ([704d29a]).
-- Support syntax highlighting for the INI syntax ([704d29a]).
-- Support syntax highlighting for the JavaScript syntax ([704d29a]).
-- Support syntax highlighting for the JSON syntax ([704d29a]).
-- Support syntax highlighting for the JSON with Comments syntax ([704d29a]).
-- Support syntax highlighting for the JSON Lines syntax ([704d29a]).
-- Support syntax highlighting for the JSX syntax ([704d29a]).
-- Support syntax highlighting for the Makefile syntax ([704d29a]).
-- Support syntax highlighting for the Ruby syntax ([704d29a]).
-- Support syntax highlighting for the TOML syntax ([704d29a]).
-- Support syntax highlighting for the TypeScript syntax ([704d29a]).
-- Support syntax highlighting for the TSX syntax ([704d29a]).
-- Support syntax highlighting for the YAML syntax ([704d29a]).
+- Support CSS, Dockerfile, `go.mod`, `go.sum`, Go, HTML, INI, JavaScript, JSON, JSON, JSON, JSX, Makefile, Ruby, TOML, TypeScript, TSX, and YAML syntaxes ([704d29a]).
 
 <!-- Footnotes -->
 
 [Unreleased]: https://github.com/vanyauhalin/moondusttheme/compare/v0.7.0...HEAD/
-[0.7.0]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.7.0/
-[0.6.1]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.6.1/
-[0.6.0]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.6.0/
-[0.5.0]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.5.0/
-[0.4.1]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.4.1/
-[0.4.0]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.4.0/
-[0.3.0]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.3.0/
-[0.2.0]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.2.0/
-[0.1.2]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.1.2/
-[0.1.1]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.1.1/
-[0.1.0]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.1.0/
+[0.7.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.6.1...v0.7.0/
+[0.6.1]: https://github.com/vanyauhalin/moondusttheme/compare/v0.6.0...v0.6.1/
+[0.6.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.5.0...v0.6.0/
+[0.5.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.4.1...v0.5.0/
+[0.4.1]: https://github.com/vanyauhalin/moondusttheme/compare/v0.4.0...v0.4.1/
+[0.4.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.3.0...v0.4.0/
+[0.3.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.2.0...v0.3.0/
+[0.2.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.1.2...v0.2.0/
+[0.1.2]: https://github.com/vanyauhalin/moondusttheme/compare/v0.1.1...v0.1.2/
+[0.1.1]: https://github.com/vanyauhalin/moondusttheme/compare/v0.1.0...v0.1.1/
+[0.1.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.1.0/
 [0.0.1]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.0.1/
 
+[9b35127]: https://github.com/vanyauhalin/moondusttheme/commit/9b35127c17b9600b1f8938e624546f2814199601/
+[a139d2b]: https://github.com/vanyauhalin/moondusttheme/commit/a139d2bbf2620c7579fd627e280e7e1f7fb16e9c/
+[162c920...c42dd98]: https://github.com/vanyauhalin/moondusttheme/compare/162c920988d85f52b5d0ec7a2e9440dc7eb60c9c...c42dd9898ee5795c09e2be18d4cc5c037f79c61f/
 [78ffc6f]: https://github.com/vanyauhalin/moondusttheme/commit/78ffc6ff4f4b9db1e98b9efd88039804f28285a7/
 [6aaabc9]: https://github.com/vanyauhalin/moondusttheme/commit/6aaabc9d17ec3aa7508b0d8eb190818eda10854d/
 [7b39b42]: https://github.com/vanyauhalin/moondusttheme/commit/7b39b42ff4a371d87423cd4b09453b251a78aaef/
@@ -138,7 +129,7 @@ There are no noticeable changes in version [0.1.0].
 [b09f1ba]: https://github.com/vanyauhalin/moondusttheme/commit/b09f1bae197fccc60476e7d57fc864f5971e9cae/
 [704d29a]: https://github.com/vanyauhalin/moondusttheme/commit/704d29a988081be4aee23276211821143e12c4f4/
 
-[Super-Pizza]: https://github.com/Super-Pizza/
+[@Super-Pizza]: https://github.com/Super-Pizza/
 
 [Keep a Changelog]: https://keepachangelog.com/en/1.1.0/
 [Semantic Versioning]: https://semver.org/spec/v2.0.0.html
