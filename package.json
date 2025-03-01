@@ -59,15 +59,15 @@
 	},
 	"devDependencies": {
 		"@types/hast": "3.0.4",
-		"@types/node": "22.9.0",
+		"@types/node": "22.13.8",
 		"@vanyauhalin/eslint-config": "0.0.5",
 		"clean-publish": "5.1.0",
-		"color": "4.2.3",
+		"color": "5.0.0",
 		"eslint": "9.21.0",
-		"hastscript": "9.0.0",
+		"hastscript": "9.0.1",
 		"sade": "1.8.1",
-		"shiki": "1.23.0",
-		"typescript": "5.6.3",
+		"shiki": "3.1.0",
+		"typescript": "5.8.2",
 		"uvu": "0.5.6"
 	},
 	"engines": {
