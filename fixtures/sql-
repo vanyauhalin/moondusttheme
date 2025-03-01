@@ -1,0 +1,11 @@
+-- SQL grammar has no rules for brackets.
+CREATE TABLE t {}
+INSERT INTO t(v)
+
+-- SQL grammar cannot separate a keyword and a field with the same name as the keyword.
+CREATE TABLE t {text TEXT}
+INSERT INTO t(text)
+
+-- SQL grammar has no rules for dots, semicolons, and commas.
+INSERT INTO t(a, b);
+SELECT WHEN a.b

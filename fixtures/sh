@@ -72,3 +72,6 @@ a >>
 alias a=b
 function f {}
 f(){}
+
+"s$(fn)"
+echo "s$(fn)"

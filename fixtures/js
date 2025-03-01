@@ -120,3 +120,10 @@ function (): is a{}
   a='s'
   a={a}
 >{a}</div>
+
+a = {
+  a() {
+    const b = c
+    let c = b
+  }
+}
