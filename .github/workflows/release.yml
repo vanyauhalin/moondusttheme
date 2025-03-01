@@ -62,11 +62,9 @@ jobs:
       env:
         GH_TOKEN: ${{github.token}}
       run: |
-        gh release create \
-          --notes-from-tag \
+        gh release create "${{github.ref_name}}" \
           --title "${{github.ref_name}}" \
-          "${{github.ref_name}}"
-        gh release upload \
-          "${{github.ref_name}}" \
+          --notes "See ${{github.server_url}}/${{github.repository}}/blob/main/CHANGELOG.md/"
+        gh release upload "${{github.ref_name}}" \
           dist/moondusttheme-*.json \
           moondusttheme.vsix
