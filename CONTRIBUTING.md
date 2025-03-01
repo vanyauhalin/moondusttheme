@@ -6,8 +6,8 @@ Welcome to the contributing guidelines for the Moondust Theme project. I appreci
 
 - [Preparation](#preparation)
 - [Development](#development)
-  - [Support a New Syntax](#support-a-new-syntax)
-  - [Port the Theme to Another Editor](#port-the-theme-to-another-editor)
+	- [Support a New Syntax](#support-a-new-syntax)
+	- [Port the Theme to Another Editor](#port-the-theme-to-another-editor)
 
 ## Preparation
 
@@ -66,10 +66,10 @@ Help the editor to recognize the created files by adding the following lines to 
 
 ```json
 {
-  "files.associations": {
-    "**/fixtures/{id}-*": "{syntax}",
-    "**/fixtures/{id}-*.js": "javascript"
-  }
+	"files.associations": {
+		"**/fixtures/{id}-*": "{syntax}",
+		"**/fixtures/{id}-*.js": "javascript"
+	}
 }
 ```
 

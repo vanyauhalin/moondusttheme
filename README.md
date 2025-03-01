@@ -2,9 +2,9 @@
 
 Handcrafted theme for those who have not found syntax highlighting useful for themself.
 
-![Showcase of Near Side of the Moon](https://raw.githubusercontent.com/vanyauhalin/moondusttheme/refs/heads/main/light.webp)
+![Showcase of Near Side of the Moon](https://raw.githubusercontent.com/vanyauhalin/moondusttheme/refs/heads/main/docs/light.webp)
 
-![Showcase of Near Side of the Moon](https://raw.githubusercontent.com/vanyauhalin/moondusttheme/refs/heads/main/dark.webp)
+![Showcase of Near Side of the Moon](https://raw.githubusercontent.com/vanyauhalin/moondusttheme/refs/heads/main/docs/dark.webp)
 
 Moondust is available on the [VSCode Marketplace], [Open VSX Registry], and [GitHub Releases]. Visit [moondustthe.me] to view more examples of syntax highlighting. Enjoy.
 

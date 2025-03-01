@@ -1,13 +1,13 @@
 {
-  "compilerOptions": {
-    "strict": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "allowJs": true,
-    "checkJs": true,
-    "target": "ESNext",
-    "skipLibCheck": true
-  }
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true,
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"noEmit": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "ESNext"
+	}
 }
