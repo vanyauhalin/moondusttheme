@@ -1,0 +1,2 @@
+func f[K comparable, V int64 | float64](m map[K]V) V {}
+func f[V any]() V {}

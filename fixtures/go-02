@@ -1,0 +1,3 @@
+// There is no scope for the comparable in the Go grammar.
+// https://github.com/worlpaker/go-syntax/issues/20/
+func f[K comparable, V any]()
