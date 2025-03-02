@@ -10,6 +10,7 @@ This document records all notable changes to the project, following the [Keep a 
 
 - Support the PHP syntax ([7b39b42]).
 - Support highlighting `some` and `any` keywords in the Swift syntax ([9b35127]).
+- Support the Vue syntax ([f6bef45]).
 
 ### Changed
 
@@ -110,6 +111,7 @@ There are no noticeable changes in version [0.1.0].
 [0.1.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.1.0/
 [0.0.1]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.0.1/
 
+[f6bef45]: https://github.com/vanyauhalin/moondusttheme/commit/f6bef450b2ca0292337ceb9e2a3646cec45002b9/
 [9b35127]: https://github.com/vanyauhalin/moondusttheme/commit/9b35127c17b9600b1f8938e624546f2814199601/
 [a139d2b]: https://github.com/vanyauhalin/moondusttheme/commit/a139d2bbf2620c7579fd627e280e7e1f7fb16e9c/
 [162c920...c42dd98]: https://github.com/vanyauhalin/moondusttheme/compare/162c920988d85f52b5d0ec7a2e9440dc7eb60c9c...c42dd9898ee5795c09e2be18d4cc5c037f79c61f/
