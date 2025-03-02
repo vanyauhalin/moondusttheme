@@ -40,6 +40,8 @@
 		"**/fixtures/swift-": "swift",
 		"**/fixtures/toml": "toml",
 		"**/fixtures/toml-": "toml",
+		"**/fixtures/vue": "vue",
+		"**/fixtures/vue-": "vue",
 		"**/fixtures/yaml": "yaml",
 		"**/fixtures/yaml-": "yaml"
 	}

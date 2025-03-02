@@ -1,0 +1,27 @@
+<script setup>
+</script>
+
+<template>
+
+<a @v="v"></a>
+<a @[v]="v"></a>
+<a :v="v"></a>
+<a :[v]="v"></a>
+<a :v.v="v"></a>
+<a #v></a>
+<a>is:{{v}}</a>
+
+<a v-for="v"></a>
+<a v-if="v"></a>
+<a v-else-if="v"></a>
+<a v-else></a>
+
+<template></template>
+<script></script>
+<style></style>
+<slot></slot>
+
+</template>
+
+<style scoped>
+</style>
