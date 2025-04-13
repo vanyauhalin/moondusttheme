@@ -61,7 +61,7 @@
 	"devDependencies": {
 		"@types/hast": "3.0.4",
 		"@types/node": "22.13.8",
-		"@vanyauhalin/eslint-config": "0.0.5",
+		"@vanyauhalin/eslint-config": "0.0.6",
 		"clean-publish": "5.1.0",
 		"color": "5.0.0",
 		"eslint": "9.21.0",
