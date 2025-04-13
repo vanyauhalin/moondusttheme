@@ -17,7 +17,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/github:vanyauhalin/moondusttheme"
+		"url": "git+https://github.com/vanyauhalin/moondusttheme.git"
 	},
 	"license": "MIT",
 	"author": {
