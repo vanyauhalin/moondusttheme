@@ -1,0 +1,15 @@
+// There is no scope for the import function.
+@import("")
+
+// There is no scope for the dot in the number.
+0.0
+
+// There is no scope for quotes.
+"s"
+'s'
+\\s
+
+// There is no scope for brackets.
+[a,b]
+{a,b}
+(a,b)

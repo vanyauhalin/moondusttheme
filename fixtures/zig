@@ -1,0 +1,51 @@
+// c
+//! c
+/// c
+
+@import("std")
+
+0.0
+0b0
+0o0
+0x0
+
+"s"
+'s'
+\\s
+
+true
+false
+
+a + b
+a = b
+a & b
+a > b
+
+[a,b]
+{a,b}
+(a,b)
+
+a.b
+a:b
+
+;
+
+i8
+c_char
+bool
+null
+
+if
+and
+for
+break
+async
+catch
+pub
+struct
+unreachable
+
+?i8
+[*c]
+
+pub fn f(a: i8, b: i8) i8 {}
