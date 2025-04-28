@@ -37,7 +37,7 @@
 		"build": "node makefile.js build",
 		"clear": "clear-package-json package.json --output package.json",
 		"grep": "node makefile.js grep",
-		"lint": "eslint .",
+		"lint": "eslint .github .vscode fixtures lib eslint.config.js index.d.ts jsconfig.json makefile.js mise.toml package.json",
 		"pull": "node makefile.js pull",
 		"test": "node makefile.js test"
 	},
