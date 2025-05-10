@@ -1,5 +1,8 @@
 # Moondust Theme
 
+[![Preview the "Near Side of the Moon" variant in VS Code](https://badgen.net/static/Preview%20in%20VS%20Code/Near%20Side%20of%20the%20Moon/gray)](https://vscode.dev/editor/theme/vanyauhalin.moondusttheme/Moondust:%20Near%20Side%20of%20the%20Moon)
+[![Preview the "Far Side of the Moon" variant in VS Code](https://badgen.net/static/Preview%20in%20VS%20Code/Far%20Side%20of%20the%20Moon/black)](https://vscode.dev/editor/theme/vanyauhalin.moondusttheme/Moondust:%20Far%20Side%20of%20the%20Moon)
+
 Handcrafted theme for those who have not found syntax highlighting useful for themself.
 
 ![Showcase of Near Side of the Moon](https://raw.githubusercontent.com/vanyauhalin/moondusttheme/refs/heads/main/docs/light.webp)
