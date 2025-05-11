@@ -1,0 +1,5 @@
+<!-- Svelte grammar has no scope for keywords that are used as tag names -->
+<slot bind:v />
+
+<!-- Svelte grammar has no scope for the style that is used as a keyword -->
+<a style:color="red" style="color: red" />

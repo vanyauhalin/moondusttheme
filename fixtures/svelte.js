@@ -1,0 +1,41 @@
+c0("<!-- c -->")
+s1("s")
+
+p0("<"); p1("slot"); p0("></slot>")
+
+p0("<"); p1("svelte"); p0(":"); p1("body"); p0("></svelte:body>")
+p0("<"); p1("svelte"); p0(":"); p1("boundary"); p0("></svelte:boundary>")
+p0("<"); p1("svelte"); p0(":"); p1("component"); p0("></svelte:component>")
+p0("<"); p1("svelte"); p0(":"); p1("document"); p0("></svelte:document>")
+p0("<"); p1("svelte"); p0(":"); p1("element"); p0("></svelte:element>")
+p0("<"); p1("svelte"); p0(":"); p1("fragment"); p0("></svelte:fragment>")
+p0("<"); p1("svelte"); p0(":"); p1("head"); p0("></svelte:head>")
+p0("<"); p1("svelte"); p0(":"); p1("options"); p0("></svelte:options>")
+p0("<"); p1("svelte"); p0(":"); p1("self"); p0("></svelte:self>")
+p0("<"); p1("svelte"); p0(":"); p1("window"); p0("></svelte:window>")
+
+p0("<"); p1("script lang"); p0("="); s0('"'); s1("ts"); s0('"'); p0(">")
+p0("$"); p1("state"); p0("("); p1("0"); p0(")")
+p0("</script>")
+
+p0("<"); p1("a v"); p0("="); s0('"'); s1("s"); p0("{"); p1("v"); p0("}"); s0('"'); p0(">"); s1("s"); p0("{"); p1("v"); p0("}</a>")
+p0("<"); p1("A v"); p0("={"); p1("v"); p0("}></A>")
+
+p0("<"); p1("a animate"); p0(":"); p1("v"); p0("/>")
+p0("<"); p1("a bind"); p0(":"); p1("v"); p0("={"); p1("v"); p0("} />")
+p0("<"); p1("a in"); p0(":"); p1("v"); p0("/>")
+p0("<"); p1("a out"); p0(":"); p1("v"); p0("/>")
+p0("<"); p1("a transition"); p0(":"); p1("v"); p0("/>")
+p0("<"); p1("a use"); p0(":"); p1("v"); p0("={"); p1("v"); p0("} />")
+
+p0("{#if"); p1("v"); p0("."); p1("v"); p0(">"); p1("0"); p0("}{:else}{/if}")
+p0("{#each"); p1("v"); p0("as"); p1("v"); p0(","); p1("v"); p0("("); p1("v"); p0(")}{/each}")
+p0("{#each"); p1("v"); p0("as {"); p1("v"); p0(","); p1("v"); p0("},"); p1("v"); p0("("); p1("v"); p0(")}{/each}")
+p0("{#key"); p1("v"); p0("}{/key}")
+p0("{#await"); p1("v"); p0("}{:then"); p1("v"); p0("}{:catch"); p1("v"); p0("}{/await}")
+p0("{#snippet"); p1("v"); p0("()}{/snippet}")
+
+p0("{@render"); p1("v"); p0("()}")
+p0("{@html"); p1("v"); p0("}")
+p0("{@const"); p1("v"); p0("}")
+p0("{@debug"); p1("v"); p0("}")

@@ -1,0 +1,41 @@
+<!-- c -->
+s
+
+<slot></slot>
+
+<svelte:body></svelte:body>
+<svelte:boundary></svelte:boundary>
+<svelte:component></svelte:component>
+<svelte:document></svelte:document>
+<svelte:element></svelte:element>
+<svelte:fragment></svelte:fragment>
+<svelte:head></svelte:head>
+<svelte:options></svelte:options>
+<svelte:self></svelte:self>
+<svelte:window></svelte:window>
+
+<script lang="ts">
+$state(0)
+</script>
+
+<a v="s{v}">s{v}</a>
+<A v={v}></A>
+
+<a animate:v />
+<a bind:v={v} />
+<a in:v />
+<a out:v />
+<a transition:v />
+<a use:v={v} />
+
+{#if v.v > 0}{:else}{/if}
+{#each v as v, v (v)}{/each}
+{#each v as {v,v}, v (v)}{/each}
+{#key v}{/key}
+{#await v}{:then v}{:catch v}{/await}
+{#snippet v()}{/snippet}
+
+{@render v()}
+{@html v}
+{@const v}
+{@debug v}

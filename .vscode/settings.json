@@ -36,6 +36,8 @@
 		"**/fixtures/sh-": "shellscript",
 		"**/fixtures/sql": "sql",
 		"**/fixtures/sql-": "sql",
+		"**/fixtures/svelte": "svelte",
+		"**/fixtures/svelte-": "svelte",
 		"**/fixtures/swift": "swift",
 		"**/fixtures/swift-": "swift",
 		"**/fixtures/toml": "toml",
