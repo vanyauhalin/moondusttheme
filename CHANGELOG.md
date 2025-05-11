@@ -4,7 +4,15 @@ This document records all notable changes to the project, following the [Keep a 
 
 ## [Unreleased]
 
-There are no noticeable changes in version [unreleased].
+<!-- There are no noticeable changes in version [unreleased]. -->
+
+### Added
+
+- Support the Svelte syntax ([1d27fe1]).
+
+### Changed
+
+- Use color `p1` for HTML attribute names and `s0` with `s1` for their values ([868b3ca]).
 
 ## [0.9.0] - 2025-04-29
 
@@ -122,6 +130,8 @@ There are no noticeable changes in version [0.1.0].
 [0.1.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.1.0/
 [0.0.1]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.0.1/
 
+[1d27fe1]: https://github.com/vanyauhalin/moondusttheme/commit/1d27fe1045f4a47fb43d00c5aeb3e6655a39d0ed/
+[868b3ca]: https://github.com/vanyauhalin/moondusttheme/commit/868b3ca557b9d8174a98e3f47149da7e682ed037/
 [6f0cdb5]: https://github.com/vanyauhalin/moondusttheme/commit/6f0cdb55077548228885c234fd5d263be5b6a8d6/
 [e96b091]: https://github.com/vanyauhalin/moondusttheme/commit/e96b09198982a8902619147414588b105159c655/
 [f6bef45]: https://github.com/vanyauhalin/moondusttheme/commit/f6bef450b2ca0292337ceb9e2a3646cec45002b9/
