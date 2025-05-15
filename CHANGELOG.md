@@ -9,6 +9,7 @@ This document records all notable changes to the project, following the [Keep a 
 ### Added
 
 - Support the Svelte syntax ([1d27fe1], [a3a4ac5]).
+- Support the Astro syntax ([44c66c9]).
 
 ### Changed
 
@@ -130,6 +131,7 @@ There are no noticeable changes in version [0.1.0].
 [0.1.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.1.0/
 [0.0.1]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.0.1/
 
+[44c66c9]: https://github.com/vanyauhalin/moondusttheme/commit/44c66c98bf775376a9dc39282d4f96ba5e9c3b45/
 [a3a4ac5]: https://github.com/vanyauhalin/moondusttheme/commit/a3a4ac5f206b4a1aad8613ccefed515970eb34d8/
 [1d27fe1]: https://github.com/vanyauhalin/moondusttheme/commit/1d27fe1045f4a47fb43d00c5aeb3e6655a39d0ed/
 [868b3ca]: https://github.com/vanyauhalin/moondusttheme/commit/868b3ca557b9d8174a98e3f47149da7e682ed037/
