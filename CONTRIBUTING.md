@@ -52,28 +52,27 @@ I would like to describe specific potential goals for contribution, but you are 
 
 Adding support for a new syntax must begin with defining which [TextMate grammars] the implementation will be based upon. Preference should be given to those [grammars that are distributed with] Visual Studio Code. If there are none, then use the extension that is either the most popular or the most relevant.
 
-Once you have discovered the grammar, create a new configuration record with it in the [`grammar.js`] file and populate the [`vendor`] directory with it using the following command:
+Once you have discovered the grammar, create a new configuration record with it in the [`lib/grammars.js`] file and populate the [`vendor`] directory with it using the following command:
 
 ```sh
 pnpm run pull
 ```
 
-For future testing purposes, you need to create a new configuration record in the [`test.js`] file where the scope property will be the `scopeName` of the grammar.
+For future testing purposes, you need to create a new configuration record in the [`lib/test.js`] file and create two or three files in the [`fixtures`] directory. The first fixture file `{id}` will contain the code that will be used for testing. The second `{id}.js` will contain the expected result of the test. Both files are required. The third `{id}-` is optional and may contain notes related to the tested grammar. Keep these files empty for now; we will fill them in later.
 
-Additionally, create two files in the [`fixtures`] directory: `{id}-{number}` and `{id}-{number}.js`. The first file will contain the code that will be used for testing, and the second file will contain the expected result of the test. Keep these files empty for now; we will fill them in later.
-
-Help the editor to recognize the created files by adding the following lines to the [`.vscode/settings.json`] file:
+Additionally, you can help the editor recognize fixture files by adding the following lines to the [`.vscode/settings.json`] file:
 
 ```json
 {
 	"files.associations": {
-		"**/fixtures/{id}-*": "{syntax}",
-		"**/fixtures/{id}-*.js": "javascript"
+		"**/fixtures/{id}": "{syntax}",
+		"**/fixtures/{id}-": "{syntax}",
+		"**/fixtures/{id}.js": "javascript"
 	}
 }
 ```
 
-The last configuration record will be in the [`syntax.js`] file. Although this will not describe tokens and their colors for now, we will return to this a bit later.
+The last configuration record will be in the [`lib/syntaxes.js`] file. Although this will not describe tokens and their colors for now, we will return to this a bit later.
 
 > [!NOTE]
 >
@@ -95,7 +94,7 @@ The next step is to define tokens and their colors for the new syntax:
 
 - Fill the fixture file you created earlier and with various syntax constructs. You do not have to create code that feels real; make it as simple as possible.
 - Mark up the syntax constructs with the expected colors in the corresponding file.
-- Define the tokens and their colors in the record of the syntax in the `syntax.js` file. You can use the Command Palette and the "Developer: Inspect Editor Tokens and Scopes" action to help you with this.
+- Define the tokens and their colors in the record of the syntax in the `lib/syntaxes.js` file. You can use the Command Palette and the "Developer: Inspect Editor Tokens and Scopes" action to help you with this.
 
 In the interval between these actions, you can run the command:
 
@@ -121,10 +120,10 @@ Visual Studio Code is my main code editor, so this theme was primarily created f
 
 [`.vscode/settings.json`]: ./.vscode/settings.json
 [`fixtures`]: ./fixtures
+[`lib/grammars.js`]: ./lib/grammars.js
+[`lib/syntaxes.js`]: ./lib/syntaxes.js
+[`lib/test.js`]: ./lib/test.js
 [`vendor`]: ./vendor
-[`grammar.js`]: ./grammar.js
-[`syntax.js`]: ./syntax.js
-[`test.js`]: ./test.js
 
 [TextMate grammars]: https://macromates.com/manual/en/language_grammars/
 [grammars that are distributed with]: https://github.com/microsoft/vscode/tree/main/extensions/
