@@ -1,5 +1,7 @@
 {
 	"files.associations": {
+		"**/fixtures/astro": "astro",
+		"**/fixtures/astro-": "astro",
 		"**/fixtures/c": "c",
 		"**/fixtures/c-": "c",
 		"**/fixtures/css": "css",
