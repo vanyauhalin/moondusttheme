@@ -24,6 +24,8 @@
 		"**/fixtures/js-": "javascript",
 		"**/fixtures/json": "json",
 		"**/fixtures/json-": "json",
+		"**/fixtures/lua": "lua",
+		"**/fixtures/lua-": "lua",
 		"**/fixtures/makefile": "makefile",
 		"**/fixtures/makefile-": "makefile",
 		"**/fixtures/php": "php",

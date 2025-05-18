@@ -1,0 +1,14 @@
+-- There is no scope for the require strings.
+require("s")
+
+-- There are no scopes for brackets.
+()
+{}
+[]
+
+-- There is no scope for the ellipsis.
+p(...)
+
+-- There are no scopes for the dot, colon, and comma.
+p:v(v,v)
+p.v(v,v)

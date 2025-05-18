@@ -1,0 +1,30 @@
+#!/bin/sh
+
+-- c
+--- c
+--[[ c]]
+/* c */
+
+"s"
+'s'
+[[s]]
+
++
+=
+
+::t::
+
+true
+nil
+
+local
+
+if
+then
+else
+end
+
+goto t
+
+function f(v,v)
+end
