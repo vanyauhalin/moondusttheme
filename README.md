@@ -3,33 +3,54 @@
 [![Preview the "Near Side of the Moon" variant in VS Code](https://badgen.net/static/Preview%20in%20VS%20Code/Near%20Side%20of%20the%20Moon/gray)](https://vscode.dev/editor/theme/vanyauhalin.moondusttheme/Moondust:%20Near%20Side%20of%20the%20Moon)
 [![Preview the "Far Side of the Moon" variant in VS Code](https://badgen.net/static/Preview%20in%20VS%20Code/Far%20Side%20of%20the%20Moon/black)](https://vscode.dev/editor/theme/vanyauhalin.moondusttheme/Moondust:%20Far%20Side%20of%20the%20Moon)
 
-Handcrafted theme for those who have not found syntax highlighting useful for themself.
+Handcrafted theme for those who have not found syntax highlighting useful for
+themself.
 
 ![Showcase of Near Side of the Moon](https://raw.githubusercontent.com/vanyauhalin/moondusttheme/refs/heads/main/docs/light.webp)
 
 ![Showcase of Near Side of the Moon](https://raw.githubusercontent.com/vanyauhalin/moondusttheme/refs/heads/main/docs/dark.webp)
 
-Moondust is available on the [VSCode Marketplace], [Open VSX Registry], and [GitHub Releases]. Visit [moondustthe.me] to view more examples of syntax highlighting. Enjoy.
+Moondust is available on the [VSCode Marketplace], [Open VSX Registry], and
+[GitHub Releases]. Visit [moondustthe.me] to view more examples of syntax
+highlighting. Enjoy.
 
 ## About
 
-Early on in my programming journey, syntax highlighting aided my understanding the coding. However, as I gained more experience, I found myself relying less on it. Eventually, I realized that the abundance of colors was very straining on my eyes and made it difficult to focus and concentrate.
+Early on in my programming journey, syntax highlighting aided my understanding
+the coding. However, as I gained more experience, I found myself relying less on
+it. Eventually, I realized that the abundance of colors was very straining on my
+eyes and made it difficult to focus and concentrate.
 
-Moondust is crafted to reduce eye strain, allowing to focus on code. It challenges the conventional approach of highlighting keywords and typical structures. Instead of drawing excessive attention to them, this theme brings business logic to the forefront.
+Moondust is crafted to reduce eye strain, allowing to focus on code. It
+challenges the conventional approach of highlighting keywords and typical
+structures. Instead of drawing excessive attention to them, this theme brings
+business logic to the forefront.
 
-For a more in-depth discussion on the issues associated with the conventional approach to syntax highlighting, recommend reading the articles [A case against syntax highlighting] and [Syntax highlighting is a waste of an information channel].
+For a more in-depth discussion on the issues associated with the conventional
+approach to syntax highlighting, recommend reading the articles
+[A case against syntax highlighting] and
+[Syntax highlighting is a waste of an information channel].
 
-Moondust is tailored for each syntax individually. At present, it supports [Astro], [C], [CSS], [Dockerfile], [fish], [Go], [Go Module], [Go Sum], [HTML], [INI], [JavaScript], [JSON], [JSON with Comments], [JSON Lines], [JSX], [Lua], [Makefile], [PHP], [Python], [Ruby], [Rust], [Shell Script], [SQL], [Svelte], [Swift], [TOML], [TypeScript], [TSX], [Vue], [YAML], and [Zig].
+Moondust is tailored for each syntax individually. At present, it supports
+[Astro], [C], [CSS], [Dockerfile], [fish], [Go], [Go Module], [Go Sum], [HTML],
+[INI], [JavaScript], [JSON], [JSON with Comments], [JSON Lines], [JSX], [Lua],
+[Makefile], [PHP], [Python], [Ruby], [Rust], [Shell Script], [SQL], [Svelte],
+[Swift], [TOML], [TypeScript], [TSX], [Vue], [YAML], and [Zig].
 
-In the [initial phase], Moondust was primarily a modification of the [GitHub Theme]. I owe a great deal of gratitude to the Primer team for their work.
+In the [initial phase], Moondust was primarily a modification of the
+[GitHub Theme]. I owe a great deal of gratitude to the Primer team for their
+work.
 
-A special shout-out goes to the entire community that focuses on creating minimalistic, two-color, monochrome themes, particularly [Monochrome]. It was a delight for me to delve into your work, and it is heartening to realize that our aesthetic preferences align closely.
+A special shout-out goes to the entire community that focuses on creating
+minimalistic, two-color, monochrome themes, particularly [Monochrome]. It was a
+delight for me to delve into your work, and it is heartening to realize that our
+aesthetic preferences align closely.
 
 ## License
 
-[MIT] (c) [Ivan Uhalin]
+[MIT] © [Ivan Uhalin]
 
-<!-- Footnotes -->
+<!-- Definitions -->
 
 [VSCode Marketplace]: https://marketplace.visualstudio.com/items?itemName=vanyauhalin.moondusttheme
 [Open VSX Registry]: https://open-vsx.org/extension/vanyauhalin/moondusttheme/
