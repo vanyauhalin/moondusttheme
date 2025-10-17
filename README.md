@@ -28,8 +28,9 @@ business logic to the forefront.
 
 For a more in-depth discussion on the issues associated with the conventional
 approach to syntax highlighting, recommend reading the articles
-[A case against syntax highlighting] and
-[Syntax highlighting is a waste of an information channel].
+[A case against syntax highlighting],
+[Syntax highlighting is a waste of an information channel], and
+[I am sorry, but everyone is getting syntax highlighting wrong].
 
 Moondust is tailored for each syntax individually. At present, it supports
 [Astro], [C], [CSS], [Dockerfile], [fish], [Go], [Go Module], [Go Sum], [HTML],
@@ -60,6 +61,7 @@ aesthetic preferences align closely.
 
 [A case against syntax highlighting]: https://www.linusakesson.net/programming/syntaxhighlighting/
 [Syntax highlighting is a waste of an information channel]: https://buttondown.email/hillelwayne/archive/syntax-highlighting-is-a-waste-of-an-information/
+[I am sorry, but everyone is getting syntax highlighting wrong]: https://tonsky.me/blog/syntax-highlighting/
 
 [Astro]: https://moondustthe.me/#astro
 [C]: https://moondustthe.me/#c
