@@ -3,6 +3,7 @@
 		"**/fixtures/astro": "astro",
 		"**/fixtures/astro-": "astro",
 		"**/fixtures/c": "c",
+		"**/fixtures/csharp": "csharp",
 		"**/fixtures/c-": "c",
 		"**/fixtures/css": "css",
 		"**/fixtures/css-": "css",
