@@ -1,0 +1,163 @@
+// csharp
+/// csharp
+/* csharp */
+/** csharp */
+
++
+-
+*
+/
+%
+
+++
+--
+
+==
+!=
+<
+>
+<=
+>=
+
+&&
+||
+!
+
+&
+|
+^
+~
+<<
+>>
+
+=
++=
+-=
+*=
+/=
+%=
+&=
+|=
+^=
+<<=
+>>=
+
+sizeof
+&
+*
+->
+?
+:
+,
+;
+
+#define A
+#undef A
+
+#if
+#elif
+#else
+#endif
+
+#pragma
+
+await
+async
+byte
+sbyte
+short
+ushort
+int
+uint
+long
+ulong
+char
+float
+double
+decimal
+void
+public
+private
+protected
+static
+virtual
+event
+sealed
+override
+readonly
+record
+operator
+explicit
+implicit
+abstract
+ref
+in
+out
+var
+using
+
+
+const
+volatile
+
+"s"
+'s'
+
+true
+false
+
+0
+0b0
+0B0
+0e0
+0E0
+0f
+0F
+0l
+0L
+0ll
+0LL
+0u
+0U
+0ull
+0ULL
+0x0
+0X0
+0.0
+
+int a[0]
+int *a
+
+struct a 
+{
+	int a
+}
+
+enum a 
+{
+	A
+}
+
+if {}
+else {}
+
+switch () {
+	case 0: ;
+	default: ;
+}
+
+for {}
+while {}
+do {} while {}
+
+break
+continue
+return
+goto
+
+int a(int a, int *argv[]) {}
+
+{
+	a.a
+	a->a()
+}
