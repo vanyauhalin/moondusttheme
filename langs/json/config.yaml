@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=../../lang-config.json
+
+grammar:
+  project: https://github.com/microsoft/vscode
+  version: 1.97.2
+  files:
+  - extensions/json/syntaxes/JSON.tmLanguage.json
+
+syntax:
+  colors:
+    comment.line.double-slash.js: c0
+    comment.block.documentation.json: c0
+    comment.block.json: c0
+    meta.structure.dictionary.value.json punctuation.definition.string.begin.json: s0
+    meta.structure.dictionary.value.json punctuation.definition.string.end.json: s0
+    punctuation.definition.array.begin.json: p0
+    punctuation.definition.array.end.json: p0
+    punctuation.definition.dictionary.begin.json: p0
+    punctuation.definition.dictionary.end.json: p0
+    punctuation.definition.string.begin.json: p0
+    punctuation.definition.string.end.json: p0
+    punctuation.separator.array.json: p0
+    punctuation.separator.dictionary.key-value.json: p0
+    punctuation.separator.dictionary.pair.json: p0
+    punctuation.support.type.property-name.begin.json: p0
+    punctuation.support.type.property-name.end.json: p0
+    source.json: s1
+    string.json support.type.property-name.json: p1

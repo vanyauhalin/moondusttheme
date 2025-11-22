@@ -1,5 +1,4 @@
 c0("# Comment")
-
 p0("FROM"); p1("node:14-alpine"); p0("AS"); p1("node")
 p0("WORKDIR"); p1("/")
 p0("COPY"); p1(". .")
@@ -11,7 +10,6 @@ p0("CMD"); p1('["node", "main.js"]')
 p0("ONBUILD RUN"); p1("echo")
 p0("ADD"); p1(". .")
 p0("ARG"); p1("NODE_ENV")
-
 p0("ENTRYPOINT"); p1('["node", "main.js"]')
 p0("ENV"); p1("NODE_ENV=$NODE_ENV")
 p0("EXPOSE"); p1("3000")

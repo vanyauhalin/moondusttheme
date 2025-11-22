@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=../../lang-config.json
+
+grammar:
+  project: https://github.com/golang/vscode-go
+  version: v0.47.0
+  files:
+  - extension/syntaxes/go.sum.tmGrammar.json
+
+syntax:
+  colors:
+    constant.language.go.sum: s1
+    go.sum: p1

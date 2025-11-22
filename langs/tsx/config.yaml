@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=../../lang-config.json
+
+extends: jsx
+
+grammar:
+  project: https://github.com/microsoft/vscode
+  version: 1.97.2
+  files:
+  - extensions/typescript-basics/syntaxes/TypeScriptReact.tmLanguage.json
+
+syntax:
+  replace:
+    .js.jsx: .tsx

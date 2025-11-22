@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../../lang-config.json
+
+grammar:
+  project: https://github.com/sveltejs/language-tools
+  version: extensions-109.6.0
+  files:
+  - packages/svelte-vscode/syntaxes/postcss.src.yaml
+  - packages/svelte-vscode/syntaxes/svelte.tmLanguage.src.yaml
+
+syntax:
+  colors:
+    comment.block.svelte: c0
+    keyword.control.as.svelte: p0
+    keyword.control.conditional.svelte: p0
+    keyword.control.flow.svelte: p0
+    keyword.control.svelte: p0
+    keyword.other.animation.svelte: p0
+    keyword.other.debugger.svelte: p0
+    keyword.other.svelte: p0
+    meta.brace.round.svelte: p0
+    meta.directive.animate.svelte keyword.other.animation.svelte: p1
+    meta.directive.bind.svelte keyword.control.svelte: p1
+    meta.directive.in.svelte keyword.other.animation.svelte: p1
+    meta.directive.out.svelte keyword.other.animation.svelte: p1
+    meta.directive.transition.svelte keyword.other.animation.svelte: p1
+    meta.directive.use.svelte keyword.control.svelte: p1
+    meta.scope.tag.slot.svelte meta.tag.start.svelte keyword.control.svelte: p1
+    meta.scope.tag.svelte:body.svelte meta.tag.start.svelte keyword.control.svelte: p1
+    meta.scope.tag.svelte:boundary.svelte meta.tag.start.svelte keyword.control.svelte: p1
+    meta.scope.tag.svelte:component.svelte meta.tag.start.svelte keyword.control.svelte: p1
+    meta.scope.tag.svelte:document.svelte meta.tag.start.svelte keyword.control.svelte: p1
+    meta.scope.tag.svelte:element.svelte meta.tag.start.svelte keyword.control.svelte: p1
+    meta.scope.tag.svelte:fragment.svelte meta.tag.start.svelte keyword.control.svelte: p1
+    meta.scope.tag.svelte:head.svelte meta.tag.start.svelte keyword.control.svelte: p1
+    meta.scope.tag.svelte:options.svelte meta.tag.start.svelte keyword.control.svelte: p1
+    meta.scope.tag.svelte:self.svelte meta.tag.start.svelte keyword.control.svelte: p1
+    meta.scope.tag.svelte:window.svelte meta.tag.start.svelte keyword.control.svelte: p1
+    meta.tag.end.svelte entity.name.tag.svelte: p0
+    meta.tag.end.svelte support.class.component.svelte: p0
+    punctuation.definition.block.begin.svelte: p0
+    punctuation.definition.block.end.svelte: p0
+    punctuation.definition.keyword.svelte: p0
+    punctuation.definition.string.begin.svelte: s0
+    punctuation.definition.string.end.svelte: s0
+    punctuation.definition.tag.begin.svelte: p0
+    punctuation.definition.tag.end.svelte: p0
+    punctuation.definition.variable.svelte: p0
+    punctuation.section.embedded.begin.svelte: p0
+    punctuation.section.embedded.end.svelte: p0
+    punctuation.separator.key-value.svelte: p0
+    punctuation.separator.svelte: p0
+    source.svelte: p1
+    storage.type.svelte: p0
+    string.quoted.svelte: s1
+    string.unquoted.svelte: s1
+    text.svelte: s1

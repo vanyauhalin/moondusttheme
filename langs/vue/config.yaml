@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=../../lang-config.json
+
+grammar:
+  project: https://github.com/vuejs/language-tools
+  version: v2.2.6
+  files:
+  - extensions/vscode/syntaxes/markdown-vue.json
+  - extensions/vscode/syntaxes/mdx-vue.json
+  - extensions/vscode/syntaxes/vue-directives.json
+  - extensions/vscode/syntaxes/vue-interpolations.json
+  - extensions/vscode/syntaxes/vue-sfc-style-variable-injection.json
+  - extensions/vscode/syntaxes/vue.tmLanguage.json
+
+syntax:
+  colors:
+    entity.name.tag.template.html.vue: p1
+    keyword.control.conditional.vue: p0
+    keyword.control.loop.vue: p0
+    meta.template-tag.end entity.name.tag.template.html.vue: p0
+    punctuation.attribute-shorthand.bind.html.vue: p0
+    punctuation.attribute-shorthand.event.html.vue: p0
+    punctuation.attribute-shorthand.slot.html.vue: p0
+    punctuation.definition.interpolation.begin.html.vue: p0
+    punctuation.definition.interpolation.end.html.vue: p0
+    source.vue: p1
+
+test:
+  skip: true

@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=../../lang-config.json
+
+grammar:
+  project: https://github.com/withastro/language-tools
+  version: astro-vscode@2.15.4
+  files:
+  - packages/vscode/syntaxes/astro.tmLanguage.src.yaml
+
+syntax:
+  colors:
+    comment.block.astro: c0
+    meta.tag.end.astro entity.name.tag.astro: p0
+    meta.tag.end.astro support.class.component.astro: p0
+    punctuation.definition.string.begin.astro: s0
+    punctuation.definition.string.end.astro: s0
+    punctuation.definition.tag.begin.astro: p0
+    punctuation.definition.tag.end.astro: p0
+    punctuation.section.embedded.begin.astro: p0
+    punctuation.section.embedded.end.astro: p0
+    punctuation.separator.key-value.astro: p0
+    source.astro comment: c0
+    source.astro: p1
+    string.quoted.astro: s1
+    string.template.astro: s1
+    string.unquoted.astro: s1
+    text.astro: s1

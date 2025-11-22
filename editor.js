@@ -1,156 +1,84 @@
+// https://github.com/microsoft/vscode-docs/blob/ab2cce3016320617879c9b4d3aa6684c44a04a8f/api/references/theme-color.md
+
 /**
- * @import {S1, S10} from "./shared.js"
+ * @import {ThemeEditor} from "./theme.js"
  */
 
 import color from "color"
-import * as colors from "./colors.js"
 
 const wh = "#FFFFFF"
 const tr = "#FFFFFF00"
 // const red = "#FF0000"
 
 /**
- * @typedef {object} EditorTheme
- * @property {string} background
- * @property {S10} neutral
- * @property {S10} accent
- * @property {S1} error
- * @property {S1} info
- * @property {S1} warning
+ * @param {ThemeEditor} te
+ * @returns {Record<string, string>}
  */
-
-/**
- * @typedef {object} EditorFragment
- * @property {EditorColors} colors
- */
-
-/**
- * @typedef {Record<string, string>} EditorColors
- */
-
-/**
- * @returns {EditorFragment}
- */
-export function light() {
-	let cs = colors.light()
-
-	/** @type {EditorTheme} */
-	let et = {
-		background: "#FFFFFF",
-		neutral: cs.gray,
-		accent: cs.blue,
-		error: ["#B35900"],
-		info: [cs.gray[4]],
-		warning: ["#7D4E00"],
-	}
-
-	/** @type {EditorColors} */
-	let ec = {
-		...sharedColors(),
-		...lightColors(et),
-	}
-
-	return {
-		colors: compute(ec),
-	}
-}
-
-/**
- * @returns {EditorFragment}
- */
-export function dark() {
-	let cs = colors.dark()
-
-	/** @type {EditorTheme} */
-	let et = {
-		background: "#161A1D",
-		neutral: cs.gray,
-		accent: cs.blue,
-		error: [""],
-		info: [""],
-		warning: [""],
-	}
-
-	/** @type {EditorColors} */
-	let ec = {
-		...sharedColors(),
-		...darkColors(et),
-	}
-
-	return {
-		colors: compute(ec),
-	}
-}
-
-/**
- * @param {EditorTheme} et
- * @returns {EditorColors}
- */
-function lightColors(et) {
+export function lightColors(te) {
 	return {
 		// Base colors
-		"focusBorder": et.accent[3],
-		"foreground": et.neutral[7],
-		"widget.border": et.neutral[2],
-		"selection.background": et.accent[2],
-		"descriptionForeground": et.neutral[5],
-		"errorForeground": et.error[0],
+		"focusBorder": te.accent[3],
+		"foreground": te.neutral[7],
+		"widget.border": te.neutral[2],
+		"selection.background": te.accent[2],
+		"descriptionForeground": te.neutral[5],
+		"errorForeground": te.error[0],
 
 		// Text colors
-		"textLink.activeForeground": et.accent[5],
-		"textLink.foreground": et.accent[5],
+		"textLink.activeForeground": te.accent[5],
+		"textLink.foreground": te.accent[5],
 
 		// Action colors
-		"toolbar.hoverBackground": et.neutral[1],
-		"toolbar.activeBackground": et.neutral[1],
+		"toolbar.hoverBackground": te.neutral[1],
+		"toolbar.activeBackground": te.neutral[1],
 
 		// Button control
-		"button.background": et.accent[5],
+		"button.background": te.accent[5],
 		"button.foreground": wh,
 		"button.separator": color(wh).alpha(0.2).hexa(),
-		"button.hoverBackground": et.accent[6],
+		"button.hoverBackground": te.accent[6],
 		"button.secondaryForeground": wh,
-		"button.secondaryBackground": et.neutral[6],
-		"button.secondaryHoverBackground": et.neutral[8],
+		"button.secondaryBackground": te.neutral[6],
+		"button.secondaryHoverBackground": te.neutral[8],
 
 		// Scrollbar control
-		"scrollbarSlider.activeBackground": color(et.neutral[3]).alpha(0.6).hexa(),
-		"scrollbarSlider.background": color(et.neutral[3]).alpha(0.4).hexa(),
+		"scrollbarSlider.activeBackground": color(te.neutral[3]).alpha(0.6).hexa(),
+		"scrollbarSlider.background": color(te.neutral[3]).alpha(0.4).hexa(),
 
 		// Lists and trees
-		"list.activeSelectionBackground": et.accent[5],
+		"list.activeSelectionBackground": te.accent[5],
 		"list.activeSelectionForeground": wh,
-		"list.focusHighlightForeground": et.accent[2],
-		"list.focusOutline": et.accent[3],
-		"list.focusAndSelectionOutline": et.accent[3],
-		"list.highlightForeground": et.accent[5],
-		"list.inactiveSelectionBackground": et.neutral[1],
+		"list.focusHighlightForeground": te.accent[2],
+		"list.focusOutline": te.accent[3],
+		"list.focusAndSelectionOutline": te.accent[3],
+		"list.highlightForeground": te.accent[5],
+		"list.inactiveSelectionBackground": te.neutral[1],
 
 		// Activity Bar
-		"activityBar.foreground": et.neutral[6],
-		"activityBar.inactiveForeground": et.neutral[4],
+		"activityBar.foreground": te.neutral[6],
+		"activityBar.inactiveForeground": te.neutral[4],
 
 		// Side Bar
-		"sideBar.background": et.neutral[0],
+		"sideBar.background": te.neutral[0],
 
 		// Minimap
 		"minimap.foregroundOpacity": color(wh).alpha(0.8).hexa(),
 
 		// Editor colors
-		"editor.background": et.background,
-		"editorLineNumber.foreground": et.neutral[4],
+		"editor.background": te.background,
+		"editorLineNumber.foreground": te.neutral[4],
 		"editorCursor.background": wh,
-		"editorCursor.foreground": et.neutral[5],
-		"editor.selectionBackground": et.accent[2],
-		"editor.selectionHighlightBackground": et.accent[1],
-		"editor.lineHighlightBackground": color(et.neutral[1]).alpha(0.4).hexa(),
-		"editorWhitespace.foreground": et.neutral[2],
-		"editorRuler.foreground": et.neutral[0],
-		"editorError.foreground": et.error[0],
-		"editorWarning.foreground": et.warning[0],
-		"editorInfo.foreground": et.info[0],
+		"editorCursor.foreground": te.neutral[5],
+		"editor.selectionBackground": te.accent[2],
+		"editor.selectionHighlightBackground": te.accent[1],
+		"editor.lineHighlightBackground": color(te.neutral[1]).alpha(0.4).hexa(),
+		"editorWhitespace.foreground": te.neutral[2],
+		"editorRuler.foreground": te.neutral[0],
+		"editorError.foreground": te.error[0],
+		"editorWarning.foreground": te.warning[0],
+		"editorInfo.foreground": te.info[0],
 		"editorUnnecessaryCode.opacity": color(wh).alpha(0.4).hexa(),
-		"editorGutter.modifiedBackground": et.neutral[3],
+		"editorGutter.modifiedBackground": te.neutral[3],
 
 		// Diff editor colors
 		"diffEditor.insertedTextBackground": "#80ccff80",
@@ -159,127 +87,127 @@ function lightColors(et) {
 		"diffEditor.removedLineBackground": "#ffddb04d",
 
 		// Editor widget colors
-		"editorSuggestWidgetStatus.foreground": et.neutral[6],
+		"editorSuggestWidgetStatus.foreground": te.neutral[6],
 
 		// Peek view colors
-		"peekView.border": et.neutral[3],
-		"peekViewEditor.background": color(et.neutral[0]).alpha(0.4).hexa(),
-		"peekViewEditorGutter.background": color(et.neutral[0]).alpha(0.4).hexa(),
-		"peekViewResult.selectionBackground": et.accent[5],
+		"peekView.border": te.neutral[3],
+		"peekViewEditor.background": color(te.neutral[0]).alpha(0.4).hexa(),
+		"peekViewEditorGutter.background": color(te.neutral[0]).alpha(0.4).hexa(),
+		"peekViewResult.selectionBackground": te.accent[5],
 		"peekViewResult.selectionForeground": wh,
 
 		// Panel colors
-		"panelTitle.activeBorder": et.neutral[7],
+		"panelTitle.activeBorder": te.neutral[7],
 
 		// Status Bar colors
-		"statusBar.foreground": et.neutral[6],
-		"statusBar.debuggingBackground": et.neutral[6],
+		"statusBar.foreground": te.neutral[6],
+		"statusBar.debuggingBackground": te.neutral[6],
 		"statusBar.debuggingForeground": wh,
-		"statusBar.debuggingBorder": et.neutral[2],
-		"statusBar.noFolderForeground": et.neutral[6],
-		"statusBar.noFolderBackground": et.background,
-		"statusBar.noFolderBorder": et.neutral[2],
-		"statusBarItem.prominentForeground": et.neutral[6],
-		"statusBarItem.remoteForeground": et.neutral[6],
+		"statusBar.debuggingBorder": te.neutral[2],
+		"statusBar.noFolderForeground": te.neutral[6],
+		"statusBar.noFolderBackground": te.background,
+		"statusBar.noFolderBorder": te.neutral[2],
+		"statusBarItem.prominentForeground": te.neutral[6],
+		"statusBarItem.remoteForeground": te.neutral[6],
 
 		// Command Center colors
-		"commandCenter.background": et.neutral[1],
+		"commandCenter.background": te.neutral[1],
 
 		// Debug Icons colors
-		"debugIcon.breakpointForeground": et.neutral[5],
-		"debugIcon.breakpointDisabledForeground": et.neutral[3],
+		"debugIcon.breakpointForeground": te.neutral[5],
+		"debugIcon.breakpointDisabledForeground": te.neutral[3],
 	}
 }
 
 /**
- * @param {EditorTheme} et
- * @returns {EditorColors}
+ * @param {ThemeEditor} te
+ * @returns {Record<string, string>}
  */
-function darkColors(et) {
+export function darkColors(te) {
 	return {
 		// Base colors
-		"focusBorder": et.accent[3],
-		"foreground": et.neutral[1],
-		"widget.border": et.neutral[6],
-		"selection.background": et.accent[5],
-		"descriptionForeground": et.neutral[3],
+		"focusBorder": te.accent[3],
+		"foreground": te.neutral[1],
+		"widget.border": te.neutral[6],
+		"selection.background": te.accent[5],
+		"descriptionForeground": te.neutral[3],
 
 		// Text colors
-		"textLink.activeForeground": et.accent[0],
-		"textLink.foreground": et.accent[0],
+		"textLink.activeForeground": te.accent[0],
+		"textLink.foreground": te.accent[0],
 
 		// Action colors
-		"toolbar.hoverBackground": et.neutral[7],
-		"toolbar.activeBackground": et.neutral[7],
+		"toolbar.hoverBackground": te.neutral[7],
+		"toolbar.activeBackground": te.neutral[7],
 
 		// Button control
-		"button.background": et.accent[4],
-		"button.foreground": et.neutral[0],
-		"button.separator": color(et.neutral[0]).alpha(0.44).hexa(),
-		"button.hoverBackground": et.accent[3],
-		"button.secondaryForeground": et.neutral[1],
-		"button.secondaryBackground": et.neutral[5],
-		"button.secondaryHoverBackground": et.neutral[4],
+		"button.background": te.accent[4],
+		"button.foreground": te.neutral[0],
+		"button.separator": color(te.neutral[0]).alpha(0.44).hexa(),
+		"button.hoverBackground": te.accent[3],
+		"button.secondaryForeground": te.neutral[1],
+		"button.secondaryBackground": te.neutral[5],
+		"button.secondaryHoverBackground": te.neutral[4],
 
 		// Scrollbar control
-		"scrollbarSlider.activeBackground": color(et.neutral[3]).alpha(0.4).hexa(),
-		"scrollbarSlider.background": color(et.neutral[3]).alpha(0.2).hexa(),
+		"scrollbarSlider.activeBackground": color(te.neutral[3]).alpha(0.4).hexa(),
+		"scrollbarSlider.background": color(te.neutral[3]).alpha(0.2).hexa(),
 
 		// Lists and trees
-		"list.activeSelectionBackground": et.accent[4],
-		"list.activeSelectionForeground": et.neutral[0],
-		"list.focusHighlightForeground": et.accent[8],
-		"list.focusOutline": et.accent[3],
-		"list.focusAndSelectionOutline": et.accent[3],
-		"list.highlightForeground": et.accent[1],
-		"list.inactiveSelectionBackground": et.neutral[7],
+		"list.activeSelectionBackground": te.accent[4],
+		"list.activeSelectionForeground": te.neutral[0],
+		"list.focusHighlightForeground": te.accent[8],
+		"list.focusOutline": te.accent[3],
+		"list.focusAndSelectionOutline": te.accent[3],
+		"list.highlightForeground": te.accent[1],
+		"list.inactiveSelectionBackground": te.neutral[7],
 
 		// Activity Bar
-		"activityBar.foreground": et.neutral[2],
-		"activityBar.inactiveForeground": et.neutral[4],
+		"activityBar.foreground": te.neutral[2],
+		"activityBar.inactiveForeground": te.neutral[4],
 
 		// Side Bar
-		"sideBar.background": et.neutral[9],
+		"sideBar.background": te.neutral[9],
 
 		// Minimap
 		"minimap.foregroundOpacity": color(wh).alpha(0.6).hexa(),
 
 		// Editor colors
-		"editor.background": et.background,
-		"editorLineNumber.foreground": et.neutral[4],
-		"editorCursor.background": et.neutral[0],
-		"editorCursor.foreground": et.neutral[3],
-		"editor.selectionBackground": et.accent[5],
-		"editor.selectionHighlightBackground": et.accent[5],
-		"editor.lineHighlightBackground": color(et.neutral[7]).alpha(0.44).hexa(),
-		"editorWhitespace.foreground": et.neutral[5],
-		"editorRuler.foreground": et.neutral[9],
+		"editor.background": te.background,
+		"editorLineNumber.foreground": te.neutral[4],
+		"editorCursor.background": te.neutral[0],
+		"editorCursor.foreground": te.neutral[3],
+		"editor.selectionBackground": te.accent[5],
+		"editor.selectionHighlightBackground": te.accent[5],
+		"editor.lineHighlightBackground": color(te.neutral[7]).alpha(0.44).hexa(),
+		"editorWhitespace.foreground": te.neutral[5],
+		"editorRuler.foreground": te.neutral[9],
 		"editorUnnecessaryCode.opacity": color(wh).alpha(0.54).hexa(),
-		"editorGutter.modifiedBackground": et.neutral[5],
+		"editorGutter.modifiedBackground": te.neutral[5],
 
 		// Peek view colors
-		"peekViewResult.selectionBackground": et.accent[4],
+		"peekViewResult.selectionBackground": te.accent[4],
 
 		// Panel colors
 		"panelTitle.activeBorder": tr,
 
 		// Status Bar colors
-		"statusBar.foreground": et.neutral[2],
+		"statusBar.foreground": te.neutral[2],
 		"statusBar.noFolderBackground": "editor.background",
 
 		// Command Center colors
-		"commandCenter.background": et.neutral[8],
+		"commandCenter.background": te.neutral[8],
 
 		// Debug Icons colors
-		"debugIcon.breakpointForeground": et.neutral[3],
-		"debugIcon.breakpointDisabledForeground": et.neutral[5],
+		"debugIcon.breakpointForeground": te.neutral[3],
+		"debugIcon.breakpointDisabledForeground": te.neutral[5],
 	}
 }
 
 /**
- * @returns {EditorColors}
+ * @returns {Record<string, string>}
  */
-function sharedColors() {
+export function sharedColors() {
 	return {
 		// Contrast colors
 		// "contrastActiveBorder:"
@@ -1071,33 +999,4 @@ function sharedColors() {
 		// "commentsView.resolvedIcon"
 		// "commentsView.unresolvedIcon"
 	}
-}
-
-/**
- * @param {EditorColors} r
- * @returns {EditorColors}
- * @throws {Error}
- */
-function compute(r) {
-	/** @type {Record<string, string>} */
-	let t = {}
-
-	for (let k of Object.keys(r).sort()) {
-		let v = r[k]
-
-		while (true) {
-			if (!v) {
-				throw new Error(`Could not compute '${k}'`)
-			}
-
-			if (v.startsWith("#")) {
-				t[k] = v
-				break
-			}
-
-			v = r[v]
-		}
-	}
-
-	return t
 }

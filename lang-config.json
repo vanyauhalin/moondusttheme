@@ -1,0 +1,138 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"extends": {
+			"type": "string",
+			"default": "",
+			"title": "Parent Configuration",
+			"description": "Identifier of the configuration to inherit from."
+		},
+		"grammar": {
+			"type": "object",
+			"properties": {
+				"project": {
+					"type": "string",
+					"minLength": 1,
+					"format": "uri",
+					"pattern": "^https:\\/\\/github\\.com\\/[\\w-]+\\/[\\w.-]+$",
+					"title": "GitHub Project URL",
+					"description": "GitHub repository URL where the grammar files are hosted.",
+					"examples": [
+						"https://github.com/microsoft/vscode",
+						"https://github.com/bmalehorn/vscode-fish"
+					]
+				},
+				"version": {
+					"type": "string",
+					"minLength": 1,
+					"title": "Grammar Version",
+					"description": "Version identifier for the grammar files, such as a tag or commit hash. Whenever possible, prefer tags to commit hashes.",
+					"examples": [
+						"1.97.2",
+						"2bdcfbea62cadc2a977eace3189d25b31df71e72"
+					]
+				},
+				"files": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"minLength": 1,
+						"title": "Grammar File",
+						"description": "Relative path to a grammar file within the project repository.",
+						"examples": [
+							"extensions/css/syntaxes/css.tmLanguage.json",
+							"syntaxes/fish.tmLanguage.json"
+						]
+					},
+					"title": "Grammar Files",
+					"description": "List of relative paths to grammar files within the project repository."
+				}
+			},
+			"required": [
+				"project",
+				"version",
+				"files"
+			],
+			"title": "Grammar Configuration",
+			"description": "Configuration for grammar sourcing."
+		},
+		"syntax": {
+			"type": "object",
+			"properties": {
+				"colors": {
+					"type": "object",
+					"additionalProperties": {
+						"anyOf": [
+							{
+								"const": "c0",
+								"title": "c0",
+								"description": "Color for comments, documentation, and similar."
+							},
+							{
+								"const": "p0",
+								"title": "p0",
+								"description": "Color for keywords, operations, punctuation characters, and similar."
+							},
+							{
+								"const": "p1",
+								"title": "p1",
+								"description": "Color for variables, identifiers, literals, and similar."
+							},
+							{
+								"const": "s0",
+								"title": "s0",
+								"description": "Color for string quotes, regexp delimiters, and similar."
+							},
+							{
+								"const": "s1",
+								"title": "s1",
+								"description": "Color for string content, regexp content, and similar."
+							}
+						]
+					},
+					"default": {},
+					"title": "Scope Colors",
+					"description": "Scope names mapped to color codes."
+				},
+				"replace": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "string",
+						"title": "Scope Replacement",
+						"description": "Pattern replacements for scope name endings during inheritance.",
+						"examples": [
+							".json: .json.comments",
+							".js.jsx: .tsx"
+						]
+					},
+					"default": {},
+					"title": "Scope Replacements",
+					"description": "Pattern replacements for scope names endings during inheritance."
+				}
+			},
+			"required": [],
+			"title": "Syntax Configuration",
+			"description": "Configuration for syntax highlighting."
+		},
+		"test": {
+			"type": "object",
+			"properties": {
+				"skip": {
+					"type": "boolean",
+					"default": false,
+					"title": "Skip Tests",
+					"description": "Whether to skip tests. Consider adding a comment explaining the reason."
+				}
+			},
+			"required": [],
+			"default": {},
+			"title": "Test Configuration",
+			"description": "Configuration settings for testing."
+		}
+	},
+	"required": [
+		"grammar",
+		"syntax"
+	]
+}

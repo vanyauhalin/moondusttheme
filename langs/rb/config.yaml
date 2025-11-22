@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../../lang-config.json
+
+grammar:
+  project: https://github.com/microsoft/vscode
+  version: 1.97.2
+  files:
+  - extensions/ruby/syntaxes/ruby.tmLanguage.json
+
+syntax:
+  colors:
+    source.ruby punctuation.separator.key-value: p0
+    comment.block.documentation.ruby: c0
+    comment.line.number-sign.ruby: c0
+    keyword.control.def.ruby: p0
+    keyword.control.pseudo-method.ruby: p0
+    keyword.control.ruby: p0
+    keyword.control.start-block.ruby: p0
+    keyword.operator.arithmetic.ruby: p0
+    keyword.operator.assignment.augmented.ruby: p0
+    keyword.operator.assignment.ruby: p0
+    keyword.operator.comparison.ruby: p0
+    keyword.operator.logical.ruby: p0
+    keyword.other.special-method.ruby: p0
+    meta.require.ruby punctuation.definition.string.begin.ruby: p0
+    meta.require.ruby punctuation.definition.string.end.ruby: p0
+    meta.require.ruby string.quoted.double.interpolated.ruby: p1
+    punctuation.definition.constant.hashkey.ruby: p0
+    punctuation.definition.constant.ruby: p0
+    punctuation.definition.parameters.ruby: p0
+    punctuation.definition.string.begin.ruby: s0
+    punctuation.definition.string.end.ruby: s0
+    punctuation.definition.variable.ruby: p0
+    punctuation.section.array.begin.ruby: p0
+    punctuation.section.array.end.ruby: p0
+    punctuation.section.embedded.begin.ruby: p0
+    punctuation.section.embedded.end.ruby: p0
+    punctuation.section.function.ruby: p0
+    punctuation.section.regexp.begin.ruby: s0
+    punctuation.section.regexp.end.ruby: s0
+    punctuation.section.regexp.ruby: s0
+    punctuation.section.scope.begin.ruby: p0
+    punctuation.section.scope.end.ruby: p0
+    punctuation.separator.method.ruby: p0
+    punctuation.separator.namespace.ruby: p0
+    punctuation.separator.object.ruby: p0
+    punctuation.separator.statement.ruby: p0
+    punctuation.separator.variable.ruby: p0
+    source.ruby: p1
+    string.interpolated.ruby: s1
+    string.quoted.double.interpolated.ruby: s1
+    string.quoted.other.interpolated.ruby: s1
+    string.quoted.single.ruby: s1
+    string.regexp.interpolated.ruby: s1
+    support.function.kernel.ruby: p0

@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../../lang-config.json
+
+grammar:
+  project: https://github.com/microsoft/vscode
+  version: 1.97.2
+  files:
+  - extensions/ini/syntaxes/ini.tmLanguage.json
+
+syntax:
+  colors:
+    comment.line.number-sign.ini: c0
+    comment.line.semicolon.ini: c0
+    entity.name.section.group-title.ini: p1
+    keyword.other.definition.ini: p1
+    punctuation.definition.entity.ini: p0
+    punctuation.definition.string.begin.ini: s0
+    punctuation.definition.string.end.ini: s0
+    punctuation.separator.key-value.ini: p0
+    source.ini: s1

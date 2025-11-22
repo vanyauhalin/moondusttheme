@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../../lang-config.json
+
+grammar:
+  project: https://github.com/microsoft/vscode
+  version: 1.97.2
+  files:
+  - extensions/go/syntaxes/go.tmLanguage.json
+
+syntax:
+  colors:
+    comment.block.go: c0
+    comment.line.double-slash.go: c0
+    constant.numeric.decimal.point.go: p0
+    constant.other.placeholder.go: p0
+    entity.name.type.any.go: p0
+    keyword.channel.go: p0
+    keyword.const.go: p0
+    keyword.control.go: p0
+    keyword.control.import.go: p0
+    keyword.function.go: p0
+    keyword.interface.go: p0
+    keyword.map.go: p0
+    keyword.operator.address.go: p0
+    keyword.operator.arithmetic.bitwise.go: p0
+    keyword.operator.arithmetic.go: p0
+    keyword.operator.assignment.go: p0
+    keyword.operator.channel.go: p0
+    keyword.operator.comparison.go: p0
+    keyword.operator.decrement.go: p0
+    keyword.operator.ellipsis.go: p0
+    keyword.operator.increment.go: p0
+    keyword.operator.logical.go: p0
+    keyword.package.go: p0
+    keyword.struct.go: p0
+    keyword.type.go: p0
+    keyword.var.go: p0
+    punctuation.definition.begin.bracket.curly.go: p0
+    punctuation.definition.begin.bracket.round.go: p0
+    punctuation.definition.begin.bracket.square.go: p0
+    punctuation.definition.end.bracket.curly.go: p0
+    punctuation.definition.end.bracket.round.go: p0
+    punctuation.definition.end.bracket.square.go: p0
+    punctuation.definition.imports.begin.bracket.round.go: p0
+    punctuation.definition.imports.end.bracket.round.go: p0
+    punctuation.definition.string.begin.go: s0
+    punctuation.definition.string.end.go: s0
+    punctuation.other.colon.go: p0
+    punctuation.other.comma.go: p0
+    punctuation.other.period.go: p0
+    punctuation.separator.constant.numeric.go: p0
+    punctuation.terminator.go: p0
+    source.go: p1
+    storage.type.boolean.go: p0
+    storage.type.byte.go: p0
+    storage.type.error.go: p0
+    storage.type.numeric.go: p0
+    storage.type.rune.go: p0
+    storage.type.string.go: p0
+    storage.type.uintptr.go: p0
+    string.quoted.double.go: s1
+    string.quoted.raw.go: s1
+    string.quoted.rune.go: s1

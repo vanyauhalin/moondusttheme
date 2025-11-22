@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=../../lang-config.json
+
+extends: json
+
+grammar:
+  project: https://github.com/microsoft/vscode
+  version: 1.97.2
+  files:
+  - extensions/json/syntaxes/JSONL.tmLanguage.json
+
+syntax:
+  replace:
+    .json: .json.lines

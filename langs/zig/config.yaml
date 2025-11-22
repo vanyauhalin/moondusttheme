@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../lang-config.json
+
+grammar:
+  project: https://github.com/ziglang/vscode-zig
+  version: 0.6.8
+  files:
+  - syntaxes/zig.tmLanguage.json
+
+syntax:
+  colors:
+    comment.line.documentation.zig: c0
+    comment.line.double-slash.zig: c0
+    keyword.constant.default.zig: p0
+    keyword.control.async.zig: p0
+    keyword.control.conditional.zig: p0
+    keyword.control.flow.zig: p0
+    keyword.control.repeat.zig: p0
+    keyword.control.trycatch.zig: p0
+    keyword.default.zig: p0
+    keyword.operator.arithmetic.zig: p0
+    keyword.operator.assignment.zig: p0
+    keyword.operator.bitwise.zig: p0
+    keyword.operator.c-pointer.zig: p0
+    keyword.operator.comparison.zig: p0
+    keyword.operator.question.zig: p0
+    keyword.statement.zig: p0
+    keyword.storage.zig: p0
+    keyword.structure.zig: p0
+    keyword.type.c.zig: p0
+    keyword.type.integer.zig: p0
+    keyword.type.zig: p0
+    punctuation.accessor.zig: p0
+    punctuation.comma.zig: p0
+    punctuation.separator.key-value.zig: p0
+    punctuation.terminator.statement.zig: p0
+    source.zig: p1
+    storage.type.function.zig: p0
+    string.multiline.zig: s1
+    string.quoted.double.zig: s1
+    string.quoted.single.zig: s1

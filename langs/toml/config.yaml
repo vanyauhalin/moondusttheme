@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../lang-config.json
+
+grammar:
+  project: https://github.com/tamasfe/taplo
+  version: release-even-better-toml-0.21.2
+  files:
+  - editors/vscode/toml.tmLanguage.json
+
+syntax:
+  colors:
+    comment.line.number-sign.toml: c0
+    meta.preprocessor.toml: c0
+    punctuation.definition.array.table.toml: p0
+    punctuation.definition.array.toml: p0
+    punctuation.definition.table.inline.toml: p0
+    punctuation.definition.table.toml: p0
+    punctuation.eq.toml: p0
+    punctuation.separator.array.toml: p0
+    punctuation.separator.dot.toml: p0
+    punctuation.separator.table.inline.toml: p0
+    source.toml: s1
+    support.type.property-name.array.toml: p1
+    support.type.property-name.table.toml: p1
+    support.type.property-name.toml: p1

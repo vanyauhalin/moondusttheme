@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../../lang-config.json
+
+grammar:
+  project: https://github.com/golang/vscode-go
+  version: v0.47.0
+  files:
+  - extension/syntaxes/go.mod.tmGrammar.json
+
+syntax:
+  colors:
+    comment.line.double-slash.go.mod: c0
+    constant.language.go.mod: s1
+    constant.other.placeholder.go.mod: p0
+    keyword.go.mod: p0
+    operator.go.mod: p0
+    punctuation.definition.string.begin.go.mod: p0
+    punctuation.definition.string.end.go.mod: p0
+    go.mod: p1
