@@ -1,8 +1,5 @@
 name: Release
 
-permissions:
-  contents: write
-
 on:
   push:
     tags:
@@ -11,60 +8,80 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-    - name: Checkout Repository
+    - name: Checkout repository
       uses: actions/checkout@v4
+
+    - name: Store anchor
+      id: anchor
+      run: |
+        v="${{github.ref_name}}"
+        r="^## \[$v\] - [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]$"
+        h=$(grep "$r" CHANGELOG.md 2>/dev/null)
+        if [ -z "$h" ]; then exit 1; fi
+        v="${v%.*.*}${v#*.}"
+        v="${v%.*}${v##*.}"
+        d="${h##* - }"
+        a="${v}---${d}"
+        echo "anchor=$a" >> "$GITHUB_OUTPUT"
 
     - name: Setup mise
       uses: jdx/mise-action@v2
 
     - name: Setup pnpm
       run: |
-        d=$(echo "$HOME/.local/share/pnpm")
+        d="$HOME/.local/share/pnpm"
         mkdir -p "${d}"
         echo "PNPM_HOME=${d}" >> "$GITHUB_ENV"
         echo "${d}" >> "$GITHUB_PATH"
 
-    - name: Install VSCode Extension Manager
+    - name: Install vsce
       run: pnpm install --global @vscode/vsce@3
 
-    - name: Install Open VSX Extension Manager
+    - name: Install ovsx
       run: pnpm install --global ovsx@0
 
-    - name: Install Extension Dependencies
+    - name: Verify VSCE token
+      env:
+        VSCE_PAT: ${{secrets.VSCE_RELEASE_TOKEN}}
+      run: vsce verify-pat
+
+    - name: Verify OVSX token
+      env:
+        OVSX_PAT: ${{secrets.OVSX_RELEASE_TOKEN}}
+      run: ovsx verify-pat
+
+    - name: Install dependencies
       run: pnpm install --frozen-lockfile
 
-    - name: Build Extension
-      run: pnpm build
+    - name: Build themes
+      run: node cli.js build
 
-    - name: Clear Extension
+    - name: Clear package
       run: pnpm clear
 
-    # https://github.com/microsoft/vscode-vsce/issues/1073
-    - name: Package Extension
-      run: |
-        vsce package \
-          --allow-unused-files-pattern \
-          --no-dependencies \
-          --out moondusttheme.vsix
+    # https://github.com/microsoft/vscode-vsce/issues/1225
+    - name: Package extension
+      run: vsce package --no-dependencies --skip-license --out moondusttheme.vsix
 
-    - name: Release Extension on VSCode Marketplace
+    - name: Publish to VS Code Marketplace
       env:
         VSCE_PAT: ${{secrets.VSCE_RELEASE_TOKEN}}
       run: vsce publish --packagePath moondusttheme.vsix
 
-    - name: Release Extension on Open VSX
+    - name: Publish to Open VSX Registry
       env:
         OVSX_PAT: ${{secrets.OVSX_RELEASE_TOKEN}}
       run: ovsx publish --packagePath moondusttheme.vsix
 
-    - name: Release Extension on GitHub
+    - name: Create GitHub release
       env:
         GH_TOKEN: ${{github.token}}
       run: |
-        gh release create "${{github.ref_name}}" \
-          --title "${{github.ref_name}}" \
-          --notes "See ${{github.server_url}}/${{github.repository}}/blob/main/CHANGELOG.md/"
-        gh release upload "${{github.ref_name}}" \
-          dist/moondusttheme-*.json \
-          moondusttheme.vsix
+        v="${{github.ref_name}}"
+        a="${{steps.anchor.outputs.anchor}}"
+        u="${{github.server_url}}/${{github.repository}}/blob/main/CHANGELOG.md#$a"
+        gh release create "$v" --title "$v" --notes "See $u"
+        gh release upload "$v" dist/moondusttheme-*.json moondusttheme.vsix
