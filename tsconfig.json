@@ -9,5 +9,6 @@
 		"skipLibCheck": true,
 		"strict": true,
 		"target": "ESNext"
-	}
+	},
+	"include": ["langs", "*.js", "*.ts"]
 }
