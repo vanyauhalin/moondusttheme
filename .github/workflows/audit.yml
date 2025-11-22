@@ -12,17 +12,26 @@ jobs:
   audit:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Repository
+    - name: Checkout repository
       uses: actions/checkout@v4
 
     - name: Setup mise
       uses: jdx/mise-action@v2
 
-    - name: Install Extension Dependencies
+    - name: Install dependencies
       run: pnpm install --frozen-lockfile
 
-    - name: Pull Extension Dependencies
-      run: pnpm pull
+    - name: Pull grammars
+      run: node cli.js pull
 
-    - name: Run Extension Tests
-      run: pnpm test
+    - name: Check types
+      run: pnpm check
+
+    - name: Lint code
+      run: pnpm lint
+
+    - name: Run tests
+      run: node cli.js test
+
+    - name: Build themes
+      run: node cli.js build
