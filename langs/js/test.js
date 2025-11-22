@@ -85,8 +85,7 @@ p0("void"); p1("a")
 p0("new"); p1("a")
 
 p0("type"); p1("a"); p0(`= s|"s"|'s'|\`s\`|0|string|this`)
-p0("function"); p1("a"); p0("(..."); p1("a"); p0(","); p1("a"); p0('?:string|"",[')
-p1("a"); p0("],{"); p1("a"); p0(`}:{a:string}):s|"s"|'s'|\`s\`|0|string|this {`); p1("a"); p0("}")
+p0("function"); p1("a"); p0("(..."); p1("a"); p0(","); p1("a"); p0('?:string|"",['); p1("a"); p0("],{"); p1("a"); p0(`}:{a:string}):s|"s"|'s'|\`s\`|0|string|this {`); p1("a"); p0("}")
 p0(`():s|"s"|'s'|\`s\`|0|string|this|{a:string}=>{}`)
 
 p0("namespace"); p1("a"); p0("{")

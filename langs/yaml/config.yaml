@@ -38,4 +38,5 @@ syntax:
     storage.modifier.chomping-indicator.yaml: p0
 
 test:
+  # Skipping due to significant tokenization differences.
   skip: true

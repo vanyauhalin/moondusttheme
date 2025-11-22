@@ -25,4 +25,5 @@ syntax:
     source.vue: p1
 
 test:
+  # Skipping due to significant tokenization differences.
   skip: true
