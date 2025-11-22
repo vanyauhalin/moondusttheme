@@ -332,7 +332,7 @@ async function handleBuild(o) {
 		},
 		{
 			...sharedColors(),
-			...darkColors(ta[0].editor),
+			...darkColors(ta[1].editor),
 		},
 	]
 
