@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../lang-config.json
+
+grammar:
+  project: https://github.com/microsoft/vscode
+  version: 1.97.2
+  files:
+  - extensions/xml/syntaxes/xml.tmLanguage.json
+
+syntax:
+  colors:
+    comment.block.xml: c0
+    constant.character.entity.xml: p1
+    entity.name.tag.localname.xml: p1
+    entity.name.tag.namespace.xml: p1
+    entity.other.attribute-name.localname.xml: p1
+    entity.other.attribute-name.namespace.xml: p1
+    meta.tag.preprocessor.xml punctuation.definition.string.begin.xml: p0
+    meta.tag.preprocessor.xml punctuation.definition.string.end.xml: p0
+    meta.tag.preprocessor.xml string.quoted.double.xml: p0
+    meta.tag.preprocessor.xml string.quoted.single.xml: p0
+    meta.tag.preprocessor.xml: p0
+    meta.tag.sgml.doctype.xml punctuation.definition.string.begin.xml: p0
+    meta.tag.sgml.doctype.xml punctuation.definition.string.end.xml: p0
+    meta.tag.sgml.doctype.xml string.quoted.double.xml: p0
+    meta.tag.sgml.doctype.xml string.quoted.single.xml: p0
+    meta.tag.sgml.doctype.xml: p0
+    punctuation.definition.constant.xml: p0
+    punctuation.definition.string.begin.xml: s0
+    punctuation.definition.string.end.xml: s0
+    punctuation.definition.tag.xml: p0
+    punctuation.separator.namespace.xml: p0
+    string.quoted.double.xml: s1
+    string.quoted.single.xml: s1
+    string.unquoted.cdata.xml punctuation.definition.string.begin.xml: p0
+    string.unquoted.cdata.xml punctuation.definition.string.end.xml: p0
+    string.unquoted.cdata.xml: p0
+    text.xml: s1

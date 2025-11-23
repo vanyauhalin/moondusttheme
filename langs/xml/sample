@@ -1,0 +1,14 @@
+<!-- c -->
+
+<!DOCTYPE a [<!ENTITY % a "s" 's'> %a;]>
+<?xml a="s" a='s'?>
+<![CDATA[s]]>
+
+&a;
+
+<a>s</a>
+<a></a>
+<a />
+<a:a>
+
+<a a="s" a='s' a=s a:a="s"></a>

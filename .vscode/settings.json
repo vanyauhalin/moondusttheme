@@ -26,6 +26,7 @@
 		"**/langs/toml/sample*": "toml",
 		"**/langs/vue/sample*": "vue",
 		"**/langs/yaml/sample*": "yaml",
+		"**/langs/xml/sample*": "xml",
 		"**/langs/zig/sample*": "zig"
 	}
 }
