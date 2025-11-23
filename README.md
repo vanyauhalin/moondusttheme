@@ -33,10 +33,10 @@ approach to syntax highlighting, recommend reading the articles
 [I am sorry, but everyone is getting syntax highlighting wrong].
 
 Moondust is tailored for each syntax individually. At present, it supports
-[Astro], [C], [CSS], [Dockerfile], [fish], [Go], [Go Module], [Go Sum], [HTML],
-[INI], [JavaScript], [JSON], [JSON with Comments], [JSON Lines], [JSX], [Lua],
-[Makefile], [PHP], [Python], [Ruby], [Rust], [Shell Script], [SQL], [Svelte],
-[Swift], [TOML], [TypeScript], [TSX], [Vue], [YAML], and [Zig].
+[Astro], [C], [C++], [CSS], [Dockerfile], [fish], [Go], [Go Module], [Go Sum],
+[HTML], [INI], [JavaScript], [JSON], [JSON with Comments], [JSON Lines], [JSX],
+[Lua], [Makefile], [PHP], [Python], [Ruby], [Rust], [Shell Script], [SQL],
+[Svelte], [Swift], [TOML], [TypeScript], [TSX], [Vue], [XML], [YAML], and [Zig].
 
 In the [initial phase], Moondust was primarily a modification of the
 [GitHub Theme]. I owe a great deal of gratitude to the Primer team for their
@@ -65,6 +65,7 @@ aesthetic preferences align closely.
 
 [Astro]: https://moondustthe.me/#astro
 [C]: https://moondustthe.me/#c
+[C++]: https://moondustthe.me/#cpp
 [CSS]: https://moondustthe.me/#css
 [Dockerfile]: https://moondustthe.me/#dockerfile
 [fish]: https://moondustthe.me/#fish
@@ -92,6 +93,7 @@ aesthetic preferences align closely.
 [TypeScript]: https://moondustthe.me/#ts
 [TSX]: https://moondustthe.me/#tsx
 [Vue]: https://moondustthe.me/#vue
+[XML]: https://moondustthe.me/#xml
 [YAML]: https://moondustthe.me/#yaml
 [Zig]: https://moondustthe.me/#zig
 
