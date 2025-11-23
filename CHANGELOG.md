@@ -9,7 +9,8 @@ This document records all notable changes to the project, following the
 
 ### Added
 
-- Add support for C++ syntax ([9a8fa7e]).
+- Add support for C++ syntax ([9a8fa7e]);
+- Add support for XML syntax ([0c20adc]).
 
 ## [0.10.0] - 2025-05-18
 
@@ -154,6 +155,7 @@ There are no notable changes in this release.
 [0.1.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.1.0/
 [0.0.1]: https://github.com/vanyauhalin/moondusttheme/releases/tag/v0.0.1/
 
+[0c20adc]: https://github.com/vanyauhalin/moondusttheme/commit/0c20adc10d455ec111761f8cd934dda52081a1ae/
 [9a8fa7e]: https://github.com/vanyauhalin/moondusttheme/commit/9a8fa7e3ad682667b52807c0a4220e55c796e816/
 [5bf27e8]: https://github.com/vanyauhalin/moondusttheme/commit/5bf27e87d5e6de9680ff66918b833d4735217a9a/
 [44c66c9]: https://github.com/vanyauhalin/moondusttheme/commit/44c66c98bf775376a9dc39282d4f96ba5e9c3b45/
