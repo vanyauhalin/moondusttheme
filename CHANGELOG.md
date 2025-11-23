@@ -1,122 +1,137 @@
 # Changelog
 
-This document records all notable changes to the project, following the [Keep a Changelog] format and adhering to [Semantic Versioning].
+This document records all notable changes to the project, following the
+[Keep a Changelog] format and adhering to [Semantic Versioning].
 
 ## [Unreleased]
 
-There are no noticeable changes in version [unreleased].
+There are no notable changes in this release.
 
 ## [0.10.0] - 2025-05-18
 
 ### Added
 
-- Support the Svelte syntax ([1d27fe1], [a3a4ac5]).
-- Support the Astro syntax ([44c66c9]).
-- Support the Lua syntax ([5bf27e8]).
+- Add support for Svelte syntax ([1d27fe1], [a3a4ac5]);
+- Add support for Astro syntax ([44c66c9]);
+- Add support for Lua syntax ([5bf27e8]).
 
 ### Changed
 
-- Use color `p1` for HTML attribute names and `s0` with `s1` for their values ([868b3ca]).
+- Update HTML attribute highlighting to use color `p1` for names and `s0` with
+  `s1` for values ([868b3ca]).
 
 ## [0.9.0] - 2025-04-29
 
 ### Added
 
-- Support the Zig syntax ([e96b091]).
+- Add support for Zig syntax ([e96b091]);
 - Configure colors for the `menu` scope ([6f0cdb5]).
 
 ## [0.8.0] - 2025-03-02
 
 ### Added
 
-- Support the PHP syntax ([7b39b42]).
-- Support highlighting `some` and `any` keywords in the Swift syntax ([9b35127]).
-- Support the Vue syntax ([f6bef45]).
+- Add support for PHP syntax ([7b39b42]);
+- Add highlighting for `some` and `any` keywords in Swift syntax ([9b35127]);
+- Add support for Vue syntax ([f6bef45]).
 
 ### Changed
 
-- Synchronize themes by extracting shared links between tokens ([78ffc6f]).
-- Update grammars for C, CSS, Dockerfile, Go, `go.mod`, `go.sum`, HTML, INI, JavaScript, JSON, JSON with Comments, JSON Lines, JSX, Makefile, PHP, Python, Ruby, Rust, Shell, SQL, Swift, TOML, TypeScript, TSX, and YAML syntaxes ([162c920...c42dd98]).
+- Synchronize themes by extracting shared links between tokens ([78ffc6f]);
+- Update grammars for C, CSS, Dockerfile, Go, `go.mod`, `go.sum`, HTML, INI,
+  JavaScript, JSON, JSON with Comments, JSON Lines, JSX, Makefile, PHP, Python,
+  Ruby, Rust, Shell, SQL, Swift, TOML, TypeScript, TSX, and YAML syntaxes
+  ([162c920...c42dd98]).
 
 ### Fixed
 
-- Remove the transparency of the unexpected bracket ([6aaabc9]).
-- Remove attempts to highlight anything inside the TypeScript type declaration ([a139d2b]).
+- Remove transparency from unexpected brackets ([6aaabc9]);
+- Fix incorrect highlighting inside TypeScript type declarations ([a139d2b]).
 
 ## [0.7.0] - 2024-11-02
 
 ### Added
 
-- Add the "Far Side of the Moon" variant of the theme ([7eb998e]).
-- Support the Python syntax ([5755a5d]).
-- Support the C syntax ([aaabc25]).
+- Add the "Far Side of the Moon" theme variant ([7eb998e]);
+- Add support for Python syntax ([5755a5d]);
+- Add support for C syntax ([aaabc25]).
 
 ## [0.6.1] - 2024-07-16
 
-There are no noticeable changes in version [0.6.1].
+There are no notable changes in this release.
 
 ## [0.6.0] - 2024-07-02
 
 ### Added
 
-- Support the Rust syntax by [@Super-Pizza] ([0a02e58...59b1f5d]).
+- Add support for Rust syntax by [@Super-Pizza] ([0a02e58...59b1f5d]).
 
 ## [0.5.0] - 2024-06-28
 
 ### Added
 
-- Support the Swift syntax ([158f0b6]).
+- Add support for Swift syntax ([158f0b6]).
 
 ## [0.4.1] - 2024-05-21
 
 ### Added
 
-- Add string highlighting for a function within a string in the Shell syntax ([4272d1f]).
+- Add string highlighting for functions within strings in Shell syntax
+  ([4272d1f]).
 
 ### Fixed
 
-- Disable the string highlighting of string interpolation in the Shell syntax ([383a376]).
+- Disable string highlighting for string interpolation in Shell syntax
+  ([383a376]).
 
 ## [0.4.0] - 2024-05-10
 
 ### Added
 
-- Support the Shell syntax ([3385ad4]).
+- Add support for Shell syntax ([3385ad4]).
 
 ## [0.3.0] - 2024-05-04
 
 ### Added
 
-- Support the SQL syntax ([5b7c040]).
+- Add support for SQL syntax ([5b7c040]).
 
 ## [0.2.0] - 2024-04-20
 
 ### Added
 
-- Support the fish syntax ([f1978d3]).
+- Add support for fish syntax ([f1978d3]).
 
 ## [0.1.2] - 2024-04-01
 
 ### Fixed
 
-- Fix highlighting of keywords in a method of an object in the JavaScript syntax ([b09f1ba]).
+- Fix highlighting of keywords in object methods in JavaScript syntax
+  ([b09f1ba]).
 
 ## [0.1.1] - 2024-03-31
 
-There are no noticeable changes in version [0.1.1].
+There are no notable changes in this release.
 
 ## [0.1.0] - 2024-03-29
 
-There are no noticeable changes in version [0.1.0].
+There are no notable changes in this release.
 
 ## [0.0.1] - 2024-03-29
 
 ### Added
 
-- Add the "Near Side of the Moon" variant of the theme ([704d29a]).
-- Support CSS, Dockerfile, `go.mod`, `go.sum`, Go, HTML, INI, JavaScript, JSON, JSON, JSON, JSX, Makefile, Ruby, TOML, TypeScript, TSX, and YAML syntaxes ([704d29a]).
+- Add the "Near Side of the Moon" theme variant ([704d29a]);
+- Add support for CSS, Dockerfile, `go.mod`, `go.sum`, Go, HTML, INI,
+  JavaScript, JSON, JSON with Comments, JSON Lines, JSX, Makefile, Ruby, TOML,
+  TypeScript, TSX, and YAML syntaxes ([704d29a]).
 
-<!-- Footnotes -->
+<!-- Definitions -->
+
+[Keep a Changelog]: https://keepachangelog.com/en/1.1.0/
+[Semantic Versioning]: https://semver.org/spec/v2.0.0.html
+
+[@Super-Pizza]: https://github.com/Super-Pizza/
 
 [Unreleased]: https://github.com/vanyauhalin/moondusttheme/compare/v0.10.0...HEAD/
 [0.10.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.9.0...v0.10.0/
@@ -161,8 +176,3 @@ There are no noticeable changes in version [0.1.0].
 [f1978d3]: https://github.com/vanyauhalin/moondusttheme/commit/f1978d3458d699874d304802b5b759e530b2686f/
 [b09f1ba]: https://github.com/vanyauhalin/moondusttheme/commit/b09f1bae197fccc60476e7d57fc864f5971e9cae/
 [704d29a]: https://github.com/vanyauhalin/moondusttheme/commit/704d29a988081be4aee23276211821143e12c4f4/
-
-[@Super-Pizza]: https://github.com/Super-Pizza/
-
-[Keep a Changelog]: https://keepachangelog.com/en/1.1.0/
-[Semantic Versioning]: https://semver.org/spec/v2.0.0.html
