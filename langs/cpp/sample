@@ -1,0 +1,347 @@
+// c
+/// c
+/* c */
+/** c */
+
+"s"
+"s"s
+"s"_s
+'s'
+'s's
+'s'_s
+R"(s)"
+R"(s)"s
+R"(s)"_s
+
+true
+false
+NULL
+nullptr
+
+0
+0b0
+0B0
+0e0
+0E0
+0f
+0F
+0l
+0L
+0ll
+0LL
+0u
+0U
+0ull
+0ULL
+0x0
+0X0
+0.0
+0'0
+0_s
+
++
+-
+*
+/
+%
+
+++
+--
+
+==
+!=
+<
+>
+<=
+>=
+
+&&
+||
+!
+
+&
+|
+^
+~
+<<
+>>
+
+=
++=
+-=
+*=
+/=
+%=
+&=
+|=
+^=
+<<=
+>>=
+
+?
+:
+
+,
+;
+
+std::a;
+v::v();
+
+a.a;
+a->a();
+
+alignas(a)
+alignof(a)
+delete
+delete[]
+new
+noexcept
+sizeof(a)
+sizeof...()
+typeid(a)
+
+#elif
+#else
+#endif
+#if
+#ifdef
+#ifndef
+#include "s"
+#include <s>
+#include_next "s"
+#pragma
+#pragma mark
+#undef a
+
+#if defined()
+#endif
+
+#error
+#warning
+#line
+
+auto
+char
+double
+float
+int
+long int
+long long int
+short int
+signed int
+unsigned int
+void
+
+blkcnt_t
+blksize_t
+caddr_t
+clock_t
+daddr_t
+dev_t
+div_t
+fixpt_t
+gid_t
+id_t
+in_addr_t
+in_port_t
+ino_t
+int_fast8_t
+int_fast16_t
+int_fast32_t
+int_fast64_t
+int_least8_t
+int_least16_t
+int_least32_t
+int_least64_t
+int8_t
+int16_t
+int32_t
+int64_t
+intmax_t
+intptr_t
+key_t
+mode_t
+nlink_t
+off_t
+pid_t
+qaddr_t
+quad_t
+segsz_t
+size_t
+ssize_t
+suseconds_t
+swblk_t
+time_t
+u_char
+u_int
+u_long
+u_quad_t
+u_short
+uid_t
+uint
+uint_fast8_t
+uint_fast16_t
+uint_fast32_t
+uint_fast64_t
+uint_least8_t
+uint_least16_t
+uint_least32_t
+uint_least64_t
+uint8_t
+uint16_t
+uint32_t
+uint64_t
+uintmax_t
+uintptr_t
+useconds_t
+ushort
+
+pthread_t
+pthread_attr_t
+pthread_cond_t
+pthread_condattr_t
+pthread_key_t
+pthread_mutex_t
+pthread_mutexattr_t
+pthread_once_t
+pthread_rwlock_t
+pthread_rwlockattr_t
+
+concept
+constinit
+export
+module
+requires
+typedef
+
+const int
+extern
+register
+restrict
+static
+thread_local
+volatile int
+
+const
+const noexcept
+consteval
+constexpr
+explicit
+final
+friend
+inline
+mutable
+override
+virtual
+volatile
+
+const int a() {};
+consteval int a() {};
+constexpr int a() {};
+explicit int a() {};
+extern int a() {};
+friend int a() {};
+inline int a() {};
+mutable int a() {};
+register int a() {};
+restrict int a() {};
+static int a() {};
+thread_local int a() {};
+virtual int a() {};
+volatile int a() {};
+
+break
+case
+catch
+co_await
+co_return
+co_yield
+continue
+default
+do
+else
+for
+goto
+goto
+if
+return
+switch
+throw
+try
+while
+
+private:
+protected:
+public:
+
+decltype();
+
+class {};
+enum {};
+extern "" {};
+struct {};
+union {};
+
+struct a final {}
+struct a : a, a {};
+struct a : private a {};
+struct a : protected a {};
+struct a : public a {};
+struct a : virtual a {};
+
+class a final {}
+class a : a, a {};
+class a : private a {};
+class a : protected a {};
+class a : public a {};
+class a : virtual a {};
+
+namespace a {};
+namespace a = a;
+using namespace a;
+
+template class a::a<>;
+template class <a::a>;
+template<class a, a::a>;
+
+int[0];
+int (*a)();
+for (a : a) {};
+
+asm("s" : ());
+static_assert(a);
+
+[](){}();
+[]() -> int {};
+[](a...) {};
+
+int a(int *a, int &a[]) {};
+int a(_In_ int a, _Out_ int a) {};
+int a(std::a a, a a) {};
+int a::a();
+a a() {};
+std::a<> a() {};
+auto a() -> std::a {};
+auto a() -> decltype(a) {};
+[[a::a]] int a();
+
+using a = void ()();
+using a = std::a;
+
+() {
+start:
+switch () {
+case:
+default:
+}
+};
+
+class {
+a() : a() {}
+a() = default;
+a() = delete;
+a() = override;
+a operator()() {};
+a operator[]() {};
+~a() {}
+};

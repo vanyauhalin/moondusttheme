@@ -2,6 +2,7 @@
 	"files.associations": {
 		"**/langs/astro/sample*": "astro",
 		"**/langs/c/sample*": "c",
+		"**/langs/cpp/sample*": "cpp",
 		"**/langs/css/sample*": "css",
 		"**/langs/dockerfile/sample*": "dockerfile",
 		"**/langs/fish/sample*": "fish",

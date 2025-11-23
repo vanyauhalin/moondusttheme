@@ -1,0 +1,280 @@
+# yaml-language-server: $schema=../../lang-config.json
+
+grammar:
+  project: https://github.com/microsoft/vscode
+  version: 1.97.2
+  files:
+  - extensions/cpp/syntaxes/cpp.tmLanguage.json
+
+syntax:
+  colors:
+    comment.block.cpp: c0
+    comment.block.documentation.cpp: c0
+    comment.line.double-slash.cpp: c0
+    comment.line.double-slash.documentation.cpp: c0
+    constant.numeric.decimal.point.cpp: p0
+    entity.name.type.parameter.cpp: p0
+    keyword.control.break.cpp: p0
+    keyword.control.case.cpp: p0
+    keyword.control.catch.cpp: p0
+    keyword.control.co_await.cpp: p0
+    keyword.control.co_return.cpp: p0
+    keyword.control.co_yield.cpp: p0
+    keyword.control.continue.cpp: p0
+    keyword.control.default.cpp: p0
+    keyword.control.directive.conditional.defined.cpp: p0
+    keyword.control.directive.conditional.if: p0
+    keyword.control.directive.conditional.ifdef: p0
+    keyword.control.directive.conditional.ifndef: p0
+    keyword.control.directive.define.cpp: p0
+    keyword.control.directive.diagnostic.error.cpp: p0
+    keyword.control.directive.diagnostic.warning.cpp: p0
+    keyword.control.directive.elif.cpp: p0
+    keyword.control.directive.else.cpp: p0
+    keyword.control.directive.endif.cpp: p0
+    keyword.control.directive.include_next.cpp: p0
+    keyword.control.directive.include.cpp: p0
+    keyword.control.directive.line.cpp: p0
+    keyword.control.directive.pragma.cpp: p0
+    keyword.control.directive.pragma.pragma-mark.cpp: p0
+    keyword.control.directive.undef.cpp: p0
+    keyword.control.do.cpp: p0
+    keyword.control.else.cpp: p0
+    keyword.control.for.cpp: p0
+    keyword.control.goto.cpp: p0
+    keyword.control.if.cpp: p0
+    keyword.control.return.cpp: p0
+    keyword.control.switch.cpp: p0
+    keyword.control.throw.cpp: p0
+    keyword.control.try.cpp: p0
+    keyword.control.while.cpp: p0
+    keyword.operator.alignas.cpp: p0
+    keyword.operator.alignof.cpp: p0
+    keyword.operator.arithmetic.cpp: p0
+    keyword.operator.asm.cpp: p0
+    keyword.operator.assignment.compound.bitwise.cpp: p0
+    keyword.operator.assignment.compound.cpp: p0
+    keyword.operator.assignment.cpp: p0
+    keyword.operator.bitwise.cpp: p0
+    keyword.operator.bitwise.shift.cpp: p0
+    keyword.operator.comparison.cpp: p0
+    keyword.operator.decrement.cpp: p0
+    keyword.operator.delete.array.bracket.cpp: p0
+    keyword.operator.delete.array.cpp: p0
+    keyword.operator.delete.cpp: p0
+    keyword.operator.increment.cpp: p0
+    keyword.operator.logical.cpp: p0
+    keyword.operator.new.cpp: p0
+    keyword.operator.noexcept.cpp: p0
+    keyword.operator.sizeof.cpp: p0
+    keyword.operator.sizeof.variadic.cpp: p0
+    keyword.operator.ternary.cpp: p0
+    keyword.operator.typeid.cpp: p0
+    keyword.other.concept.cpp: p0
+    keyword.other.constinit.cpp: p0
+    keyword.other.default.function.cpp: p0
+    keyword.other.delete.function.cpp: p0
+    keyword.other.export.cpp: p0
+    keyword.other.module.cpp: p0
+    keyword.other.operator.overload.cpp: p0
+    keyword.other.requires.cpp: p0
+    keyword.other.typedef.cpp: p0
+    keyword.other.using.directive.cpp: p0
+    meta.declaration.namespace.alias.cpp entity.name.namespace.alias.cpp: p1
+    meta.declaration.namespace.alias.cpp: p0
+    meta.declaration.type.alias.cpp meta.qualified_type.cpp: p0
+    meta.function.definition.cpp meta.qualified_type.cpp: p0
+    meta.head.class.cpp: p0
+    meta.head.function.definition.cpp entity.name.function.definition.cpp: p1
+    meta.head.function.definition.cpp variable.parameter.cpp: p1
+    meta.head.function.definition.cpp: p0
+    meta.head.struct.cpp: p0
+    meta.template.call.cpp: p0
+    meta.template.definition.cpp: p0
+    punctuation.definition.begin.bracket.square.array.type.cpp: p0
+    punctuation.definition.capture.begin.lambda.cpp: p0
+    punctuation.definition.capture.end.lambda.cpp: p0
+    punctuation.definition.end.bracket.square.array.type.cpp: p0
+    punctuation.definition.function.pointer.dereference.cpp: p0
+    punctuation.definition.function.return-type.cpp: p0
+    punctuation.definition.lambda.return-type.cpp: p0
+    punctuation.definition.parameters.begin.lambda.cpp: p0
+    punctuation.definition.parameters.begin.preprocessor.cpp: p0
+    punctuation.definition.parameters.end.lambda.cpp: p0
+    punctuation.definition.parameters.end.preprocessor.cpp: p0
+    punctuation.definition.string.begin.assembly.cpp: s0
+    punctuation.definition.string.begin.cpp: s0
+    punctuation.definition.string.end.assembly.cpp: s0
+    punctuation.definition.string.end.cpp: s0
+    punctuation.section.angle-brackets.begin.template.call.cpp: p0
+    punctuation.section.angle-brackets.begin.template.definition.cpp: p0
+    punctuation.section.angle-brackets.end.template.call.cpp: p0
+    punctuation.section.angle-brackets.end.template.definition.cpp: p0
+    punctuation.section.arguments.begin.bracket.round.decltype.cpp: p0
+    punctuation.section.arguments.begin.bracket.round.function.call.cpp: p0
+    punctuation.section.arguments.begin.bracket.round.function.call.initializer.cpp: p0
+    punctuation.section.arguments.begin.bracket.round.function.member.cpp: p0
+    punctuation.section.arguments.begin.bracket.round.initializer.cpp: p0
+    punctuation.section.arguments.begin.bracket.round.operator.alignas.cpp: p0
+    punctuation.section.arguments.begin.bracket.round.operator.alignof.cpp: p0
+    punctuation.section.arguments.begin.bracket.round.operator.noexcept.cpp: p0
+    punctuation.section.arguments.begin.bracket.round.operator.sizeof.cpp: p0
+    punctuation.section.arguments.begin.bracket.round.operator.sizeof.variadic.cpp: p0
+    punctuation.section.arguments.begin.bracket.round.operator.typeid.cpp: p0
+    punctuation.section.arguments.begin.bracket.round.static_assert.cpp: p0
+    punctuation.section.arguments.end.bracket.round.decltype.cpp: p0
+    punctuation.section.arguments.end.bracket.round.function.call.cpp: p0
+    punctuation.section.arguments.end.bracket.round.function.call.initializer.cpp: p0
+    punctuation.section.arguments.end.bracket.round.function.member.cpp: p0
+    punctuation.section.arguments.end.bracket.round.initializer.cpp: p0
+    punctuation.section.arguments.end.bracket.round.operator.alignas.cpp: p0
+    punctuation.section.arguments.end.bracket.round.operator.alignof.cpp: p0
+    punctuation.section.arguments.end.bracket.round.operator.noexcept.cpp: p0
+    punctuation.section.arguments.end.bracket.round.operator.sizeof.cpp: p0
+    punctuation.section.arguments.end.bracket.round.operator.sizeof.variadic.cpp: p0
+    punctuation.section.arguments.end.bracket.round.operator.typeid.cpp: p0
+    punctuation.section.arguments.end.bracket.round.static_assert.cpp: p0
+    punctuation.section.block.begin.bracket.curly.class.cpp: p0
+    punctuation.section.block.begin.bracket.curly.cpp: p0
+    punctuation.section.block.begin.bracket.curly.enum.cpp: p0
+    punctuation.section.block.begin.bracket.curly.extern.cpp: p0
+    punctuation.section.block.begin.bracket.curly.function.definition.cpp: p0
+    punctuation.section.block.begin.bracket.curly.function.definition.special.constructor.cpp: p0
+    punctuation.section.block.begin.bracket.curly.function.definition.special.member.destructor.cpp: p0
+    punctuation.section.block.begin.bracket.curly.function.definition.special.operator-overload.cpp: p0
+    punctuation.section.block.begin.bracket.curly.lambda.cpp: p0
+    punctuation.section.block.begin.bracket.curly.namespace.cpp: p0
+    punctuation.section.block.begin.bracket.curly.struct.cpp: p0
+    punctuation.section.block.begin.bracket.curly.switch.cpp: p0
+    punctuation.section.block.begin.bracket.curly.union.cpp: p0
+    punctuation.section.block.end.bracket.curly.class.cpp: p0
+    punctuation.section.block.end.bracket.curly.cpp: p0
+    punctuation.section.block.end.bracket.curly.enum.cpp: p0
+    punctuation.section.block.end.bracket.curly.extern.cpp: p0
+    punctuation.section.block.end.bracket.curly.function.definition.cpp: p0
+    punctuation.section.block.end.bracket.curly.function.definition.special.constructor.cpp: p0
+    punctuation.section.block.end.bracket.curly.function.definition.special.member.destructor.cpp: p0
+    punctuation.section.block.end.bracket.curly.function.definition.special.operator-overload.cpp: p0
+    punctuation.section.block.end.bracket.curly.lambda.cpp: p0
+    punctuation.section.block.end.bracket.curly.namespace.cpp: p0
+    punctuation.section.block.end.bracket.curly.struct.cpp: p0
+    punctuation.section.block.end.bracket.curly.switch.cpp: p0
+    punctuation.section.block.end.bracket.curly.union.cpp: p0
+    punctuation.section.parameters.begin.bracket.round.cpp: p0
+    punctuation.section.parameters.begin.bracket.round.function.pointer.cpp: p0
+    punctuation.section.parameters.begin.bracket.round.special.constructor.cpp: p0
+    punctuation.section.parameters.begin.bracket.round.special.member.destructor.cpp: p0
+    punctuation.section.parameters.begin.bracket.round.special.operator-overload.cpp: p0
+    punctuation.section.parameters.end.bracket.round.cpp: p0
+    punctuation.section.parameters.end.bracket.round.function.pointer.cpp: p0
+    punctuation.section.parameters.end.bracket.round.special.constructor.cpp: p0
+    punctuation.section.parameters.end.bracket.round.special.member.destructor.cpp: p0
+    punctuation.section.parameters.end.bracket.round.special.operator-overload.cpp: p0
+    punctuation.section.parens.begin.bracket.round.assembly.cpp: p0
+    punctuation.section.parens.begin.bracket.round.assembly.inner.cpp: p0
+    punctuation.section.parens.begin.bracket.round.conditional.switch.cpp: p0
+    punctuation.section.parens.begin.bracket.round.cpp: p0
+    punctuation.section.parens.begin.bracket.round.function.pointer.cpp: p0
+    punctuation.section.parens.control.defined.cpp: p0
+    punctuation.section.parens.end.bracket.round.assembly.cpp: p0
+    punctuation.section.parens.end.bracket.round.assembly.inner.cpp: p0
+    punctuation.section.parens.end.bracket.round.conditional.switch.cpp: p0
+    punctuation.section.parens.end.bracket.round.cpp: p0
+    punctuation.section.parens.end.bracket.round.function.pointer.cpp: p0
+    punctuation.separator.colon.access.control.cpp: p0
+    punctuation.separator.colon.case.cpp: p0
+    punctuation.separator.colon.case.default.cpp: p0
+    punctuation.separator.colon.inheritance.cpp: p0
+    punctuation.separator.colon.range-based.cpp: p0
+    punctuation.separator.constant.numeric.cpp: p0
+    punctuation.separator.delimiter.colon.assembly.cpp: p0
+    punctuation.separator.delimiter.comma.cpp: p0
+    punctuation.separator.delimiter.comma.inheritance.cpp: p0
+    punctuation.separator.dot-access.cpp: p0
+    punctuation.separator.initializers.cpp: p0
+    punctuation.separator.label.cpp: p0
+    punctuation.separator.pointer-access.cpp: p0
+    punctuation.separator.scope-resolution.cpp: p0
+    punctuation.separator.scope-resolution.function.call.cpp: p0
+    punctuation.separator.scope-resolution.function.definition.cpp: p0
+    punctuation.terminator.statement.cpp: p0
+    punctuation.vararg-ellipses.cpp: p0
+    source.cpp punctuation.definition.begin.bracket.square: p0
+    source.cpp punctuation.definition.end.bracket.square: p0
+    source.cpp punctuation.definition.string.end: s0
+    source.cpp string.quoted.double.raw punctuation.definition.string.begin meta.encoding: s0
+    source.cpp string.quoted.double.raw punctuation.definition.string.begin: s0
+    source.cpp string.quoted.double.raw: s1
+    source.cpp: p1
+    storage.modifier.const.cpp: p0
+    storage.modifier.consteval.cpp: p0
+    storage.modifier.constexpr.cpp: p0
+    storage.modifier.cpp: p0
+    storage.modifier.explicit.cpp: p0
+    storage.modifier.extern.cpp: p0
+    storage.modifier.friend.cpp: p0
+    storage.modifier.inline.cpp: p0
+    storage.modifier.mutable.cpp: p0
+    storage.modifier.pointer.cpp: p0
+    storage.modifier.reference.cpp: p0
+    storage.modifier.register.cpp: p0
+    storage.modifier.restrict.cpp: p0
+    storage.modifier.specifier.const.cpp: p0
+    storage.modifier.specifier.extern.cpp: p0
+    storage.modifier.specifier.functional.post-parameters.const.cpp: p0
+    storage.modifier.specifier.functional.post-parameters.final.cpp: p0
+    storage.modifier.specifier.functional.post-parameters.noexcept.cpp: p0
+    storage.modifier.specifier.functional.post-parameters.override.cpp: p0
+    storage.modifier.specifier.functional.post-parameters.volatile.cpp: p0
+    storage.modifier.specifier.functional.pre-parameters.consteval.cpp: p0
+    storage.modifier.specifier.functional.pre-parameters.constexpr.cpp: p0
+    storage.modifier.specifier.functional.pre-parameters.explicit.cpp: p0
+    storage.modifier.specifier.functional.pre-parameters.friend.cpp: p0
+    storage.modifier.specifier.functional.pre-parameters.inline.cpp: p0
+    storage.modifier.specifier.functional.pre-parameters.mutable.cpp: p0
+    storage.modifier.specifier.functional.pre-parameters.virtual.cpp: p0
+    storage.modifier.specifier.register.cpp: p0
+    storage.modifier.specifier.restrict.cpp: p0
+    storage.modifier.specifier.static.cpp: p0
+    storage.modifier.specifier.thread_local.cpp: p0
+    storage.modifier.specifier.volatile.cpp: p0
+    storage.modifier.static.cpp: p0
+    storage.modifier.thread_local.cpp: p0
+    storage.modifier.virtual.cpp: p0
+    storage.modifier.volatile.cpp: p0
+    storage.type.built-in.cpp: p0
+    storage.type.built-in.primitive.cpp: p0
+    storage.type.class.cpp: p0
+    storage.type.decltype.cpp: p0
+    storage.type.enum.cpp: p0
+    storage.type.extern.cpp: p0
+    storage.type.modifier.access.control.private.cpp: p0
+    storage.type.modifier.access.control.protected.cpp: p0
+    storage.type.modifier.access.control.public.cpp: p0
+    storage.type.modifier.access.private.cpp: p0
+    storage.type.modifier.access.protected.cpp: p0
+    storage.type.modifier.access.public.cpp: p0
+    storage.type.modifier.final.cpp: p0
+    storage.type.modifier.virtual.cpp: p0
+    storage.type.namespace.alias.cpp: p0
+    storage.type.namespace.definition.cpp: p0
+    storage.type.namespace.directive.cpp: p0
+    storage.type.return-type.lambda.cpp: p0
+    storage.type.struct.cpp: p0
+    storage.type.template.cpp: p0
+    storage.type.union.cpp: p0
+    string.quoted.double.cpp keyword.other.suffix.literal.user-defined.reserved.string.cpp: p1
+    string.quoted.double.cpp keyword.other.suffix.literal.user-defined.string.cpp: p1
+    string.quoted.double.cpp: s1
+    string.quoted.double.include.cpp punctuation.definition.string.begin.cpp: p0
+    string.quoted.double.include.cpp punctuation.definition.string.end.cpp: p0
+    string.quoted.double.raw keyword.other.suffix.literal.user-defined.reserved.string.cpp: p1
+    string.quoted.double.raw keyword.other.suffix.literal.user-defined.string.cpp: p1
+    string.quoted.other.lt-gt.include.cpp punctuation.definition.string.begin.cpp: p0
+    string.quoted.other.lt-gt.include.cpp punctuation.definition.string.end.cpp: p0
+    string.quoted.single.cpp keyword.other.suffix.literal.user-defined.character.cpp: p1
+    string.quoted.single.cpp keyword.other.suffix.literal.user-defined.reserved.character.cpp: p1
+    string.quoted.single.cpp keyword.other.suffix.literal.user-defined.reserved.string.cpp: p1
+    string.quoted.single.cpp: s1
+    support.other.attribute.cpp: p0
+    support.type.built-in.posix-reserved.pthread.cpp: p0

@@ -1,0 +1,26 @@
+// Shiki does not highlight the second pair of brackets. VS Code does.
+//
+//  Actual       #define     a      ()     a()
+//  (sample)   └─p0──────┘ └─p1─┘ └─p0─┘ └─p1──┘
+//
+//  Expected     #define     a      ()     a      ()
+//  (test.js)  └─p0──────┘ └─p1─┘ └─p0─┘ └─p1─┘ └─p0─┘
+//
+// p0("#define"); p1("a"); p0("()"); p1("a"); p0("()")
+#define a() a();
+
+// There is no scope to highlight the <typename ... a>.
+void a = []<typename... a>(a... a) {};
+
+// There is no scope to highlight curly brackets.
+a({1});
+
+// There is no scope to highlight the colon.
+struct {
+	int a : a;
+};
+
+// There is no scope to highlight a custom type.
+() {
+a a;
+};
