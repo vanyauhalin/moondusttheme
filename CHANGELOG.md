@@ -5,7 +5,9 @@ This document records all notable changes to the project, following the
 
 ## [Unreleased]
 
-<!-- There are no notable changes in this release. -->
+There are no notable changes in this release.
+
+## [0.11.0] - 2025-11-23
 
 ### Added
 
@@ -138,7 +140,8 @@ There are no notable changes in this release.
 
 [@Super-Pizza]: https://github.com/Super-Pizza/
 
-[Unreleased]: https://github.com/vanyauhalin/moondusttheme/compare/v0.10.0...HEAD/
+[Unreleased]: https://github.com/vanyauhalin/moondusttheme/compare/v0.11.0...HEAD/
+[0.11.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.10.0...v0.11.0/
 [0.10.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.9.0...v0.10.0/
 [0.9.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.8.0...v0.9.0/
 [0.8.0]: https://github.com/vanyauhalin/moondusttheme/compare/v0.7.0...v0.8.0/
